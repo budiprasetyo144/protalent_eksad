@@ -27,7 +27,7 @@ class OurServices extends StatefulWidget {
 class _OurServicesState extends State<OurServices> {
   @override
   Widget build(BuildContext context) {
-    setPageTitle('Services Protalent', context);
+    setPageTitle('Protalent Services', context);
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
         appBar: ResponsiveWidget.isSmallScreen(context)

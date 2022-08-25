@@ -16,7 +16,7 @@ class _HomeNew3State extends State<HomeNew3> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height * 0.9,
+      height: screenSize.height * 1.1,
       width: screenSize.width,
       child: Column(
         children: [
@@ -55,7 +55,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                       padding: const EdgeInsets.only(top: 5),
                       width: 250,
-                      height: 65,
+                      height: 75,
                       child: const Text(
                         'We work as an extension of your team.',
                         style: TextStyle(
@@ -72,7 +72,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.43,
+                        height: screenSize.height * 0.55,
                         child: const Animasi_Kanan_Kiri(
                             judul:
                                 'We work as a true extension of your team. We believe in rolling up our sleeves, diving in and working together to deliver the top-quality, tailored solutions our clients need to grow and thrive.'))
@@ -99,7 +99,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                       padding: const EdgeInsets.only(top: 5),
                       width: 250,
-                      height: 65,
+                      height: 75,
                       child: const Text(
                         'We offer smart tailored outsourcing and HR solutions.',
                         style: TextStyle(
@@ -116,7 +116,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.43,
+                        height: screenSize.height * 0.55,
                         child: const Animasi_Kanan_Kiri(
                             judul:
                                 'Through our tailored approach, exceptional support, and flexible solutions, we make finding and retaining top talents easier and simpler.'))
@@ -143,7 +143,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                       padding: const EdgeInsets.only(top: 5),
                       width: 250,
-                      height: 65,
+                      height: 75,
                       child: const Text(
                         'We have a rich outsourcing experience across various industries.',
                         style: TextStyle(
@@ -160,7 +160,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.43,
+                        height: screenSize.height * 0.55,
                         child: const Animasi_Kanan_Kiri(
                             judul:
                                 'We have been providing outsourcing solutions to variance clients for eight years now helping them streamline their operations, save valuable time, and cut costs.'))
@@ -187,7 +187,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                       padding: const EdgeInsets.only(top: 5),
                       width: 250,
-                      height: 65,
+                      height: 75,
                       child: const Text(
                         'We Are Expert recruiters.',
                         style: TextStyle(
@@ -204,7 +204,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.43,
+                        height: screenSize.height * 0.55,
                         child: ShowUpAnimation(
                           delayStart: const Duration(seconds: 1),
                           curve: Curves.decelerate,

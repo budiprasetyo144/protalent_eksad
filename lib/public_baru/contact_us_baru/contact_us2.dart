@@ -20,7 +20,7 @@ class ContactUs2 extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: 460,
+      height: 480,
       width: screenSize.width,
       // color: Colors.blue,
       decoration: const BoxDecoration(
@@ -223,6 +223,7 @@ class ContactUs2 extends StatelessWidget {
                   ),
                   Container(
                     width: 450,
+                    height: 107,
                     child: TextFormField(
                       controller: messageController,
                       decoration: const InputDecoration(

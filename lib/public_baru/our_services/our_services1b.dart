@@ -89,7 +89,7 @@ class _OurServices1bState extends State<OurServices1b> {
                           height: 20,
                         ),
                         Container(
-                          height: 40,
+                          height: 47,
                           padding: const EdgeInsets.only(top: 5),
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
@@ -157,7 +157,7 @@ class _OurServices1bState extends State<OurServices1b> {
                           height: 20,
                         ),
                         Container(
-                          height: 40,
+                          height: 47,
                           padding: const EdgeInsets.only(top: 5),
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
@@ -225,7 +225,7 @@ class _OurServices1bState extends State<OurServices1b> {
                           height: 20,
                         ),
                         Container(
-                          height: 40,
+                          height: 47,
                           padding: const EdgeInsets.only(top: 5),
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
@@ -293,7 +293,7 @@ class _OurServices1bState extends State<OurServices1b> {
                           height: 20,
                         ),
                         Container(
-                          height: 40,
+                          height: 47,
                           padding: const EdgeInsets.only(top: 5),
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),

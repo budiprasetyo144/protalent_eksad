@@ -34,7 +34,8 @@ class _CareerState extends State<Career> {
             ? AppbarHomeSmall(screenSize)
             : AppbarHomeLarge(screenSize, context, Colors.black, Colors.black,
                 Colors.black, Colors.blue, Colors.black),
-        body: ListView(
+        body: ResponsiveWidget.isSmallScreen(context)
+        ? ListView(
           children: const [
             Career1(),
             Career1_2(),
@@ -42,7 +43,16 @@ class _CareerState extends State<Career> {
             Career3(),
             Footer(),
           ],
-        ),
+        )
+        : ListView(
+        children: const [
+          Career1(),
+          Career1_2(),
+          Career2(),
+          Career3(),
+          Footer(),
+    ],
+    ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: WAChat());
   }

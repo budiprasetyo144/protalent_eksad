@@ -6,6 +6,7 @@ import 'package:protalent_eksad/public_baru/home/home1_new.dart';
 import 'package:protalent_eksad/public_baru/home/home2_new.dart';
 import 'package:protalent_eksad/public_baru/home/home3_new.dart';
 import 'package:protalent_eksad/public_baru/home/home4_new.dart';
+import 'package:protalent_eksad/public_small/small_contact/small_contact_us2.dart';
 import 'package:protalent_eksad/public_small/small_footer.dart';
 import 'package:protalent_eksad/public_small/small_home/small_home1.dart';
 import 'package:protalent_eksad/public_small/small_home/small_home2.dart';
@@ -53,7 +54,7 @@ class _HomePageNewState extends State<HomePageNew> {
           HomeSmall2(),
           HomeSmall3(),
           HomeSmall4(),
-          ContactUs2(),
+          ContactUs2_small(),
           const FooterSmall(),
         ],
       )

@@ -28,13 +28,15 @@ class ContactUs_baru extends StatefulWidget {
 }
 
 class _ContactUsState extends State<ContactUs_baru> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     setPageTitle('Contact Us', context);
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        key: _scaffoldKey,
         appBar: ResponsiveWidget.isSmallScreen(context)
-            ? AppbarHomeSmall(screenSize)
+            ? AppBarKecil()
             : AppbarHomeLarge(screenSize, context, Colors.black, Colors.black,
                 Colors.black, Colors.black, Colors.blue),
         body: ResponsiveWidget.isSmallScreen(context)
@@ -54,5 +56,25 @@ class _ContactUsState extends State<ContactUs_baru> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: WAChat());
+  }
+
+
+  AppBar AppBarKecil() {
+    return AppBar(
+      leading: IconButton(
+        onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+        icon: Icon(Icons.list_outlined,size: 30,color: Colors.black,),),
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      title: Container(
+        child: SizedBox(
+          height: 50,
+          width: 150,
+          child: Image.asset("assets/logo/logo_protalent.png"),
+        ),
+      ),
+
+      // ),
+    );
   }
 }

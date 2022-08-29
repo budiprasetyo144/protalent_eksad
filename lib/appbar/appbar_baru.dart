@@ -4,6 +4,7 @@ import 'package:protalent_eksad/widget/dropdown_appbar.dart';
 import 'package:protalent_eksad/widget/botton.dart';
 
 
+
 AppBar AppbarHomeSmall(Size screenSize) {
   return AppBar(
     backgroundColor: Colors.white,
@@ -19,6 +20,8 @@ AppBar AppbarHomeSmall(Size screenSize) {
           const Spacer(
             flex: 1,
           ),
+
+          Spacer(),
           Container(
             child: SizedBox(
               height: 50,
@@ -26,17 +29,7 @@ AppBar AppbarHomeSmall(Size screenSize) {
               child: Image.asset("assets/logo/logo_protalent.png"),
             ),
           ),
-          const Spacer(
-            flex: 3,
-          ),
-          const SizedBox(
-            height: 50,
-            width: 150,
-            child: DropDownHome(),
-          ),
-          const Spacer(
-            flex: 1,
-          ),
+          Spacer(),
         ],
       ),
     ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protalent_eksad/footer.dart';
-// import 'package:protalent_eksad/public/home/home4.dart';
+import 'package:protalent_eksad/conts_warna.dart';
 import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us2.dart';
 import 'package:protalent_eksad/public_baru/home/home1_new.dart';
 import 'package:protalent_eksad/public_baru/home/home2_new.dart';
@@ -11,6 +11,7 @@ import 'package:protalent_eksad/public_small/small_home/small_home1.dart';
 import 'package:protalent_eksad/public_small/small_home/small_home2.dart';
 import 'package:protalent_eksad/public_small/small_home/small_home3.dart';
 import 'package:protalent_eksad/public_small/small_home/small_home4.dart';
+import 'package:protalent_eksad/widget/drawer.dart';
 import 'package:protalent_eksad/widget/whatsapp.dart';
 import '../appbar/appbar_baru.dart';
 
@@ -32,16 +33,19 @@ class HomePageNew extends StatefulWidget {
 }
 
 class _HomePageNewState extends State<HomePageNew> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     setPageTitle('Protalent by Eksad', context);
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+        key: _scaffoldKey,
       floatingActionButton: WAChat(),
       appBar: ResponsiveWidget.isSmallScreen(context)
-          ? AppbarHomeSmall(screenSize)
+          ? AppBarKecil()
           : AppbarHomeLarge(screenSize, context, Colors.blue, Colors.blue,
               Colors.black, Colors.black, Colors.black),
+      drawer: DrawerProtalent(),
       body: ResponsiveWidget.isSmallScreen(context)
      ? ListView(
         children: [
@@ -65,4 +69,34 @@ class _HomePageNewState extends State<HomePageNew> {
       )
     );
   }
+
+
+
+
+
+
+
+
+
+
+  AppBar AppBarKecil() {
+    return AppBar(
+      leading: IconButton(
+        onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+        icon: Icon(Icons.list_outlined,size: 30,color: Colors.black,),),
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      title: Container(
+        child: SizedBox(
+          height: 50,
+          width: 150,
+          child: Image.asset("assets/logo/logo_protalent.png"),
+        ),
+      ),
+
+      // ),
+    );
+  }
 }
+
+

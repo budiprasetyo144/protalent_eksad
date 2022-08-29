@@ -109,7 +109,7 @@ class Footer extends StatelessWidget {
                                 IconButton(
                                   onPressed: () {
                                     launch(
-                                        'https://youtube.com/eksad_technology');
+                                        'https://www.youtube.com/channel/UCiZgIbpWgrAMrHW-TaS9EPw');
                                   },
                                   icon: const Icon(
                                     FontAwesomeIcons.youtube,

@@ -23,13 +23,12 @@ class HomeSmall1 extends StatelessWidget {
         ),
         Container(
           width: screenSize.width,
-          height: screenSize.height * 0.65,
+          height: screenSize.height * 0.66,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(height: 1,),
-              SizedBox(height: 1,),
+              SizedBox(height: 15,),
               Container(
                 width: screenSize.width,
                 height: screenSize.height * 0.16,

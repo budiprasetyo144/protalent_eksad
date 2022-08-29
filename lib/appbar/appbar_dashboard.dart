@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:protalent_eksad/login.dart';
 // import 'package:protalent_eksad/widget/botton.dart';
-// import 'package:protalent_eksad/homepage.dart';
 
 AppBar BarAtas(BuildContext context) {
   return AppBar(

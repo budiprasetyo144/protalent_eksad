@@ -3,7 +3,6 @@ import 'package:protalent_eksad/admin/dashboard.dart';
 // import 'package:protalent_eksad/admin/setting_dashboard.dart';
 import 'package:protalent_eksad/client/dashboard_client.dart';
 // import 'package:protalent_eksad/client/hired_talent.dart';
-// import 'package:protalent_eksad/homepage.dart';
 import 'package:protalent_eksad/homepage_new.dart';
 import 'package:protalent_eksad/login.dart';
 import 'package:protalent_eksad/public_baru/career/career.dart';

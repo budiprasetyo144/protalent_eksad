@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us_baru.dart';
 import 'package:protalent_eksad/widget/addnew.dart';
 // import 'package:protalent_eksad/widget/apply.dart';
 // import 'package:protalent_eksad/widget/filter.dart';
 import 'package:protalent_eksad/admin/pages/add_pages.dart';
-import 'package:protalent_eksad/public/contact_us/ContactUs.dart';
 import 'package:data_table_2/data_table_2.dart';
 
 class PagesDashboard extends StatefulWidget {
@@ -199,7 +199,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -213,7 +213,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -227,7 +227,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -285,7 +285,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -299,7 +299,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -313,7 +313,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -371,7 +371,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -385,7 +385,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(
@@ -399,7 +399,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
-                                                  const ContactUs(),
+                                                  const ContactUs_baru(),
                                             ));
                                       },
                                       child: const Text(

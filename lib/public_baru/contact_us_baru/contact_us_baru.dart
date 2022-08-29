@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 // import 'package:protalent_eksad/public_baru/career/career3.dart';
 import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us1.dart';
 import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us2.dart';
+import 'package:protalent_eksad/public_small/small_contact/small_contact_us1.dart';
+import 'package:protalent_eksad/public_small/small_contact/small_contact_us2.dart';
 
 import '../../appbar/appbar_baru.dart';
 import '../../footer.dart';
@@ -34,7 +36,15 @@ class _ContactUsState extends State<ContactUs_baru> {
             ? AppbarHomeSmall(screenSize)
             : AppbarHomeLarge(screenSize, context, Colors.black, Colors.black,
                 Colors.black, Colors.black, Colors.blue),
-        body: ListView(
+        body: ResponsiveWidget.isSmallScreen(context)
+        ? ListView(
+          children: [
+            const ContactUs1_small(),
+            ContactUs2_small(),
+            const Footer(),
+          ],
+        )
+        : ListView(
           children: [
             const ContactUs1(),
             ContactUs2(),

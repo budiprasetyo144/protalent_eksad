@@ -55,7 +55,7 @@ class ContactUs2 extends StatelessWidget {
                         '\n'
                         'an outsourcing partner '
                         'you can trust and thrive with',
-                        textAlign: TextAlign.left,
+                        textAlign: TextAlign.justify,
                         style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontSize: 30,

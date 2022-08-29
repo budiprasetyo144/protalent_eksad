@@ -56,7 +56,7 @@ class ContactUs2_small extends StatelessWidget {
               Text(
                   'Go for the one who knows what they are doing, those who you share values with, '
                   'and those who will celebrate your success, and help you win over your biggest challenges. '
-                  '\nLooking for an outsourcing partner? ',
+                  'Looking for an outsourcing partner? ',
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.poppins(
                       color: Colors.white,

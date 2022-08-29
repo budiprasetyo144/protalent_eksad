@@ -6,6 +6,9 @@ import 'package:protalent_eksad/public_baru/home/home1_new.dart';
 import 'package:protalent_eksad/public_baru/home/home2_new.dart';
 import 'package:protalent_eksad/public_baru/home/home3_new.dart';
 import 'package:protalent_eksad/public_baru/home/home4_new.dart';
+import 'package:protalent_eksad/public_small/small_home/small_home1.dart';
+import 'package:protalent_eksad/public_small/small_home/small_home2.dart';
+import 'package:protalent_eksad/public_small/small_home/small_home3.dart';
 import 'package:protalent_eksad/widget/whatsapp.dart';
 import '../appbar/appbar_baru.dart';
 
@@ -37,7 +40,21 @@ class _HomePageNewState extends State<HomePageNew> {
           ? AppbarHomeSmall(screenSize)
           : AppbarHomeLarge(screenSize, context, Colors.blue, Colors.blue,
               Colors.black, Colors.black, Colors.black),
-      body: ListView(
+      body: ResponsiveWidget.isSmallScreen(context)
+     ? ListView(
+        children: [
+          HomeSmall1(),
+          HomeSmall2(),
+          HomeSmall3(),
+          //const HomeNew1(),
+          // const HomeNew2(),
+          // const HomeNew3(),
+          const HomeNew4(),
+          ContactUs2(),
+          const Footer(),
+        ],
+      )
+        : ListView(
         children: [
           const HomeNew1(),
           const HomeNew2(),
@@ -46,7 +63,7 @@ class _HomePageNewState extends State<HomePageNew> {
           ContactUs2(),
           const Footer(),
         ],
-      ),
+      )
     );
   }
 }

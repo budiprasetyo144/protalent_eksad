@@ -119,7 +119,9 @@ class _HomeNew3State extends State<HomeNew3> {
                         height: screenSize.height * 0.55,
                         child: const Animasi_Kanan_Kiri(
                             judul:
-                                'Through our tailored approach, exceptional support, and flexible solutions, we make finding and retaining top talents easier and simpler.'))
+                                'Through our tailored approach, exceptional support, and flexible solutions, we make'
+                                    ' finding and retaining top talents easier and simpler.'),
+                    ),
                   ],
                 ),
               ),
@@ -163,7 +165,8 @@ class _HomeNew3State extends State<HomeNew3> {
                         height: screenSize.height * 0.55,
                         child: const Animasi_Kanan_Kiri(
                             judul:
-                                'We have been providing outsourcing solutions to variance clients for eight years now helping them streamline their operations, save valuable time, and cut costs.'))
+                                'We have been providing outsourcing solutions to variance clients for eight years '
+                                    'now helping them streamline their operations, save valuable time, and cut costs.'))
                   ],
                 ),
               ),
@@ -212,7 +215,10 @@ class _HomeNew3State extends State<HomeNew3> {
                           child: Container(
                             height: screenSize.height * 0.42,
                             child: Text(
-                              'We are a team of expert recruiters, with a mission to match talented people with successful employers. We strongly believe in building a value of trust, honesty and transparency with our clients so as to develop long term relationships and to adopt flexible approach as per their needs.',
+                              'We are a team of expert recruiters, with a mission to match talented people'
+                                  ' with successful employers. We strongly believe in building a value of trust, '
+                                  'honesty and transparency with our clients so as to develop long term relationships'
+                                  ' and to adopt flexible approach as per their needs.',
                               style: GoogleFonts.poppins(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,

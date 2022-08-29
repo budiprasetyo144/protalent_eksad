@@ -12,14 +12,14 @@ import 'package:protalent_eksad/register.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  configureApp();
+   WidgetsFlutterBinding.ensureInitialized();
+   configureApp();
   runApp(const MyApp());
 }
 
-void configureApp() {
-  setUrlStrategy(PathUrlStrategy());
-}
+ void configureApp() {
+   setUrlStrategy(PathUrlStrategy());
+ }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -1,103 +1,378 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:protalent_eksad/login.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:protalent_eksad/animation/animasi_kiri_kanan.dart';
+import 'package:show_up_animation/show_up_animation.dart';
 
-class Career3 extends StatelessWidget {
-  const Career3({Key? key}) : super(key: key);
+class Career3_small extends StatefulWidget {
+  const Career3_small({Key? key}) : super(key: key);
 
+  @override
+  State<Career3_small> createState() => _Career3_smallState();
+}
+
+class _Career3_smallState extends State<Career3_small> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: <Color>[
-              Color(0xff137fc2),
-              Color(0xff3958d5),
-              Color(0xff184b80),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          )),
-      width: screenSize.width * 0.5,
-      height: 350,
-      padding: EdgeInsets.only(
-        left: screenSize.width * 0.10,
-        right: screenSize.width * 0.10,
-      ),
+      height: screenSize.height * 1.5,
+      width: screenSize.width,
+      color: Colors.white,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Spacer(
-            flex: 1,
+          const SizedBox(
+            height: 15,
           ),
           Container(
-            width: screenSize.width,
-            alignment: Alignment.center,
-            child: Text('Apply Your Resume',
-                style: GoogleFonts.poppins(
-                    fontSize: 30,
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    fontWeight: FontWeight.bold)),
-          ),
-          const Spacer(
-            flex: 1,
-          ),
-          Container(
-            width: screenSize.width,
-            alignment: Alignment.center,
+            width: screenSize.width * 0.5,
+            height: screenSize.height * 0.07,
             child: Text(
-              'You may or may not be actively looking for a job at the moment but some positions will give you a peep into the dynamic '
-                  'job market. Submit your resume from the button bellow and our consultants will do the rest.',
+              "Career Opportunities",
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                fontSize: 20,
-                letterSpacing: 1.1,
-                // height: 1.3,
-                color: const Color.fromARGB(255, 255, 255, 255),
+                color: const Color(0xff1e5ea8),
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const Spacer(
-            flex: 1,
+          const SizedBox(
+            height: 15,
           ),
           Container(
-            height: 40,
-            width: screenSize.width * 0.10,
-            alignment: Alignment.center,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                // padding: const EdgeInsets.all(15),
-                  fixedSize: screenSize,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  primary: const Color.fromARGB(255, 12, 66, 101)
-                // shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
-              ),
-              onPressed: () {
-                _launchURL();
-              },
-              child: const Text("APPLY NOW", style: TextStyle(fontSize: 17)),
+            width: 1000,
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              "Depending on your area of expertise, core skills, and interest, we offer contract/project, contract-to-hire, and direct-hire opportunities in each of the specialty areas we service",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                  color: const Color(0xff111111),
+                  fontSize: 17,
+                  letterSpacing: 1.3,
+                  height: 1.3,
+                  fontWeight: FontWeight.w500),
             ),
           ),
-          const Spacer(
-            flex: 1,
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            width: 1000,
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              "Our process begins with a meticulous pairing of candidates with the right professional who understands your needs and goals.",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                  color: const Color(0xff111111),
+                  fontSize: 17,
+                  letterSpacing: 1.3,
+                  height: 1.3,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: screenSize.width,
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          child: Animasi_Kiri_Kanan(
+                            screenSize: screenSize,
+                            widget: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                border: Border.all(
+                                    color:
+                                        const Color.fromARGB(255, 4, 97, 184),
+                                    width: 1),
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                    'assets/icons/icon-service-1.png',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 100,
+                          child: ShowUpAnimation(
+                            delayStart: const Duration(seconds: 1),
+                            direction: Direction.horizontal,
+                            child: const Text(
+                              "PERMANENT POSITIONS",
+                              style: TextStyle(
+                                  color: Colors.blueAccent,
+                                  fontSize: 17,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 200,
+                      height: 180,
+                      child: ShowUpAnimation(
+                        delayStart: const Duration(seconds: 1),
+                        direction: Direction.horizontal,
+                        child: Text(
+                          "Our understanding of the business and strong network helps find you a job that fits your skills, interests, and goals.",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1.3,
+                              height: 1.4),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: screenSize.width,
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          child: Animasi_Kiri_Kanan(
+                            screenSize: screenSize,
+                            widget: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                border: Border.all(
+                                    color:
+                                        const Color.fromARGB(255, 4, 97, 184),
+                                    width: 1),
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                    'assets/icons/icon-service-2.png',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 100,
+                          child: ShowUpAnimation(
+                            delayStart: const Duration(seconds: 1),
+                            direction: Direction.horizontal,
+                            child: const Text(
+                              "CONTRACT-TO-HIRE",
+                              style: TextStyle(
+                                  color: Colors.blueAccent,
+                                  fontSize: 17,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 200,
+                      height: 180,
+                      child: ShowUpAnimation(
+                        delayStart: const Duration(seconds: 1),
+                        direction: Direction.horizontal,
+                        child: Text(
+                          "Everyone knows that the right experts can work wonders for your career by getting you much-needed attention.",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1.3,
+                              height: 1.4),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: screenSize.width,
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          child: Animasi_Kiri_Kanan(
+                            screenSize: screenSize,
+                            widget: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                border: Border.all(
+                                    color:
+                                        const Color.fromARGB(255, 4, 97, 184),
+                                    width: 1),
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                    'assets/icons/icon-service-3.png',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 100,
+                          child: ShowUpAnimation(
+                            delayStart: const Duration(seconds: 1),
+                            direction: Direction.horizontal,
+                            child: const Text(
+                              "PROJECT BASIS",
+                              style: TextStyle(
+                                  color: Colors.blueAccent,
+                                  fontSize: 17,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 200,
+                      height: 180,
+                      child: ShowUpAnimation(
+                        delayStart: const Duration(seconds: 1),
+                        direction: Direction.horizontal,
+                        child: Text(
+                          "We find positions that put your right at the heart of the business and disruptive change. Step into the future.",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1.3,
+                              height: 1.4),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: screenSize.width,
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          child: Animasi_Kiri_Kanan(
+                            screenSize: screenSize,
+                            widget: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                border: Border.all(
+                                    color:
+                                        const Color.fromARGB(255, 4, 97, 184),
+                                    width: 1),
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                    'assets/icons/icon-service-4.png',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 100,
+                          child: ShowUpAnimation(
+                            delayStart: const Duration(seconds: 1),
+                            direction: Direction.horizontal,
+                            child: const Text(
+                              "INTERNAL STAFF",
+                              style: TextStyle(
+                                  color: Colors.blueAccent,
+                                  fontSize: 17,
+                                  letterSpacing: 1.1,
+                                  fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 200,
+                      height: 180,
+                      child: ShowUpAnimation(
+                        delayStart: const Duration(seconds: 1),
+                        direction: Direction.horizontal,
+                        child: Text(
+                          "Join us to advance your career growth.",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1.3,
+                              height: 1.4),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
-  }
-}
-
-_launchURL() async {
-  const url = 'https://bit.ly/EksadFormApplicant';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
   }
 }

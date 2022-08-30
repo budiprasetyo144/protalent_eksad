@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:protalent_eksad/public_baru/career/career2.dart';
 import 'package:protalent_eksad/public_baru/career/career3.dart';
+import 'package:protalent_eksad/public_small/small_career/small_career1.dart';
+import 'package:protalent_eksad/public_small/small_career/small_career2.dart';
+import 'package:protalent_eksad/public_small/small_career/small_career3.dart';
+import 'package:protalent_eksad/public_small/small_career/small_career4.dart';
 
 import '../../appbar/appbar_baru.dart';
 import '../../footer.dart';
@@ -37,10 +41,10 @@ class _CareerState extends State<Career> {
         body: ResponsiveWidget.isSmallScreen(context)
         ? ListView(
           children: const [
-            Career1(),
-            Career1_2(),
-            Career2(),
-            Career3(),
+            Career1_small(),
+            Career2_small(),
+            Career3_small(),
+            Career4_small(),
             Footer(),
           ],
         )

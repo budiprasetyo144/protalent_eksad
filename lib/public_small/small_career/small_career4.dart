@@ -21,8 +21,8 @@ class Career4_small extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           )),
-      width: screenSize.width * 0.5,
-      height: 350,
+      width: screenSize.width,
+      height: screenSize.height * 0.6,
       padding: EdgeInsets.only(
         left: screenSize.width * 0.10,
         right: screenSize.width * 0.10,
@@ -65,8 +65,8 @@ class Career4_small extends StatelessWidget {
             flex: 1,
           ),
           Container(
-            height: 40,
-            width: screenSize.width * 0.10,
+            height: screenSize.height*0.1,
+            width: screenSize.width,
             alignment: Alignment.center,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(

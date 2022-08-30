@@ -5,6 +5,7 @@ import 'package:protalent_eksad/public_small/small_career/small_career1.dart';
 import 'package:protalent_eksad/public_small/small_career/small_career2.dart';
 import 'package:protalent_eksad/public_small/small_career/small_career3.dart';
 import 'package:protalent_eksad/public_small/small_career/small_career4.dart';
+import 'package:protalent_eksad/public_small/small_footer.dart';
 
 import '../../appbar/appbar_baru.dart';
 import '../../footer.dart';
@@ -45,7 +46,7 @@ class _CareerState extends State<Career> {
             Career2_small(),
             Career3_small(),
             Career4_small(),
-            Footer(),
+            FooterSmall(),
           ],
         )
         : ListView(

@@ -6,6 +6,7 @@ import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us2.dart';
 import 'package:protalent_eksad/public_small/small_contact/small_contact_us1.dart';
 import 'package:protalent_eksad/public_small/small_contact/small_contact_us2.dart';
 import 'package:protalent_eksad/public_small/small_footer.dart';
+import 'package:protalent_eksad/widget/drawer.dart';
 
 import '../../appbar/appbar_baru.dart';
 import '../../footer.dart';
@@ -39,6 +40,7 @@ class _ContactUsState extends State<ContactUs_baru> {
             ? AppBarKecil()
             : AppbarHomeLarge(screenSize, context, Colors.black, Colors.black,
                 Colors.black, Colors.black, Colors.blue),
+        drawer: DrawerProtalent(),
         body: ResponsiveWidget.isSmallScreen(context)
         ? ListView(
           children: [

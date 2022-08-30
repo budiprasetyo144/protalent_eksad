@@ -9,17 +9,17 @@ import 'package:protalent_eksad/public_baru/career/career.dart';
 import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us_baru.dart';
 import 'package:protalent_eksad/public_baru/our_services/our_services.dart';
 import 'package:protalent_eksad/register.dart';
-// import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() {
-   // WidgetsFlutterBinding.ensureInitialized();
-   // configureApp();
+   WidgetsFlutterBinding.ensureInitialized();
+   configureApp();
   runApp(const MyApp());
 }
 
- // void configureApp() {
- //   setUrlStrategy(PathUrlStrategy());
- // }
+ void configureApp() {
+   setUrlStrategy(PathUrlStrategy());
+ }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

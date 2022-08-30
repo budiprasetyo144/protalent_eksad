@@ -20,7 +20,7 @@ class ContactUs2_small extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height*2,
+      height: screenSize.height * 1.5,
       width: screenSize.width,
       padding: EdgeInsets.symmetric(horizontal: 15),
       // color: Colors.blue,
@@ -40,9 +40,6 @@ class ContactUs2_small extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                height: 25,
-              ),
               Text(
                   'Yes, you need '
                   '\n'
@@ -63,15 +60,9 @@ class ContactUs2_small extends StatelessWidget {
                       fontSize: 18,
                       // fontWeight: FontWeight.bold,
                       letterSpacing: 1.1)),
-              SizedBox(
-                height: 15,
-              ),
               Text("We’ll contact you immediately to discuss to help you.",
                   style: GoogleFonts.poppins(
                       color: Colors.white, fontSize: 18, letterSpacing: 1.2)),
-              SizedBox(
-                height: 10,
-              ),
               Form(
                 key: _formKey,
                 child: Column(
@@ -134,12 +125,12 @@ class ContactUs2_small extends StatelessWidget {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                           ),
                         ),

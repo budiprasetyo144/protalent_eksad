@@ -18,7 +18,7 @@ class SideMenu extends StatefulWidget {
 
 class _SideMenuState extends State<SideMenu> {
   List<Widget> views = [
-    MainDashboard(),
+    //MainDashboard(),
     SettingDashboard(),
     PagesDashboard(),
     PostDashboard(),

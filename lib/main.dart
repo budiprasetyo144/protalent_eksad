@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:protalent_eksad/admin/dashboard.dart';
-// import 'package:protalent_eksad/admin/setting_dashboard.dart';
+import 'package:protalent_eksad/admin/dashboard/desc_talent.dart';
+import 'package:protalent_eksad/admin/new_sidemenu.dart';
 import 'package:protalent_eksad/client/dashboard_client.dart';
-// import 'package:protalent_eksad/client/hired_talent.dart';
 import 'package:protalent_eksad/homepage_new.dart';
 import 'package:protalent_eksad/login.dart';
 import 'package:protalent_eksad/public_baru/career/career.dart';
@@ -38,8 +37,9 @@ class MyApp extends StatelessWidget {
         '/contact': (context) => const ContactUs_baru(),
         '/login': (context) => const login(),
         '/register': (context) => const Register(),
-        '/admin': (context) => const Dashboard(),
+        '/admin': (context) => const DashboardAdmin(),
         '/client': (context) => const DashboardClient(),
+        '/talent': (context) => const SelectTalent()
       },
 
       //home: Scaffold(

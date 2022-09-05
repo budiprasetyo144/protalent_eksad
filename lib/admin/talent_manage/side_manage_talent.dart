@@ -22,7 +22,7 @@ class SideMenuManageTalent extends StatefulWidget {
 
 class _SideMenuManageTalentState extends State<SideMenuManageTalent> {
   List<Widget> views = [
-    MainDashboard(),
+   // MainDashboard(),
     SettingDashboard(),
     PagesDashboard(),
     PostDashboard(),

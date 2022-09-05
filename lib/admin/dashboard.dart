@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protalent_eksad/admin/new_sidemenu.dart';
 import 'package:protalent_eksad/admin/side_menu.dart';
 import 'package:protalent_eksad/appbar/appbar_dashboard.dart';
 // import 'package:protalent_eksad/main.dart';
@@ -18,8 +19,9 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     setPageTitle('Dashboard Admin Protalent', context);
     return Scaffold(
-      appBar: BarAtas(context),
-      body: const SideMenu(),
+      //appBar: BarAtas(context),
+      body: DashboardAdmin(),
+      //body: const SideMenu(),
     );
   }
 }

@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us_baru.dart';
-import 'package:protalent_eksad/widget/addnew.dart';
-// import 'package:protalent_eksad/widget/apply.dart';
-// import 'package:protalent_eksad/widget/filter.dart';
-import 'package:protalent_eksad/admin/pages/add_pages.dart';
-import 'package:data_table_2/data_table_2.dart';
+import 'package:protalent_eksad/api/page_api.dart';
 
 class PagesDashboard extends StatefulWidget {
   const PagesDashboard({Key? key}) : super(key: key);
@@ -14,13 +9,18 @@ class PagesDashboard extends StatefulWidget {
 }
 
 class _PagesDashboardState extends State<PagesDashboard> {
-  String bulkAction = 'Bulk action';
-  String allDates = 'All dates';
-  bool value = false;
-  bool value1 = false;
-  bool value2 = false;
-  bool value3 = false;
-  bool value4 = false;
+  final formKey = GlobalKey<FormState>();
+
+  int id = 0;
+  String nm = '';
+  String pg = '';
+  String selectname = '';
+  String selectpage = '';
+
+  int selectedIndex = 0;
+
+  TextEditingController _controllerName = TextEditingController();
+  TextEditingController _controllerPage = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
     return Container(
       height: 2000,
       width: screenSize.width,
-      padding: const EdgeInsets.only(left: 100, right: 100),
+      padding: const EdgeInsets.only(left: 80, right: 80),
       color: const Color.fromRGBO(238, 224, 224, 1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,390 +45,416 @@ class _PagesDashboardState extends State<PagesDashboard> {
                     ),
                   ),
                 ),
-                const AddNewButton(arah: AddPages())
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                TextButton(
+                ElevatedButton(
                   style: TextButton.styleFrom(
-                    primary: Colors.black,
+                    padding: const EdgeInsets.all(16.0),
+                    primary: Colors.white,
+                    backgroundColor: Colors.blue,
                     textStyle: const TextStyle(fontSize: 15),
                   ),
-                  onPressed: () {},
-                  child: const Text("All (3)"),
-                ),
-                const Spacer(
-                  flex: 3,
-                ),
-                // const Text('All(4)',
-                //     style: TextStyle(color: Color.fromARGB(255, 0, 0, 139))),
-
-                SizedBox(
-                  height: 40,
-                  width: 200,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: "Search",
-                      prefixIcon: const Icon(Icons.search),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(width: 1, color: Colors.blue),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(width: 1, color: Colors.blue),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 50,
-                ),
-                //     Spacer(
-                //       flex: 1,
-                // ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(3),
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned.fill(
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: <Color>[
-                                Color(0xFF42A5F5),
-                              ],
-                            ),
+                  onPressed: () {
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Center(child: Text('ADD NEW PAGES')),
+                        content: Form(
+                          key: formKey,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            verticalDirection: VerticalDirection.down,
+                            children: [
+                              Container(
+                                width: 200,
+                                child: TextFormField(
+                                  textAlign: TextAlign.start,
+                                  decoration: InputDecoration(
+                                    labelText: "Masukkan Nama",
+                                    hintStyle: const TextStyle(),
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                        BorderRadius.circular(5.0)),
+                                  ),
+                                  onChanged: (value) => nm = value,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              Container(
+                                width: 200,
+                                child: TextFormField(
+                                  textAlign: TextAlign.start,
+                                  maxLines: 7,
+                                  decoration: InputDecoration(
+                                    labelText: "Masukkan Keterangan",
+                                    hintStyle: const TextStyle(),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                  ),
+                                  onChanged: (value) => pg = value,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
+                        actions: <Widget>[
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(16.0),
+                              primary: Colors.black,
+                              backgroundColor: const Color.fromARGB(255, 16, 199, 71),
+                              textStyle: const TextStyle(fontSize: 15),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+
+                              if (nm.isEmpty && pg.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Data Can\'t Be Empty')),
+                                );
+                              } else if (pg.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Content Can\'t Be Empty')),
+                                );
+                              } else if (nm.isEmpty) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Name Can\'t Be Empty')),
+                                );
+                              } else {
+                                createPage(nm, pg).then(
+                                      (isSuccess) {
+                                    if (isSuccess) {
+                                      setState(() {});
+                                      Scaffold.of(this.context).showSnackBar(
+                                          const SnackBar(
+                                              content: Text("Data success")));
+                                    } else {
+                                      Scaffold.of(this.context).showSnackBar(
+                                          const SnackBar(
+                                              content: Text("Data failed!!!")));
+                                    }
+                                  },
+                                );
+                              }
+                            },
+                            child: const Text('save'),
+                          ),
+                        ],
                       ),
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(16.0),
-                          primary: Colors.black,
-                          backgroundColor: Colors.blue,
-                          textStyle: const TextStyle(fontSize: 15),
-                        ),
-                        onPressed: () {},
-                        child: const Text("Search Pages"),
-                      ),
-                    ],
-                  ),
+                    );
+                  },
+                  child: const Text('Add Pages'),
                 ),
               ],
             ),
           ),
-          Row(
-            children: const [
-              Spacer(
-                flex: 6,
-              ),
-              Text("3 items"),
-            ],
-          ),
+
           const SizedBox(
             height: 10,
           ),
           Container(
-            color: Colors.white,
-            height: 300,
-            width: screenSize.width,
-            padding: EdgeInsets.zero,
-            child: DataTable2(
-              columnSpacing: 30,
-              dataRowHeight: 70,
-              horizontalMargin: 10,
-              minWidth: 600,
-              columns: const [
-                DataColumn2(
-                  label: Text(
-                    'Title',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  size: ColumnSize.M,
-                ),
-                DataColumn(
-                  label: Text(
-                    'Author',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                DataColumn(
-                  label: Text(
-                    'Detail',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-              rows: [
-                DataRow(cells: [
-                  DataCell(Container(
-                    // padding: EdgeInsets.only(top: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            const Image(
-                              image: AssetImage('assets/icons/home.png'),
-                              height: 35,
-                              width: 35,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // SizedBox(height: 10,width: 10,),
-                                const Text(
-                                  '     About',
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 0, 139)),
-                                ),
+            height: screenSize.height * 0.65,
+            child: ListView(
+              controller: ScrollController(),
+              children: [
+                FutureBuilder<List<dynamic>>(
+                  future: getPage(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    if (snapshot.hasError ||
+                        snapshot.data == null ||
+                        snapshot.connectionState == ConnectionState.waiting) {
+                      return const CircularProgressIndicator();
+                    }
+                    return DataTable(
+                      decoration: const BoxDecoration(color: Colors.white),
+                      columnSpacing: 105,
+                      columns: const [
+                        DataColumn(label: Text('Id')),
+                        DataColumn(label: Text('Title')),
+                        DataColumn(label: Text('Page')),
+                        DataColumn(label: Text('Status')),
+                        DataColumn(label: Text('Action')),
+                      ],
+                      rows: List.generate(
+                        snapshot.data.length,
+                            (index) {
+                          var pgm = snapshot.data[index];
+                          return DataRow(
+                            cells: [
+                              DataCell(
+                                Text(pgm['idpage'].toString()),
+                              ),
+                              DataCell(
+                                Text(pgm['title']),
+                              ),
+                              DataCell(
+                                Text(pgm['page']),
+                              ),
+                              DataCell(
+                                Text(pgm['status']),
+                              ),
+                              DataCell(
                                 Row(
                                   children: [
-                                    // Text('Edit'),
                                     TextButton(
+
                                       onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
+                                        var pgm = snapshot.data[index];
+                                        selectedIndex = index;
+                                        id = pgm['idpage'];
+                                        selectname = pgm['title'];
+                                        selectpage = pgm['page'];
+                                        print(selectedIndex);
+                                        print(pgm['idpage']);
+                                        print(selectname);
+
+                                        _controllerName.clear();
+                                        // _controllerId.clear();
+                                        _controllerPage.clear();
+                                        showDialog<String>(
+                                          context: context,
+                                          builder: (BuildContext context) =>
+                                              AlertDialog(
+                                                title: const Center(
+                                                    child:
+                                                    Text('Update Pages')),
+                                                content: Form(
+                                                  key: formKey,
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                    mainAxisSize: MainAxisSize.min,
+                                                    verticalDirection:
+                                                    VerticalDirection.down,
+                                                    children: [
+                                                      const SizedBox(
+                                                        height: 10,
+                                                      ),
+                                                      const Text(
+                                                        'Data Harus di Edit*',
+                                                        style: TextStyle(
+                                                            fontSize: 13,
+                                                            color: Colors.red),
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 15,
+                                                      ),
+                                                      Center(
+                                                        child: Container(
+                                                          width: 200,
+                                                          child: TextFormField(
+                                                            //controller: _controllerName,
+
+                                                            textAlign:
+                                                            TextAlign.start,
+                                                            initialValue:
+                                                            selectname,
+                                                            decoration:
+                                                            InputDecoration(
+                                                              labelText:
+                                                              'Masukkan Nama Pages Baru',
+                                                              //labelStyle: TextStyle(),
+
+                                                              border: OutlineInputBorder(
+                                                                  borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                      5.0)),
+                                                            ),
+
+                                                            onChanged: (value) =>
+                                                            nm = value,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 40,
+                                                      ),
+                                                      Center(
+                                                        child: Container(
+                                                          width: 200,
+                                                          child: TextFormField(
+                                                            //controller: _controllerPage,
+                                                            textAlign:
+                                                            TextAlign.start,
+                                                            initialValue:
+                                                            selectpage,
+                                                            maxLines: 7,
+                                                            decoration:
+                                                            InputDecoration(
+                                                              labelText:
+                                                              "Masukkan Keterangan",
+                                                              hintStyle:
+                                                              const TextStyle(),
+                                                              border:
+                                                              OutlineInputBorder(
+                                                                borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                    5.0),
+                                                              ),
+                                                            ),
+                                                            onChanged: (value) =>
+                                                            pg = value,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                actions: <Widget>[
+                                                  TextButton(
+                                                    style: TextButton.styleFrom(
+                                                      padding: const EdgeInsets.all(
+                                                          16.0),
+                                                      primary: Colors.black,
+                                                      backgroundColor:
+                                                      const Color.fromARGB(
+                                                          255, 16, 199, 71),
+                                                      textStyle: const TextStyle(
+                                                          fontSize: 15),
+                                                    ),
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+
+                                                      if (nm.isEmpty &&
+                                                          pg.isEmpty) {
+                                                        ScaffoldMessenger.of(
+                                                            context)
+                                                            .showSnackBar(
+                                                          const SnackBar(
+                                                              content: Text(
+                                                                  'Data Can\'t Be Empty')),
+                                                        );
+                                                      } else if (pg.isEmpty) {
+                                                        ScaffoldMessenger.of(
+                                                            context)
+                                                            .showSnackBar(
+                                                          const SnackBar(
+                                                              content: Text(
+                                                                  'Content Can\'t Be Empty')),
+                                                        );
+                                                      } else if (nm.isEmpty) {
+                                                        ScaffoldMessenger.of(
+                                                            context)
+                                                            .showSnackBar(
+                                                          const SnackBar(
+                                                              content: Text(
+                                                                  'Name Can\'t Be Empty')),
+                                                        );
+                                                      } else {
+                                                        updatePage(id, nm, pg).then(
+                                                              (isSuccess) {
+                                                            if (isSuccess) {
+                                                              setState(() {});
+                                                              Scaffold.of(
+                                                                  this.context)
+                                                                  .showSnackBar(
+                                                                const SnackBar(
+                                                                  content: Text(
+                                                                      "Data success"),
+                                                                ),
+                                                              );
+                                                            } else {
+                                                              Scaffold.of(
+                                                                  this.context)
+                                                                  .showSnackBar(
+                                                                const SnackBar(
+                                                                  content: Text(
+                                                                      "Data failed!!!"),
+                                                                ),
+                                                              );
+                                                            }
+                                                          },
+                                                        );
+                                                      }
+                                                    },
+                                                    child: const Text('Update'),
+                                                  ),
+                                                ],
+                                              ),
+                                        );
                                       },
-                                      child: const Text(
-                                        'Edit',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
+                                      child: const Text('Edit Page'),
+                                      style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(16.0),
+                                        primary: Colors.white,
+                                        backgroundColor: const Color.fromARGB(
+                                            200, 23, 104, 210),
+                                        textStyle: const TextStyle(fontSize: 15),
+                                      ),),
+                                    const SizedBox(width: 10),
                                     TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'Remove',
-                                        style: TextStyle(color: Colors.black),
+                                      style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(16.0),
+                                        primary: Colors.white,
+                                        backgroundColor:
+                                        const Color.fromARGB(255, 245, 27, 27),
+                                        textStyle:
+                                        const TextStyle(fontSize: 15),
                                       ),
-                                    ),
-                                    TextButton(
                                       onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
+                                        showDialog(
+                                          context: context,
+                                          builder: (context) {
+                                            return AlertDialog(
+                                              title: const Text("Warning"),
+                                              content: Text(
+                                                  "Are you sure want to delete data page ${pgm['title']}?"),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  child: const Text("Yes"),
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                    deletePage(pgm['idpage'])
+                                                        .then((isSuccess) {
+                                                      if (isSuccess) {
+                                                        setState(() {});
+                                                        Scaffold.of(
+                                                            this.context)
+                                                            .showSnackBar(const SnackBar(
+                                                            content: Text(
+                                                                "Delete data success")));
+                                                      } else {
+                                                        Scaffold.of(
+                                                            this.context)
+                                                            .showSnackBar(const SnackBar(
+                                                            content: Text(
+                                                                "Delete data failed")));
+                                                      }
+                                                    });
+                                                  },
+                                                ),
+                                                TextButton(
+                                                  child: const Text("No"),
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
                                       },
-                                      child: const Text(
-                                        'View',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
+                                      child: const Text("Delete"),
                                     ),
                                   ],
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  )),
-                  const DataCell(
-                    Text(
-                      'Admin',
-                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 139)),
-                    ),
-                  ),
-                  const DataCell(
-                    Text('2022-06-18'),
-                  ),
-                ]),
-                DataRow(cells: [
-                  DataCell(Container(
-                    // padding: EdgeInsets.only(top: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            const Image(
-                              image: AssetImage('assets/icons/home.png'),
-                              height: 35,
-                              width: 35,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // SizedBox(height: 10,width: 10,),
-                                const Text(
-                                  '     News',
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 0, 139)),
                                 ),
-                                Row(
-                                  children: [
-                                    // Text('Edit'),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'Edit',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'Remove',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'View',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  )),
-                  const DataCell(
-                    Text(
-                      'Admin',
-                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 139)),
-                    ),
-                  ),
-                  const DataCell(
-                    Text('2022-06-18'),
-                  ),
-                ]),
-                DataRow(cells: [
-                  DataCell(Container(
-                    // padding: EdgeInsets.only(top: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            const Image(
-                              image: AssetImage('assets/icons/home.png'),
-                              height: 35,
-                              width: 35,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // SizedBox(height: 10,width: 10,),
-                                const Text(
-                                  '     Contact',
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 0, 139)),
-                                ),
-                                Row(
-                                  children: [
-                                    // Text('Edit'),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'Edit',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'Remove',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const ContactUs_baru(),
-                                            ));
-                                      },
-                                      child: const Text(
-                                        'View',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  )),
-                  const DataCell(
-                    Text(
-                      'Admin',
-                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 139)),
-                    ),
-                  ),
-                  const DataCell(
-                    Text('2022-06-18'),
-                  ),
-                ]),
+                              ),
+                            ],
+                          );
+                        },
+                      ).toList(),
+                    );
+                  },
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

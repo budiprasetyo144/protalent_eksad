@@ -27,7 +27,7 @@ class _Career2State extends State<Career2> {
             children: [
               Container(
                 width: screenSize.width * 0.5,
-                height: screenSize.height * 0.07,
+                height: screenSize.height * 0.1,
                 child: Text(
                   "Career Opportunities",
                   textAlign: TextAlign.center,

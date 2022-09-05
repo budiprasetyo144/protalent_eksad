@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/career': (context) => const Career(),
         '/service': (context) => const OurServices(),
         '/contact': (context) => const ContactUs_baru(),
-        //'/login': (context) => const login(),
+        '/login': (context) => const login(),
         '/register': (context) => const Register(),
         '/admin': (context) => const DashboardAdmin(),
         '/client': (context) => const DashboardClient(),

@@ -16,9 +16,13 @@ class DashboardAdmin extends StatefulWidget {
 }
 
 class _DashboardAdminState extends State<DashboardAdmin> {
+
   PageController page = PageController();
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    final double itemHeight = (size.height - kToolbarHeight - 24) * 2;
+    final double itemWidth = size.width / 1.65;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
@@ -171,6 +175,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                       page.jumpToPage(6);
                     },
                     child:  GridView.count(
+                      childAspectRatio: (itemWidth / itemHeight),
                       controller: ScrollController(),
                       crossAxisCount: 3,
                       mainAxisSpacing: 50,
@@ -365,6 +370,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                       page.jumpToPage(6);
                     },
                     child:  GridView.count(
+                      childAspectRatio: (itemWidth / itemHeight),
                       controller: ScrollController(),
                       crossAxisCount: 3,
                       mainAxisSpacing: 50,
@@ -559,6 +565,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                       page.jumpToPage(6);
                     },
                     child:  GridView.count(
+                      childAspectRatio: (itemWidth / itemHeight),
                       controller: ScrollController(),
                       crossAxisCount: 3,
                       mainAxisSpacing: 50,

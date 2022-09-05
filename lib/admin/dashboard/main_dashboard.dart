@@ -265,7 +265,7 @@ class Profil extends StatelessWidget {
                   "IDR $salary nett",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 17,
                     color: Color(0xFF214B9A),
                   ),
                 ),
@@ -275,7 +275,7 @@ class Profil extends StatelessWidget {
                     style: TextStyle(color: Colors.red),
                   ),
                   color: Colors.red[200],
-                  padding: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(3),
                 ),
               ],
             ),

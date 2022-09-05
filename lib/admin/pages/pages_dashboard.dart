@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:protalent_eksad/api/page_api.dart';
 
 class PagesDashboard extends StatefulWidget {
@@ -56,7 +57,14 @@ class _PagesDashboardState extends State<PagesDashboard> {
                     showDialog<String>(
                       context: context,
                       builder: (BuildContext context) => AlertDialog(
-                        title: const Center(child: Text('ADD NEW PAGES')),
+                        title: const Center(
+                            child: ListTile(
+                              leading: Icon(Icons.file_copy,color: Colors.black,),
+                              title: Text('ADD NEW PAGES',
+                                style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19),
+                              ),
+                            ),
+                        ),
                         content: Form(
                           key: formKey,
                           child: Column(

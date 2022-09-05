@@ -58,25 +58,10 @@ class _ClientDashboardState extends State<ClientDashboard> {
               //   ),
               // ),
               Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white,
-                ),
                 width: screenSize.width * 0.65,
-                height: screenSize.height * 0.52,
-                child: Center(
-                  child: Container(
-                      width: screenSize.width * 0.63,
-                      height: screenSize.height * 0.5,
-                      color: Colors.white,
-                      child: const PaginatedDataTableDemo()
-
-                      // EasyTable<_client>(
-                      //   _model,
-                      //   columnsFit: true,
-                      // ),
-                      ),
-                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                    child: const PaginatedDataTableDemo()),
               ),
             ],
           ),
@@ -109,7 +94,7 @@ class PaginatedDataTableDemoState extends State<PaginatedDataTableDemo>
       RestorableInt(PaginatedDataTable.defaultRowsPerPage);
   final RestorableBool _sortAscending = RestorableBool(true);
   final RestorableIntN _sortColumnIndex = RestorableIntN(null);
-  late DessertDataSource _dessertsDataSource;
+  late DessertDataSource _clientDataSource;
   bool initialized = false;
 
   @override
@@ -124,26 +109,26 @@ class PaginatedDataTableDemoState extends State<PaginatedDataTableDemo>
     registerForRestoration(_sortColumnIndex, 'sort_column_index');
 
     if (!initialized) {
-      _dessertsDataSource = DessertDataSource(context);
+      _clientDataSource = DessertDataSource(context);
       initialized = true;
     }
     switch (_sortColumnIndex.value) {
       case 0:
-        _dessertsDataSource.sort<num>((d) => d.nomer, _sortAscending.value);
+        _clientDataSource.sort<num>((d) => d.nomer, _sortAscending.value);
         break;
       case 1:
-        _dessertsDataSource.sort<String>(
+        _clientDataSource.sort<String>(
             (d) => d.namaClient, _sortAscending.value);
         break;
       case 2:
-        _dessertsDataSource.sort<String>(
+        _clientDataSource.sort<String>(
             (d) => d.deskripsi, _sortAscending.value);
         break;
       case 3:
-        _dessertsDataSource.sort<String>((d) => d.lokasi, _sortAscending.value);
+        _clientDataSource.sort<String>((d) => d.lokasi, _sortAscending.value);
         break;
       case 4:
-        _dessertsDataSource.sort<String>((d) => d.posted, _sortAscending.value);
+        _clientDataSource.sort<String>((d) => d.posted, _sortAscending.value);
         break;
       // case 5:
       //   _dessertsDataSource.sort<num>((d) => d.sodium, _sortAscending.value);
@@ -155,22 +140,22 @@ class PaginatedDataTableDemoState extends State<PaginatedDataTableDemo>
       //   _dessertsDataSource.sort<num>((d) => d.iron, _sortAscending.value);
       //   break;
     }
-    _dessertsDataSource.updateSelectedClients(_dessertSelections);
-    _dessertsDataSource.addListener(_updateSelectedDessertRowListener);
+    _clientDataSource.updateSelectedClients(_dessertSelections);
+    _clientDataSource.addListener(_updateSelectedDessertRowListener);
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (!initialized) {
-      _dessertsDataSource = DessertDataSource(context);
+      _clientDataSource = DessertDataSource(context);
       initialized = true;
     }
-    _dessertsDataSource.addListener(_updateSelectedDessertRowListener);
+    _clientDataSource.addListener(_updateSelectedDessertRowListener);
   }
 
   void _updateSelectedDessertRowListener() {
-    _dessertSelections.setClientSelections(_dessertsDataSource.clients);
+    _dessertSelections.setClientSelections(_clientDataSource.clients);
   }
 
   void sort<T>(
@@ -178,7 +163,7 @@ class PaginatedDataTableDemoState extends State<PaginatedDataTableDemo>
     int columnIndex,
     bool ascending,
   ) {
-    _dessertsDataSource.sort<T>(getField, ascending);
+    _clientDataSource.sort<T>(getField, ascending);
     setState(() {
       _sortColumnIndex.value = columnIndex;
       _sortAscending.value = ascending;
@@ -190,73 +175,57 @@ class PaginatedDataTableDemoState extends State<PaginatedDataTableDemo>
     _rowsPerPage.dispose();
     _sortColumnIndex.dispose();
     _sortAscending.dispose();
-    _dessertsDataSource.removeListener(_updateSelectedDessertRowListener);
-    _dessertsDataSource.dispose();
+    _clientDataSource.removeListener(_updateSelectedDessertRowListener);
+    _clientDataSource.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Container(
-      width: screenSize.width * 0.63,
-      height: screenSize.height * 0.43,
-      child: ListView(
-        controller: ScrollController(),
-        restorationId: 'paginated_data_table_list_view',
-        padding: const EdgeInsets.all(7),
-        children: [
-          PaginatedDataTable(
-            rowsPerPage: _rowsPerPage.value,
-            onRowsPerPageChanged: (value) {
-              setState(() {
-                _rowsPerPage.value = value!;
-              });
-            },
-            initialFirstRowIndex: _rowIndex.value,
-            onPageChanged: (rowIndex) {
-              setState(() {
-                _rowIndex.value = rowIndex;
-              });
-            },
-            sortColumnIndex: _sortColumnIndex.value,
-            sortAscending: _sortAscending.value,
-            onSelectAll: _dessertsDataSource.selectAll,
-            columns: [
-              DataColumn(
-                label: const Text('No'),
-                numeric: true,
-                onSort: (columnIndex, ascending) =>
-                    sort<num>((d) => d.nomer, columnIndex, ascending),
-              ),
-              DataColumn(
-                label: const Text('Client Name'),
-                onSort: (columnIndex, ascending) =>
-                    sort<String>((d) => d.namaClient, columnIndex, ascending),
-              ),
-              DataColumn(
-                label: const Text('Description'),
-                //numeric: true,
-                onSort: (columnIndex, ascending) =>
-                    sort<String>((d) => d.deskripsi, columnIndex, ascending),
-              ),
-              DataColumn(
-                label: const Text('Location'),
-                //numeric: true,
-                onSort: (columnIndex, ascending) =>
-                    sort<String>((d) => d.lokasi, columnIndex, ascending),
-              ),
-              DataColumn(
-                label: const Text('Posted'),
-                //numeric: true,
-                onSort: (columnIndex, ascending) =>
-                    sort<String>((d) => d.posted, columnIndex, ascending),
-              ),
-            ],
-            source: _dessertsDataSource,
-          ),
-        ],
-      ),
+    return PaginatedDataTable(
+      rowsPerPage: 4,
+      initialFirstRowIndex: _rowIndex.value,
+      onPageChanged: (rowIndex) {
+        setState(() {
+          _rowIndex.value = rowIndex;
+        });
+      },
+      sortColumnIndex: _sortColumnIndex.value,
+      sortAscending: _sortAscending.value,
+      //onSelectAll: _dessertsDataSource.selectAll,
+      columns: [
+        DataColumn(
+          label: const Text('No'),
+          numeric: true,
+          onSort: (columnIndex, ascending) =>
+              sort<num>((d) => d.nomer, columnIndex, ascending),
+        ),
+        DataColumn(
+          label: const Text('Client Name'),
+          onSort: (columnIndex, ascending) =>
+              sort<String>((d) => d.namaClient, columnIndex, ascending),
+        ),
+        DataColumn(
+          label: const Text('Description'),
+          //numeric: true,
+          onSort: (columnIndex, ascending) =>
+              sort<String>((d) => d.deskripsi, columnIndex, ascending),
+        ),
+        DataColumn(
+          label: const Text('Location'),
+          //numeric: true,
+          onSort: (columnIndex, ascending) =>
+              sort<String>((d) => d.lokasi, columnIndex, ascending),
+        ),
+        DataColumn(
+          label: const Text('Posted'),
+          //numeric: true,
+          onSort: (columnIndex, ascending) =>
+              sort<String>((d) => d.posted, columnIndex, ascending),
+        ),
+      ],
+      source: _clientDataSource,
     );
   }
 }

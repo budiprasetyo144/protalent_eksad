@@ -141,10 +141,10 @@ class DessertDataSource extends DataTableSource {
     );
     assert(index >= 0);
     if (index >= clients.length) throw 'index > _desserts.length';
-    final dessert = clients[index];
+    final data = clients[index];
     return DataRow2.byIndex(
       index: index,
-      selected: dessert.selected,
+      selected: data.selected,
       color: color != null
           ? MaterialStateProperty.all(color)
           : (hasZebraStripes && index.isEven
@@ -153,44 +153,44 @@ class DessertDataSource extends DataTableSource {
       onSelectChanged: hasRowTaps
           ? null
           : (value) {
-              if (dessert.selected != value) {
+              if (data.selected != value) {
                 _selectedCount += value! ? 1 : -1;
                 assert(_selectedCount >= 0);
-                dessert.selected = value;
+                data.selected = value;
                 notifyListeners();
               }
             },
       onTap: hasRowTaps
-          ? () => _showSnackbar(context, 'Tapped on row ${dessert.nomer}')
+          ? () => _showSnackbar(context, 'Tapped on row ${data.nomer}')
           : null,
       onDoubleTap: hasRowTaps
           ? () =>
-              _showSnackbar(context, 'Double Tapped on row ${dessert.nomer}')
+              _showSnackbar(context, 'Double Tapped on row ${data.nomer}')
           : null,
       onLongPress: hasRowTaps
-          ? () => _showSnackbar(context, 'Long pressed on row ${dessert.nomer}')
+          ? () => _showSnackbar(context, 'Long pressed on row ${data.nomer}')
           : null,
       onSecondaryTap: hasRowTaps
           ? () =>
-              _showSnackbar(context, 'Right clicked on row ${dessert.nomer}')
+              _showSnackbar(context, 'Right clicked on row ${data.nomer}')
           : null,
       onSecondaryTapDown: hasRowTaps
           ? (d) => _showSnackbar(
-              context, 'Right button down on row ${dessert.nomer}')
+              context, 'Right button down on row ${data.nomer}')
           : null,
       specificRowHeight:
-          hasRowHeightOverrides && dessert.nomer >= 25 ? 100 : null,
+          hasRowHeightOverrides && data.nomer >= 25 ? 100 : null,
       cells: [
-        DataCell(Text(dessert.nomer.toStringAsFixed(0))),
-        DataCell(Text('${dessert.industri}'),
+        DataCell(Text(data.nomer.toStringAsFixed(0))),
+        DataCell(Text('${data.industri}'),
             onTap: () => _showSnackbar(context,
-                'Tapped on a cell with "${dessert.industri}"', Colors.red)),
+                'Tapped on a cell with "${data.industri}"', Colors.red)),
         DataCell(
-          Text(dessert.post),
+          Text(data.post),
         ),
-        DataCell(Text('${dessert.status}')),
+        DataCell(Text('${data.status}')),
         DataCell(TextButton(
-          child: dessert.button,
+          child: data.button,
           onPressed: () {},
         )),
         // DataCell(Text('${dessert.sodium}')),
@@ -239,11 +239,11 @@ class ClientDataSourceAsync extends AsyncDataTableSource {
   bool _empty = false;
   int? _errorCounter;
 
-  RangeValues? _caloriesFilter;
+  RangeValues? _asFilter;
 
-  RangeValues? get caloriesFilter => _caloriesFilter;
-  set caloriesFilter(RangeValues? calories) {
-    _caloriesFilter = calories;
+  RangeValues? get asFilter => _asFilter;
+  set asFilter(RangeValues? calories) {
+    _asFilter = calories;
     refreshDatasource();
   }
 
@@ -287,7 +287,7 @@ class ClientDataSourceAsync extends AsyncDataTableSource {
         ? await Future.delayed(const Duration(milliseconds: 2000),
             () => DesertsFakeWebServiceResponse(0, []))
         : await _repo.getData(
-            start, end, _caloriesFilter, _sortColumn, _sortAscending);
+            start, end, _asFilter, _sortColumn, _sortAscending);
 
     var r = AsyncRowsResponse(
         x.totalRecords,
@@ -393,7 +393,7 @@ List<Client> _clients = <Client>[
     'Product Management',
     '09-08-2012',
     'ACTIVE',
-    const Text('delete'),
+    TextButton(onPressed:(){},child: const Text('delete')),
     // 87,
     // 14,
     // 1,

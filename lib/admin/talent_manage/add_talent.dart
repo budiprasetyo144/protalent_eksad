@@ -1,20 +1,4 @@
-// import 'package:flutter/material.dart';
-// import 'package:protalent_eksad/appbar/appbar_dashboard.dart';
 
-// class AddTalent extends StatefulWidget {
-//   const AddTalent({Key? key}) : super(key: key);
-
-//   @override
-//   State<AddTalent> createState() => _AddTalentState();
-// }
-
-// class _AddTalentState extends State<AddTalent> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-
-//   }
-// }
 
 import 'package:flutter/material.dart';
 import 'package:easy_table/easy_table.dart';

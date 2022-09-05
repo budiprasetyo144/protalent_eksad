@@ -6,6 +6,7 @@ class SelectTalent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         controller: ScrollController(),
@@ -98,12 +99,12 @@ class SelectTalent extends StatelessWidget {
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        width: 520,
+                        width: screenSize.width*0.4,
                         child: Column(
                           children: [
                             Container(
                               padding: const EdgeInsets.only(left: 35, top: 15),
-                              width: 500,
+                              width: screenSize.width*0.4,
                               child: const Text('Work Experience',
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
@@ -113,7 +114,7 @@ class SelectTalent extends StatelessWidget {
                             ),
                             Container(
                               padding: const EdgeInsets.only(left: 15),
-                              width: 490,
+                              width: screenSize.width*0.4,
                               height: 260,
                               child: Column(
                                 children: [
@@ -130,7 +131,7 @@ class SelectTalent extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 780,
+                        width: 440,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -188,7 +189,7 @@ class SelectTalent extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 1270,
+                  width: screenSize.width*0.8,
                   height: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -209,13 +210,13 @@ class SelectTalent extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(left: 10),
-                        width: 505,
+                        width: screenSize.width*0.34,
+
                         child: Column(
                           children: [
                             Container(
-                              padding: const EdgeInsets.only(left: 35, top: 15),
-                              width: 505,
+                              padding: const EdgeInsets.only(left: 5, top: 15),
+                              width: 355,
                               height: 55,
                               //color: Colors.red,
                               child: const Text('Education',
@@ -226,8 +227,8 @@ class SelectTalent extends StatelessWidget {
                                       letterSpacing: 2)),
                             ),
                             Container(
-                              padding: const EdgeInsets.only(right: 20),
-                              width: 490,
+
+                              width: 415,
                               // color: Colors.white,
                               child: Column(
                                 children: [
@@ -252,8 +253,8 @@ class SelectTalent extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              padding: const EdgeInsets.only(top: 15, left: 30),
-                              width: 750,
+                              padding: const EdgeInsets.only(top: 15),
+                              width: screenSize.width*0.25,
                               height: 50,
                               //color: Colors.red,
                               child: const Text('Skills',
@@ -267,7 +268,7 @@ class SelectTalent extends StatelessWidget {
                               children: [
                                 Container(
                                   padding: const EdgeInsets.only(left: 15),
-                                  width: 400,
+                                  width: 260,
                                   child: Column(
                                     children: [
                                       _skills('Flutter Developer'),
@@ -278,7 +279,7 @@ class SelectTalent extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  width: 330,
+                                  width: 327,
                                   child: Column(
                                     children: [
                                       _tempat('Bootcamp Flutter by Eksad'),
@@ -297,7 +298,7 @@ class SelectTalent extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  width: 1200,
+
                   height: 100,
                 )
               ],
@@ -408,7 +409,7 @@ ListTile _skills(String skill) {
     title: Text(
       skill,
       style: const TextStyle(
-          fontWeight: FontWeight.w600, fontSize: 20, height: 1.5),
+          fontWeight: FontWeight.w600, fontSize: 18, height: 1.5),
     ),
   );
 }
@@ -418,7 +419,7 @@ ListTile _tempat(String tempat) {
     title: Text(
       tempat,
       style: const TextStyle(
-          fontWeight: FontWeight.w600, fontSize: 20, height: 1.5),
+          fontWeight: FontWeight.w600, fontSize: 18, height: 1.5),
     ),
     trailing: const Icon(
       Icons.download_for_offline_outlined,
@@ -432,7 +433,7 @@ Row _rowpekerjaan(String _job, String _jabatan) {
     children: [
       Container(
         padding: const EdgeInsets.only(left: 15),
-        width: 180,
+        width: 154,
         height: 20,
         child: Text(_job, style: const TextStyle(fontSize: 16)),
       ),

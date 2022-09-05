@@ -97,178 +97,188 @@ class _AlertFormState extends State<AlertForm> {
     Future openDialog() => showDialog<String>(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('Add Talent'),
-            titlePadding: const EdgeInsets.only(top: 40, left: 30),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              verticalDirection: VerticalDirection.down,
+            title: Row(
               children: [
-                const SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    Container(
-                      width: 200,
-                      child: TextFormField(
-                        textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          labelText: "Full Name",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                    ),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      width: 200,
-                      child: TextFormField(
-                        textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          labelText: "Age",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Container(
-                      width: 200,
-                      child: TextFormField(
-                        textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          labelText: "Gender",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                    ),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      width: 200,
-                      child: TextFormField(
-                        textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          labelText: "Work Experience",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Container(
-                      width: 200,
-                      child: TextFormField(
-                        textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          labelText: "Expected Salary",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                    ),
-                    const Spacer(
-                      flex: 1,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      width: 200,
-                      child: TextFormField(
-                        textAlign: TextAlign.start,
-                        decoration: InputDecoration(
-                          labelText: "Latest Position",
-                          hintStyle: const TextStyle(),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5.0)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    labelText: "Latest Company",
-                    hintStyle: const TextStyle(),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    labelText: "Salary Status",
-                    hintStyle: const TextStyle(),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    labelText: "Latest Work Period",
-                    hintStyle: const TextStyle(),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    labelText: "Work Location",
-                    hintStyle: const TextStyle(),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-
-                // Container(
-                //     child: IconButton(
-                //         onPressed: () {},
-                //         icon: Icon(
-                //           Icons.add_photo_alternate,
-                //           size: 35,
-                //           color: Colors.grey,
-                //         )))
+                Icon(Icons.person_add),
+                SizedBox(width: 10,),
+                const Text('Add Talent'),
               ],
+            ),
+            titlePadding: const EdgeInsets.only(top: 40, left: 30),
+            content: Container(
+              width: 430,
+              height: 500,
+              child: ListView(
+                // mainAxisSize: MainAxisSize.min,
+                // verticalDirection: VerticalDirection.down,
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 200,
+                        child: TextFormField(
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            labelText: "Full Name",
+                            hintStyle: const TextStyle(),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 200,
+                        child: TextFormField(
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            labelText: "Age",
+                            hintStyle: const TextStyle(),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Container(
+                        width: 200,
+                        child: TextFormField(
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            labelText: "Gender",
+                            hintStyle: const TextStyle(),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 200,
+                        child: TextFormField(
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            labelText: "Work Experience",
+                            hintStyle: const TextStyle(),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Container(
+                        width: 200,
+                        child: TextFormField(
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            labelText: "Expected Salary",
+                            hintStyle: const TextStyle(),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 200,
+                        child: TextFormField(
+                          textAlign: TextAlign.start,
+                          decoration: InputDecoration(
+                            labelText: "Latest Position",
+                            hintStyle: const TextStyle(),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    textAlign: TextAlign.start,
+                    decoration: InputDecoration(
+                      labelText: "Latest Company",
+                      hintStyle: const TextStyle(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    textAlign: TextAlign.start,
+                    decoration: InputDecoration(
+                      labelText: "Salary Status",
+                      hintStyle: const TextStyle(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    textAlign: TextAlign.start,
+                    decoration: InputDecoration(
+                      labelText: "Latest Work Period",
+                      hintStyle: const TextStyle(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    textAlign: TextAlign.start,
+                    decoration: InputDecoration(
+                      labelText: "Work Location",
+                      hintStyle: const TextStyle(),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+
+                  // Container(
+                  //     child: IconButton(
+                  //         onPressed: () {},
+                  //         icon: Icon(
+                  //           Icons.add_photo_alternate,
+                  //           size: 35,
+                  //           color: Colors.grey,
+                  //         )))
+                ],
+              ),
             ),
             actions: [
               ElevatedButton(onPressed: () {}, child: const Text('SAVE'))

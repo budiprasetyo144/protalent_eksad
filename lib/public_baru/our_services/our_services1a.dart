@@ -74,7 +74,7 @@ class _OurServices1aState extends State<OurServices1a> {
                           fontSize: 18,
                           letterSpacing: 1.8,
                           height: 1.4,
-                          fontWeight: FontWeight.bold,
+                          // fontWeight: FontWeight.bold,
                           color: Colors.white),
                       textAlign: TextAlign.center,
                     ),

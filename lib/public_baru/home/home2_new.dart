@@ -11,7 +11,7 @@ class HomeNew2 extends StatelessWidget {
     return Container(
       width: screenSize.width * 0.5,
       color: const Color.fromARGB(255, 227, 235, 253),
-      height: 350,
+      height: 280,
       padding: EdgeInsets.only(
         left: screenSize.width * 0.105,
         right: screenSize.width * 0.11,
@@ -19,7 +19,7 @@ class HomeNew2 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Spacer(flex: 2,),
+          Spacer(flex: 1,),
           Container(
             width: screenSize.width,
             child: Text('How do we help ?',
@@ -28,7 +28,7 @@ class HomeNew2 extends StatelessWidget {
                     color: const Color.fromARGB(255, 12, 66, 101),
                     fontWeight: FontWeight.bold)),
           ),
-          Spacer(flex: 2,),
+          Spacer(flex: 1,),
           Container(
             width: screenSize.width,
             child: Text(

@@ -16,12 +16,12 @@ class _HomeNew3State extends State<HomeNew3> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height * 1.1,
+      height: screenSize.height * 0.95,
       width: screenSize.width,
       child: Column(
         children: [
           const SizedBox(
-            height: 30,
+            height: 25,
           ),
           Text("Why Protalent ?",
               style: GoogleFonts.poppins(
@@ -29,7 +29,7 @@ class _HomeNew3State extends State<HomeNew3> {
                   color: const Color(0xff1e5ea8),
                   fontWeight: FontWeight.bold)),
           const SizedBox(
-            height: 40,
+            height: 25,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

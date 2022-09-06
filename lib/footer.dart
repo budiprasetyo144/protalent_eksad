@@ -249,7 +249,7 @@ class Footer extends StatelessWidget {
                         ],
                       )),
                   Container(
-                      width: screenSize.width * 0.25,
+                      width: screenSize.width * 0.28,
                       height: screenSize.height * 0.55,
                       //color: Colors.blue,
                       child: Column(
@@ -260,14 +260,14 @@ class Footer extends StatelessWidget {
                             width: screenSize.width * 0.2,
                             height: screenSize.height * 0.07,
                             child: Text(
-                              ' Contact',
+                              '  Contact',
                               style: GoogleFonts.poppins(
                                   fontSize: 28,
                                   fontWeight: FontWeight.bold,
                                   letterSpacing: 1.5),
                             ),
                           ),
-                          const SizedBox(height: 8),
+                          const SizedBox(height: 5),
                           Container(
                             width: screenSize.width * 0.2,
                             child: ListTile(

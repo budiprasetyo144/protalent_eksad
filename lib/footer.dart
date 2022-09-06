@@ -11,7 +11,7 @@ class Footer extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return Container(
         width: screenSize.width,
-        height: screenSize.height * 0.78,
+        height: screenSize.height * 0.83,
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -25,7 +25,7 @@ class Footer extends StatelessWidget {
             ),
             Container(
               width: screenSize.width,
-              height: screenSize.height * 0.55,
+              height: screenSize.height * 0.6,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -324,7 +324,7 @@ class Footer extends StatelessWidget {
                                   size: 25,
                                 ),
                                 title: Container(
-                                  padding: const EdgeInsets.only(left: 14),
+                                  padding: const EdgeInsets.only(left: 14, top: 10),
                                   width: screenSize.width * 0.25,
                                   height: screenSize.height * 0.3,
                                   child: Text(

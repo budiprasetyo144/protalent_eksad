@@ -40,7 +40,7 @@ class _OurServices2State extends State<OurServices2> {
                 ),
                 Text(
                   'Our Talent',
-                  style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
+                  style: GoogleFonts.poppins(fontSize: 16, color: Colors.white),
                 ),
               ],
             ),

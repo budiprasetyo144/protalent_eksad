@@ -99,7 +99,7 @@ class _OurServices1bState extends State<OurServices1b> {
                         Container(
                           padding: const EdgeInsets.only(top: 10),
                           width: 220,
-                          height: 180,
+                          height: 200,
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
                             direction: Direction.horizontal,
@@ -158,7 +158,7 @@ class _OurServices1bState extends State<OurServices1b> {
                         Container(
                           padding: const EdgeInsets.only(top: 10),
                           width: 200,
-                          height: 180,
+                          height: 200,
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
                             direction: Direction.horizontal,
@@ -217,7 +217,7 @@ class _OurServices1bState extends State<OurServices1b> {
                         Container(
                           padding: const EdgeInsets.only(top: 10),
                           width: 200,
-                          height: 180,
+                          height: 200,
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
                             direction: Direction.horizontal,
@@ -279,7 +279,7 @@ class _OurServices1bState extends State<OurServices1b> {
                         Container(
                           padding: const EdgeInsets.only(top: 10),
                           width: 220,
-                          height: 180,
+                          height: 200,
                           child: ShowUpAnimation(
                             delayStart: const Duration(seconds: 1),
                             direction: Direction.horizontal,

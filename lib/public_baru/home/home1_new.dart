@@ -88,7 +88,7 @@ class HomeNew1 extends StatelessWidget {
                     child: const Text(
                       'CONTACT US',
                       style: TextStyle(
-                          fontSize: 19,
+                          fontSize: 16,
                           letterSpacing: 2,
                           color: Colors.white,
                           fontWeight: FontWeight.w500),

@@ -37,28 +37,31 @@ class Footer extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            width: screenSize.width * 0.15,
-                            height: screenSize.height * 0.08,
+                            width: screenSize.width * 0.10,
+                            height: screenSize.height * 0.04,
                             decoration: const BoxDecoration(
-                              //color: Colors.lightBlueAccent,
+                                //color: Colors.lightBlueAccent,
                                 image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/logo/protalent.png'),
+                                    image:
+                                        AssetImage('assets/logo/protalent.png'),
                                     fit: BoxFit.fill)),
                           ),
-                          SizedBox(height: 5,),
+                          const Spacer(
+                            flex: 8,
+                          ),
                           Container(
-                            width: screenSize.width * 0.11,
-                            height: screenSize.height * 0.09,
+                            width: screenSize.width * 0.1,
+                            height: screenSize.height * 0.08,
                             decoration: const BoxDecoration(
-                              //color: Colors.lightBlueAccent,
+                                //color: Colors.lightBlueAccent,
                                 image: DecorationImage(
                                     image: AssetImage(
                                         'assets/logo/logo-eksad.png'),
                                     fit: BoxFit.fill)),
                           ),
-
-                          const Spacer(),
+                          const Spacer(
+                            flex: 5,
+                          ),
                           Container(
                             width: screenSize.width * 0.2,
                             height: screenSize.height * 0.05,
@@ -378,8 +381,7 @@ class itemBawah extends StatelessWidget {
               color: const Color(0xff1e5ea8),
               //decoration: TextDecoration.underline,
               fontSize: 17,
-            letterSpacing: 1.2
-          ),
+              letterSpacing: 1.2),
         ));
   }
 }

@@ -50,7 +50,7 @@ class HomeNew1 extends StatelessWidget {
               ),
               Container(
                 width: screenSize.width * 0.325,
-                height: screenSize.height * 0.35,
+                height: screenSize.height * 0.38,
                 child: ShowUpAnimation(
                   delayStart: const Duration(seconds: 1),
                   curve: Curves.bounceIn,

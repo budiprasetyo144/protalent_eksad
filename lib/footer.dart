@@ -38,7 +38,7 @@ class Footer extends StatelessWidget {
                         children: [
                           Container(
                             width: screenSize.width * 0.10,
-                            height: screenSize.height * 0.04,
+                            height: screenSize.height * 0.05,
                             decoration: const BoxDecoration(
                                 //color: Colors.lightBlueAccent,
                                 image: DecorationImage(

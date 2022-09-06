@@ -26,10 +26,10 @@ class _ContactUsState extends State<ContactUs1> {
                   fit: BoxFit.cover)),
         ),
         Container(
-          width: screenSize.width * 0.5,
+          width: screenSize.width * 0.6,
           height: screenSize.height * 0.34,
           padding: EdgeInsets.only(
-              right: screenSize.width * 0.30, left: screenSize.height * 0.06),
+              right: screenSize.width * 0.30, left: screenSize.height * 0.22),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -37,7 +37,7 @@ class _ContactUsState extends State<ContactUs1> {
               Text(
                 'Contact Us',
                 style: GoogleFonts.poppins(
-                    fontSize: 37,
+                    fontSize: 27,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
                 overflow: TextOverflow.ellipsis,

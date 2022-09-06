@@ -26,7 +26,7 @@ class Career1_2 extends StatelessWidget {
             width: screenSize.width,
             child: Text('How do we help?',
                 style: GoogleFonts.poppins(
-                    fontSize: 30,
+                    fontSize: 27,
                     color: const Color.fromARGB(255, 12, 66, 101),
                     fontWeight: FontWeight.bold)),
           ),
@@ -40,7 +40,7 @@ class Career1_2 extends StatelessWidget {
                 'we’re here to make this process a bit easier for you.',
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.poppins(
-                    fontSize: 18,
+                    fontSize: 16,
                     letterSpacing: 1.1,
                     height: 1.3,
                     fontWeight: FontWeight.w500)),
@@ -57,7 +57,7 @@ class Career1_2 extends StatelessWidget {
                 'we promise to support and confidentiality in all your matters.',
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.poppins(
-                    fontSize: 18,
+                    fontSize: 16,
                     letterSpacing: 1.1,
                     height: 1.3,
                     fontWeight: FontWeight.w500)),

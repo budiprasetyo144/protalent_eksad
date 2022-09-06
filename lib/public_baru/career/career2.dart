@@ -48,7 +48,7 @@ class _Career2State extends State<Career2> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                       color: const Color(0xff111111),
-                      fontSize: 17,
+                      fontSize: 16,
                       letterSpacing: 1.3,
                       height: 1.3,
                       fontWeight: FontWeight.w500),
@@ -64,7 +64,7 @@ class _Career2State extends State<Career2> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                       color: const Color(0xff111111),
-                      fontSize: 17,
+                      fontSize: 16,
                       letterSpacing: 1.3,
                       height: 1.3,
                       fontWeight: FontWeight.w500),
@@ -114,7 +114,7 @@ class _Career2State extends State<Career2> {
                               "PERMANENT POSITIONS",
                               style: TextStyle(
                                   color: Colors.blueAccent,
-                                  fontSize: 17,
+                                  fontSize: 16,
                                   letterSpacing: 1.1,
                                   fontWeight: FontWeight.w600),
                               textAlign: TextAlign.center,
@@ -133,7 +133,7 @@ class _Career2State extends State<Career2> {
                             child: Text(
                               "Our understanding of the business and strong network helps find you a job that fits your skills, interests, and goals.",
                               style: GoogleFonts.poppins(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   letterSpacing: 1.3,
                                   height: 1.4),
@@ -181,7 +181,7 @@ class _Career2State extends State<Career2> {
                               "CONTRACT-TO-HIRE",
                               style: TextStyle(
                                   color: Colors.blueAccent,
-                                  fontSize: 17,
+                                  fontSize: 16,
                                   letterSpacing: 1.1,
                                   fontWeight: FontWeight.w600),
                               textAlign: TextAlign.center,
@@ -200,7 +200,7 @@ class _Career2State extends State<Career2> {
                             child: Text(
                               "Everyone knows that the right experts can work wonders for your career by getting you much-needed attention.",
                               style: GoogleFonts.poppins(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   letterSpacing: 1.3,
                                   height: 1.4),
@@ -248,7 +248,7 @@ class _Career2State extends State<Career2> {
                               "PROJECT BASIS",
                               style: TextStyle(
                                   color: Colors.blueAccent,
-                                  fontSize: 17,
+                                  fontSize: 16,
                                   letterSpacing: 1.1,
                                   fontWeight: FontWeight.w600),
                               textAlign: TextAlign.center,
@@ -267,7 +267,7 @@ class _Career2State extends State<Career2> {
                             child: Text(
                               "We find positions that put your right at the heart of the business and disruptive change. Step into the future.",
                               style: GoogleFonts.poppins(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   letterSpacing: 1.3,
                                   height: 1.4),
@@ -315,7 +315,7 @@ class _Career2State extends State<Career2> {
                               "INTERNAL STAFF",
                               style: TextStyle(
                                   color: Colors.blueAccent,
-                                  fontSize: 17,
+                                  fontSize: 16,
                                   letterSpacing: 1.1,
                                   fontWeight: FontWeight.w600),
                               textAlign: TextAlign.center,
@@ -334,7 +334,7 @@ class _Career2State extends State<Career2> {
                             child: Text(
                               "Join us to advance your career growth",
                               style: GoogleFonts.poppins(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   letterSpacing: 1.3,
                                   height: 1.4),

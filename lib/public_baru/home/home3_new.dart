@@ -16,7 +16,7 @@ class _HomeNew3State extends State<HomeNew3> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height * 1.03,
+      height: screenSize.height * 1.1,
       width: screenSize.width,
       child: Column(
         children: [
@@ -72,7 +72,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.55,
+                        height: screenSize.height * 0.6,
                         child: const Animasi_Kanan_Kiri(
                             judul:
                                 'We work as a true extension of your team. We believe in rolling up our sleeves, diving in and working together to deliver the top-quality, tailored solutions our clients need to grow and thrive.'))
@@ -116,7 +116,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.55,
+                        height: screenSize.height * 0.6,
                         child: const Animasi_Kanan_Kiri(
                             judul:
                                 'Through our tailored approach, exceptional support, and flexible solutions, we make'
@@ -162,7 +162,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.55,
+                        height: screenSize.height * 0.6,
                         child: const Animasi_Kanan_Kiri(
                             judul:
                                 'We have been providing outsourcing solutions to variance clients for eight years '
@@ -207,7 +207,7 @@ class _HomeNew3State extends State<HomeNew3> {
                     Container(
                         padding: const EdgeInsets.only(top: 10),
                         width: 220,
-                        height: screenSize.height * 0.55,
+                        height: screenSize.height * 0.6,
                         child: ShowUpAnimation(
                           delayStart: const Duration(seconds: 1),
                           curve: Curves.decelerate,

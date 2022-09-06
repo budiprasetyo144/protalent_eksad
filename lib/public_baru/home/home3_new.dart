@@ -60,7 +60,7 @@ class _HomeNew3State extends State<HomeNew3> {
                         'We work as an extension of your team.',
                         style: TextStyle(
                             color: Colors.blueAccent,
-                            fontSize: 17,
+                            fontSize: 16,
                             letterSpacing: 1.1,
                             fontWeight: FontWeight.w600),
                         textAlign: TextAlign.center,
@@ -104,7 +104,7 @@ class _HomeNew3State extends State<HomeNew3> {
                         'We offer smart tailored outsourcing and HR solutions.',
                         style: TextStyle(
                             color: Colors.blueAccent,
-                            fontSize: 17,
+                            fontSize: 16,
                             letterSpacing: 1.1,
                             fontWeight: FontWeight.w600),
                         textAlign: TextAlign.center,
@@ -150,7 +150,7 @@ class _HomeNew3State extends State<HomeNew3> {
                         'We have a rich outsourcing experience across various industries.',
                         style: TextStyle(
                             color: Colors.blueAccent,
-                            fontSize: 17,
+                            fontSize: 16,
                             letterSpacing: 1.1,
                             fontWeight: FontWeight.w600),
                         textAlign: TextAlign.center,
@@ -195,7 +195,7 @@ class _HomeNew3State extends State<HomeNew3> {
                         'We Are Expert recruiters.',
                         style: TextStyle(
                             color: Colors.blueAccent,
-                            fontSize: 17,
+                            fontSize: 16,
                             letterSpacing: 1.1,
                             fontWeight: FontWeight.w600),
                         textAlign: TextAlign.center,
@@ -220,7 +220,7 @@ class _HomeNew3State extends State<HomeNew3> {
                                   'honesty and transparency with our clients so as to develop long term relationships'
                                   ' and to adopt flexible approach as per their needs.',
                               style: GoogleFonts.poppins(
-                                  fontSize: 15,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   letterSpacing: 1.3,
                                   height: 1.4),

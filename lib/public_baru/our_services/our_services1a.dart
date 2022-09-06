@@ -71,7 +71,7 @@ class _OurServices1aState extends State<OurServices1a> {
                     child: Text(
                       'Register for free now, find our Best Talent, and enjoy our unlimited hires at a low cost',
                       style: GoogleFonts.poppins(
-                          fontSize: 18,
+                          fontSize: 16,
                           letterSpacing: 1.8,
                           height: 1.4,
                           // fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class _OurServices1aState extends State<OurServices1a> {
                       child: const Text(
                         'FREE REGISTER',
                         style: TextStyle(
-                            fontSize: 19,
+                            fontSize: 16,
                             fontWeight: FontWeight.w500,
                             letterSpacing: 1.1,
                             color: Colors.white),

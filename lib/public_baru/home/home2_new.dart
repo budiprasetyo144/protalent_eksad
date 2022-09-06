@@ -37,7 +37,7 @@ class HomeNew2 extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.poppins(
                     fontSize: 16,
-                    letterSpacing: 1.1,
+                    letterSpacing: 1.3,
                     height: 1.3,
                     fontWeight: FontWeight.w500)),
           ),
@@ -51,7 +51,7 @@ class HomeNew2 extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.poppins(
                     fontSize: 16,
-                    letterSpacing: 1.1,
+                    letterSpacing: 1.3,
                     height: 1.3,
                     fontWeight: FontWeight.w500)),
           ),
@@ -64,7 +64,7 @@ class HomeNew2 extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.poppins(
                     fontSize: 16,
-                    letterSpacing: 1.1,
+                    letterSpacing: 1.3,
                     height: 1.3,
                     fontWeight: FontWeight.w500)),
           ),

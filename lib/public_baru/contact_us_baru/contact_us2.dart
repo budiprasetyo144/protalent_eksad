@@ -21,6 +21,7 @@ class ContactUs2 extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return Container(
       height: 480,
+      padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.1),
       width: screenSize.width,
       // color: Colors.blue,
       decoration: const BoxDecoration(
@@ -35,12 +36,9 @@ class ContactUs2 extends StatelessWidget {
       )),
       child: Row(
         children: [
-          const Spacer(
-            flex: 3,
-          ),
           Container(
             height: screenSize.height * 0.7,
-            width: screenSize.width * 0.35,
+            width: screenSize.width * 0.37,
             child: Container(
               padding: const EdgeInsets.all(10),
               child: Column(
@@ -58,7 +56,7 @@ class ContactUs2 extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.poppins(
                             color: Colors.white,
-                            fontSize: 30,
+                            fontSize: 27,
                             fontWeight: FontWeight.bold)),
                   ),
                   const Spacer(
@@ -73,7 +71,7 @@ class ContactUs2 extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.poppins(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             // fontWeight: FontWeight.bold,
                             letterSpacing: 1.1)),
                   ),
@@ -83,7 +81,7 @@ class ContactUs2 extends StatelessWidget {
                   Text("We’ll contact you immediately to discuss to help you.",
                       style: GoogleFonts.poppins(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 16,
                           letterSpacing: 1.2)),
                   const Spacer(
                     flex: 2,
@@ -289,9 +287,7 @@ class ContactUs2 extends StatelessWidget {
               ),
             ),
           ),
-          const Spacer(
-            flex: 3,
-          ),
+
         ],
       ),
     );

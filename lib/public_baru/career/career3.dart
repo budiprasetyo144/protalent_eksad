@@ -39,7 +39,7 @@ class Career3 extends StatelessWidget {
             alignment: Alignment.center,
             child: Text('Apply Your Resume',
                 style: GoogleFonts.poppins(
-                    fontSize: 30,
+                    fontSize: 27,
                     color: const Color.fromARGB(255, 255, 255, 255),
                     fontWeight: FontWeight.bold)),
           ),
@@ -54,7 +54,7 @@ class Career3 extends StatelessWidget {
               'job market. Submit your resume from the button bellow and our consultants will do the rest.',
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
-                fontSize: 20,
+                fontSize: 16,
                 letterSpacing: 1.1,
                 // height: 1.3,
                 color: const Color.fromARGB(255, 255, 255, 255),
@@ -81,7 +81,7 @@ class Career3 extends StatelessWidget {
               onPressed: () {
                 _launchURL();
               },
-              child: const Text("APPLY NOW", style: TextStyle(fontSize: 17)),
+              child: const Text("APPLY NOW", style: TextStyle(fontSize: 16)),
             ),
           ),
           const Spacer(

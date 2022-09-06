@@ -70,7 +70,7 @@ class _HomeSmall3State extends State<HomeSmall3> {
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 10,left: 10),
-                  width: 220,
+                  width: 270,
                   height: screenSize.height * 0.3,
                   child: const Animasi_Kanan_Kiri_Small(
                       judul:
@@ -119,7 +119,7 @@ class _HomeSmall3State extends State<HomeSmall3> {
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 10,left: 10),
-                  width: 220,
+                  width: 270,
                   height: screenSize.height * 0.2,
                   child: const Animasi_Kanan_Kiri_Small(
                       judul:
@@ -166,7 +166,7 @@ class _HomeSmall3State extends State<HomeSmall3> {
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 10,left: 10),
-                  width: 220,
+                  width: 270,
                   height: screenSize.height * 0.25,
                   child: const Animasi_Kanan_Kiri_Small(
                       judul:
@@ -214,7 +214,7 @@ class _HomeSmall3State extends State<HomeSmall3> {
                 ),
                 Container(
                   padding: const EdgeInsets.only(top: 10,left: 10),
-                  width: 220,
+                  width: 270,
                   height: screenSize.height * 0.38,
                   child: const Animasi_Kanan_Kiri_Small(
                       judul:

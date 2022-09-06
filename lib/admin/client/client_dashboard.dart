@@ -28,7 +28,7 @@ class _ClientDashboardState extends State<ClientDashboard> {
           child: Column(
             children: [
               Container(
-                padding: const EdgeInsets.only(top: 30, left: 50),
+                padding: const EdgeInsets.only(top: 6, left: 50),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20),
@@ -38,7 +38,7 @@ class _ClientDashboardState extends State<ClientDashboard> {
                       Color.fromARGB(255, 18, 108, 178),
                 ),
                 width: screenSize.width * 0.7,
-                height: screenSize.height * 0.15,
+                height: screenSize.height * 0.14,
                 child: const Text(
                   'Data Client',
                   style: TextStyle(

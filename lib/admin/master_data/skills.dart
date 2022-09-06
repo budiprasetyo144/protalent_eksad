@@ -115,7 +115,7 @@ class _SkillState extends State<Skill> {
             ),
             Container(
                 width: screenSize.width * 0.6,
-                height: 374,
+                height: screenSize.height*0.4,
                 color: Colors.white70,
                 child: const PaginatedDataTableDemo()),
             const Spacer(
@@ -128,7 +128,7 @@ class _SkillState extends State<Skill> {
                   Container(
                     padding:
                         const EdgeInsets.symmetric(vertical: 7, horizontal: 30),
-                    width: screenSize.width * 0.47,
+                    width: screenSize.width * 0.4,
                     height: 58,
                     //color: Colors.grey,
                     child: TextFormField(
@@ -144,7 +144,7 @@ class _SkillState extends State<Skill> {
                   Container(
                     padding:
                         const EdgeInsets.symmetric(vertical: 7, horizontal: 25),
-                    width: screenSize.width * 0.1,
+                    width: screenSize.width * 0.15,
                     height: 58,
                     //color: Colors.red,
                     child: ElevatedButton(

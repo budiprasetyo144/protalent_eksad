@@ -26,7 +26,7 @@ AppBar AppbarHomeSmall(Size screenSize) {
             child: SizedBox(
               height: 50,
               width: 150,
-              child: Image.asset("assets/logo/logo_protalent.png"),
+              child: Image.asset("assets/logo/protalent.png"),
             ),
           ),
           Spacer(),

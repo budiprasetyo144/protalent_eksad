@@ -52,7 +52,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
           ),
           TextButton.icon(
             onPressed: () {
-              Navigator.pushNamed(context, '/');
+              Navigator.pushNamed(context, '/login');
             },
             icon: const Icon(
               Icons.output,

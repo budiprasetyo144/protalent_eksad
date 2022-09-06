@@ -39,6 +39,17 @@ class FooterSmall extends StatelessWidget {
                           //color: Colors.lightBlueAccent,
                             image: DecorationImage(
                                 image: AssetImage(
+                                    'assets/logo/protalent.png'),
+                                fit: BoxFit.fill)),
+                      ),
+                      Spacer(),
+                      Container(
+                        width: screenSize.width * 0.3,
+                        height: screenSize.height * 0.09,
+                        decoration: const BoxDecoration(
+                          //color: Colors.lightBlueAccent,
+                            image: DecorationImage(
+                                image: AssetImage(
                                     'assets/logo/logo-eksad.png'),
                                 fit: BoxFit.fill)),
                       ),
@@ -260,7 +271,7 @@ class FooterSmall extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: screenSize.width*0.15),
                               width: screenSize.width,
                               child: ListTile(
-                                minLeadingWidth: 2,
+                                minLeadingWidth: 0,
                                 leading: const Icon(
                                   Icons.phone,
                                   size: 19,
@@ -327,7 +338,7 @@ class FooterSmall extends StatelessWidget {
                                           height: 1.45,
                                           letterSpacing: 1.1
                                       ),
-                                      textAlign: TextAlign.left,
+                                      textAlign: TextAlign.center,
                                     ),
                                   )),
                             ),

@@ -37,19 +37,19 @@ class Footer extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            width: screenSize.width * 0.13,
+                            width: screenSize.width * 0.15,
                             height: screenSize.height * 0.08,
                             decoration: const BoxDecoration(
                               //color: Colors.lightBlueAccent,
                                 image: DecorationImage(
                                     image: AssetImage(
-                                        'assets/logo/logo_protalent.png'),
+                                        'assets/logo/protalent.png'),
                                     fit: BoxFit.fill)),
                           ),
                           SizedBox(height: 5,),
                           Container(
-                            width: screenSize.width * 0.1,
-                            height: screenSize.height * 0.08,
+                            width: screenSize.width * 0.11,
+                            height: screenSize.height * 0.09,
                             decoration: const BoxDecoration(
                               //color: Colors.lightBlueAccent,
                                 image: DecorationImage(

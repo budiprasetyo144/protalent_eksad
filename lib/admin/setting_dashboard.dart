@@ -69,21 +69,27 @@ class _SettingDashboardState extends State<SettingDashboard> {
     var screenSize1 = screenSize.width * 0.6;
     return Container(
       color: const Color.fromRGBO(238, 224, 224, 1),
-      height: 650,
-      padding: const EdgeInsets.only(left: 80),
+      height: screenSize.height*0.8,
+      padding: EdgeInsets.symmetric(horizontal: screenSize.height*0.15),
       width: screenSize.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "General Setting",
-            textAlign: TextAlign.start,
-            style: TextStyle(
-                color: Colors.black, fontSize: 37, fontWeight: FontWeight.bold),
+          SizedBox(
+            width: screenSize.width*0.2,
+            height: screenSize.height*0.15,
+            child: Center(
+              child: const Text(
+                "General Setting",
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                    color: Colors.black, fontSize: 37, fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           Container(
             color: Colors.white,
-            height: 480,
+            height: screenSize.height*0.7,
             width: 900,
             padding: const EdgeInsets.only(left: 30,top: 15,right: 20,bottom: 15),
             child: Form(
@@ -145,9 +151,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                     // endIndent: 0,
                     color: Colors.grey,
                   ),
-                  const Spacer(
-                    flex: 1,
-                  ),
+
                   Row(
                     children: [
                       Container(
@@ -340,6 +344,14 @@ class _SettingDashboardState extends State<SettingDashboard> {
                           const SizedBox(
                             height: 10,
                           ),
+
+                        ],
+                      ),
+                      SizedBox(width: screenSize.width*0.05,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
                           const Text(
                             "No Office",
                             style: TextStyle(
@@ -348,7 +360,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                                 fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 7,
                           ),
                           Container(
                             height: 40,
@@ -364,8 +376,11 @@ class _SettingDashboardState extends State<SettingDashboard> {
                               enabled: enb,
                             ),
                           ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                         ],
-                      ),
+                      )
                       // const SizedBox(
                       //   width: 30,
                       // ),

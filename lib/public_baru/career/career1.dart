@@ -26,10 +26,10 @@ class _Career1State extends State<Career1> {
                   fit: BoxFit.cover)),
         ),
         Container(
-          width: screenSize.width * 0.5,
-          height: screenSize.height * 0.31,
+          width: screenSize.width * 0.6,
+          height: screenSize.height * 0.34,
           padding: EdgeInsets.only(
-              left: screenSize.width * 0.15, top: screenSize.height * 0.02),
+              left: screenSize.width * 0.11, top: screenSize.height * 0.02),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -37,7 +37,7 @@ class _Career1State extends State<Career1> {
               Text(
                 'Career',
                 style: GoogleFonts.poppins(
-                    fontSize: 50,
+                    fontSize: 27,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     letterSpacing: 1.3),

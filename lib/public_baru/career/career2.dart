@@ -33,7 +33,7 @@ class _Career2State extends State<Career2> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     color: const Color(0xff1e5ea8),
-                    fontSize: 36,
+                    fontSize: 27,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

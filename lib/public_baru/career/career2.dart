@@ -82,25 +82,18 @@ class _Career2State extends State<Career2> {
                     child: Column(
                       children: [
                         Container(
+                          padding:
+                              EdgeInsets.only(top: screenSize.height * 0.01),
+                          width: screenSize.width * 0.5,
                           child: Animasi_Kiri_Kanan(
                             screenSize: screenSize,
-                            widget: Container(
-                              width: 60,
+                            widget: Image.asset(
+                              'assets/icons/icon-service-1.png',
                               height: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(
-                                    color:
-                                        const Color.fromARGB(255, 4, 97, 184),
-                                    width: 1),
-                                image: const DecorationImage(
-                                  image: AssetImage(
-                                    'assets/icons/icon-service-1.png',
-                                  ),
-                                ),
-                              ),
+                              width: 60,
                             ),
                           ),
+                       
                         ),
                         const SizedBox(
                           height: 20,
@@ -149,25 +142,18 @@ class _Career2State extends State<Career2> {
                     child: Column(
                       children: [
                         Container(
+                          padding:
+                              EdgeInsets.only(top: screenSize.height * 0.01),
+                          width: screenSize.width * 0.5,
                           child: Animasi_Kiri_Kanan(
                             screenSize: screenSize,
-                            widget: Container(
-                              width: 60,
+                            widget: Image.asset(
+                              'assets/icons/icon-service-2.png',
                               height: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(
-                                    color:
-                                        const Color.fromARGB(255, 4, 97, 184),
-                                    width: 1),
-                                image: const DecorationImage(
-                                  image: AssetImage(
-                                    'assets/icons/icon-service-2.png',
-                                  ),
-                                ),
-                              ),
+                              width: 60,
                             ),
                           ),
+                     
                         ),
                         const SizedBox(
                           height: 20,
@@ -216,25 +202,18 @@ class _Career2State extends State<Career2> {
                     child: Column(
                       children: [
                         Container(
+                          padding:
+                              EdgeInsets.only(top: screenSize.height * 0.01),
+                          width: screenSize.width * 0.5,
                           child: Animasi_Kiri_Kanan(
                             screenSize: screenSize,
-                            widget: Container(
-                              width: 60,
+                            widget: Image.asset(
+                              'assets/icons/icon-service-3.png',
                               height: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(
-                                    color:
-                                        const Color.fromARGB(255, 4, 97, 184),
-                                    width: 1),
-                                image: const DecorationImage(
-                                  image: AssetImage(
-                                    'assets/icons/icon-service-3.png',
-                                  ),
-                                ),
-                              ),
+                              width: 60,
                             ),
                           ),
+                    
                         ),
                         const SizedBox(
                           height: 20,
@@ -283,23 +262,15 @@ class _Career2State extends State<Career2> {
                     child: Column(
                       children: [
                         Container(
+                          padding:
+                              EdgeInsets.only(top: screenSize.height * 0.01),
+                          width: screenSize.width * 0.5,
                           child: Animasi_Kiri_Kanan(
                             screenSize: screenSize,
-                            widget: Container(
-                              width: 60,
+                            widget: Image.asset(
+                              'assets/icons/icon-service-4.png',
                               height: 60,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(
-                                    color:
-                                        const Color.fromARGB(255, 4, 97, 184),
-                                    width: 1),
-                                image: const DecorationImage(
-                                  image: AssetImage(
-                                    'assets/icons/icon-service-4.png',
-                                  ),
-                                ),
-                              ),
+                              width: 60,
                             ),
                           ),
                         ),

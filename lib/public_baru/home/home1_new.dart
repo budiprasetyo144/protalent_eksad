@@ -22,10 +22,12 @@ class HomeNew1 extends StatelessWidget {
                   fit: BoxFit.cover)),
         ),
         Container(
-          width: screenSize.width,
+          width: screenSize.width * 30,
           height: screenSize.height * 0.65,
           padding: EdgeInsets.only(
-              right: screenSize.width * 0.48, top: screenSize.height * 0.04),
+              left: screenSize.width * 0.055,
+              right: screenSize.width * 0.519,
+              top: screenSize.height * 0.04),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +41,7 @@ class HomeNew1 extends StatelessWidget {
                   child: Text(
                     'EMPOWER YOUR BUSINESS FOR SUCCESS.',
                     style: GoogleFonts.poppins(
-                        fontSize: 33,
+                        fontSize: 27,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                     textAlign: TextAlign.center,
@@ -47,8 +49,8 @@ class HomeNew1 extends StatelessWidget {
                 ),
               ),
               Container(
-                width: screenSize.width * 0.35,
-                height: screenSize.height * 0.33,
+                width: screenSize.width * 0.325,
+                height: screenSize.height * 0.35,
                 child: ShowUpAnimation(
                   delayStart: const Duration(seconds: 1),
                   curve: Curves.bounceIn,

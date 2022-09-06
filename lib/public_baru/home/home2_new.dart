@@ -13,8 +13,8 @@ class HomeNew2 extends StatelessWidget {
       color: const Color.fromARGB(255, 227, 235, 253),
       height: 350,
       padding: EdgeInsets.only(
-        left: screenSize.width * 0.10,
-        right: screenSize.width * 0.10,
+        left: screenSize.width * 0.105,
+        right: screenSize.width * 0.11,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class HomeNew2 extends StatelessWidget {
             width: screenSize.width,
             child: Text('How do we help ?',
                 style: GoogleFonts.poppins(
-                    fontSize: 30,
+                    fontSize: 27,
                     color: const Color.fromARGB(255, 12, 66, 101),
                     fontWeight: FontWeight.bold)),
           ),
@@ -36,7 +36,7 @@ class HomeNew2 extends StatelessWidget {
                 'operational efficiency with a recruitment solution customized to your needs.',
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.poppins(
-                    fontSize: 18,
+                    fontSize: 16,
                     letterSpacing: 1.1,
                     height: 1.3,
                     fontWeight: FontWeight.w500)),

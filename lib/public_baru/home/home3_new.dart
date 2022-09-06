@@ -25,7 +25,7 @@ class _HomeNew3State extends State<HomeNew3> {
           ),
           Text("Why Protalent ?",
               style: GoogleFonts.poppins(
-                  fontSize: 36,
+                  fontSize: 27,
                   color: const Color(0xff1e5ea8),
                   fontWeight: FontWeight.bold)),
           const SizedBox(

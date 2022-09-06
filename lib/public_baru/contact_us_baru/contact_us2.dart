@@ -47,13 +47,13 @@ class ContactUs2 extends StatelessWidget {
                 children: [
 
                   Container(
-                    height: screenSize.height * 0.23,
+                    height: screenSize.height * 0.19,
                     child: Text(
                         'Yes, you need '
                         '\n'
                         'an outsourcing partner '
                         'you can trust and thrive with',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.left,
                         style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontSize: 27,
@@ -63,12 +63,12 @@ class ContactUs2 extends StatelessWidget {
                     flex: 1,
                   ),
                   Container(
-                    height: screenSize.height * 0.3,
+                    height: screenSize.height * 0.22,
                     child: Text(
                         'Go for the one who knows what they are doing, those who you share values with, '
                         'and those who will celebrate your success, and help you win over your biggest challenges. '
                         '\nLooking for an outsourcing partner? ',
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.left,
                         style: GoogleFonts.poppins(
                             color: Colors.white,
                             fontSize: 16,

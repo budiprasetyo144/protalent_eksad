@@ -16,7 +16,7 @@ class _HomeNew3State extends State<HomeNew3> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height * 0.95,
+      height: screenSize.height * 1.03,
       width: screenSize.width,
       child: Column(
         children: [

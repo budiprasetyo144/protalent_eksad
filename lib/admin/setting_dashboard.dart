@@ -285,7 +285,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                               width: screenSize1 * 0.5,
                               child: TextFormField(
                                 decoration: const InputDecoration(
-                                    labelText: "Protalent by Eksad",
+                                    labelText: "Great talent with Eksad",
                                     hintStyle: TextStyle(),
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide(

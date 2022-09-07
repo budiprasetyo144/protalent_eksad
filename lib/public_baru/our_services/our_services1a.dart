@@ -52,7 +52,7 @@ class _OurServices1aState extends State<OurServices1a> {
                     child: Text(
                       'Find & Get the Best Talent',
                       style: GoogleFonts.poppins(
-                          fontSize: 34,
+                          fontSize: 27,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                       textAlign: TextAlign.center,

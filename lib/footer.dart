@@ -317,7 +317,7 @@ class Footer extends StatelessWidget {
                           ),
                           Container(
                             width: screenSize.width * 0.25,
-                            height: screenSize.height * 0.29,
+                            height: screenSize.height * 0.30,
                             child: ListTile(
                                 leading: const Icon(
                                   Icons.location_on,

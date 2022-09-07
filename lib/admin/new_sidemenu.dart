@@ -6,6 +6,7 @@ import 'package:protalent_eksad/admin/dashboard/main_dashboard.dart';
 import 'package:protalent_eksad/admin/master_data/master_data.dart';
 import 'package:protalent_eksad/admin/pages/pages_dashboard.dart';
 import 'package:protalent_eksad/admin/setting_dashboard.dart';
+import 'package:protalent_eksad/admin/sosmed_dashboard.dart';
 import 'package:protalent_eksad/admin/talent_manage/talent_manage.dart';
 
 class DashboardAdmin extends StatefulWidget {
@@ -163,6 +164,14 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 },
                 icon: const Icon(Icons.people_alt),
               ),
+              SideMenuItem(
+                priority: 6,
+                title: 'Social Media',
+                onTap: () {
+                  page.jumpToPage(6);
+                },
+                icon: const Icon(Icons.phone_android),
+              ),
             ],
           ),
           Expanded(
@@ -172,7 +181,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 MainDashboard(
                   all: GestureDetector(
                     onTap: () {
-                      page.jumpToPage(6);
+                      page.jumpToPage(7);
                     },
                     child:  GridView.count(
                       childAspectRatio: (itemWidth / itemHeight),
@@ -367,7 +376,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                   ),
                   available: GestureDetector(
                     onTap: () {
-                      page.jumpToPage(6);
+                      page.jumpToPage(7);
                     },
                     child:  GridView.count(
                       childAspectRatio: (itemWidth / itemHeight),
@@ -562,7 +571,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                   ),
                   hired: GestureDetector(
                     onTap: () {
-                      page.jumpToPage(6);
+                      page.jumpToPage(7);
                     },
                     child:  GridView.count(
                       childAspectRatio: (itemWidth / itemHeight),
@@ -761,6 +770,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 MasterData(),
                 ClientDashboard(),
                 TalentManagement(),
+                SosmedDashboard(),
                 SelectTalent(),
               ],
             ),

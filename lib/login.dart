@@ -123,6 +123,68 @@ class _loginState extends State<login> {
                           height: 40,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
+                            onFieldSubmitted: (String value){
+                              if (_usmail == 'admin@admin.com' &&
+                                  _uspswd != 'administrator') {
+                                showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      AlertDialog(
+                                        title: const Text('Gagal login'),
+                                        content: const Text(
+                                            'Password anda salah!!!'),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context, 'OK'),
+                                            child: const Text('OK'),
+                                          ),
+                                        ],
+                                      ),
+                                );
+                              } else if (_usmail == 'client@client.com' &&
+                                  _uspswd != 'clientpage') {
+                                showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      AlertDialog(
+                                        title: const Text('Gagal login'),
+                                        content: const Text(
+                                            'Password anda salah!!!'),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context, 'OK'),
+                                            child: const Text('OK'),
+                                          ),
+                                        ],
+                                      ),
+                                );
+                              } else if (_usmail == 'admin@admin.com' &&
+                                  _uspswd == 'administrator') {
+                                Navigator.pushNamed(context, '/admin');
+                              } else if (_usmail == 'client@client.com' &&
+                                  _uspswd == 'clientpage') {
+                                Navigator.pushNamed(context, '/client');
+                              } else {
+                                showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      AlertDialog(
+                                        title: const Text('Gagal login'),
+                                        content: const Text(
+                                            'Akun Belum terdaftar, Silahkan Registrasi'),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            onPressed: () =>
+                                                Navigator.pop(context, 'OK'),
+                                            child: const Text('OK'),
+                                          ),
+                                        ],
+                                      ),
+                                );
+                              }
+                            },
                             controller: _editingController,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
@@ -169,6 +231,68 @@ class _loginState extends State<login> {
                           height: 40,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
+                           onFieldSubmitted: (String value){
+                             if (_usmail == 'admin@admin.com' &&
+                                 _uspswd != 'administrator') {
+                               showDialog<String>(
+                                 context: context,
+                                 builder: (BuildContext context) =>
+                                     AlertDialog(
+                                       title: const Text('Gagal login'),
+                                       content: const Text(
+                                           'Password anda salah!!!'),
+                                       actions: <Widget>[
+                                         TextButton(
+                                           onPressed: () =>
+                                               Navigator.pop(context, 'OK'),
+                                           child: const Text('OK'),
+                                         ),
+                                       ],
+                                     ),
+                               );
+                             } else if (_usmail == 'client@client.com' &&
+                                 _uspswd != 'clientpage') {
+                               showDialog<String>(
+                                 context: context,
+                                 builder: (BuildContext context) =>
+                                     AlertDialog(
+                                       title: const Text('Gagal login'),
+                                       content: const Text(
+                                           'Password anda salah!!!'),
+                                       actions: <Widget>[
+                                         TextButton(
+                                           onPressed: () =>
+                                               Navigator.pop(context, 'OK'),
+                                           child: const Text('OK'),
+                                         ),
+                                       ],
+                                     ),
+                               );
+                             } else if (_usmail == 'admin@admin.com' &&
+                                 _uspswd == 'administrator') {
+                               Navigator.pushNamed(context, '/admin');
+                             } else if (_usmail == 'client@client.com' &&
+                                 _uspswd == 'clientpage') {
+                               Navigator.pushNamed(context, '/client');
+                             } else {
+                               showDialog<String>(
+                                 context: context,
+                                 builder: (BuildContext context) =>
+                                     AlertDialog(
+                                       title: const Text('Gagal login'),
+                                       content: const Text(
+                                           'Akun Belum terdaftar, Silahkan Registrasi'),
+                                       actions: <Widget>[
+                                         TextButton(
+                                           onPressed: () =>
+                                               Navigator.pop(context, 'OK'),
+                                           child: const Text('OK'),
+                                         ),
+                                       ],
+                                     ),
+                               );
+                             }
+                           },
                             controller: _editingController2,
                             textAlign: TextAlign.start,
                             obscureText: _isObscure,

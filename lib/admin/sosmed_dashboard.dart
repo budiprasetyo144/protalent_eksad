@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:protalent_eksad/api/sosmed_api.dart';
 
 class SosmedDashboard extends StatefulWidget {
   const SosmedDashboard({Key? key}) : super(key: key);
@@ -13,11 +14,19 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
   var btnText = 'Save Setting';
   var enb = true;
   final formKey = GlobalKey<FormState>();
-  final waController = TextEditingController();
+
+  TextEditingController waController = new TextEditingController();
+  // final waController = TextEditingController();
   final linkedController = TextEditingController();
   final twitterController = TextEditingController();
   final igController = TextEditingController();
   final youtubeController = TextEditingController();
+
+  String wa = '';
+  String ln = '';
+  String tw ='';
+  String ig = '';
+  String yt = '';
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +43,7 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
         const EdgeInsets.only(left: 30, top: 15, right: 30, bottom: 15),
         color: Colors.white,
         child: Form(
+          key: formKey,
           child: Column(
             children: [
               Row(
@@ -45,10 +55,6 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                           fontSize: 25,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 1.1)),
-                  // SizedBox(
-                  //   height: 0,
-                  //   width: 820,
-                  // ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -59,22 +65,47 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                     onPressed: () {
                       switch (btnText) {
                         case 'Save Setting':
-                        // createSetting(im.toString(), tt.toString(),
-                        //     tl.toString(), em.toString(), no.toString());
+
+                          createSosmed(wa, ln, tw, ig, yt);
+                          {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Save Data Success'),));
+                          }
+                          // waController.clear();
+                          // linkedController.clear();
+                          // twitterController.clear();
+                          // igController.clear();
+                          // youtubeController.clear();
+                          // createSetting(im.toString(), tt.toString(),
+                          //     tl.toString(), em.toString(), no.toString());
                           setState(() {
                             btnText = 'Update Setting';
                             enb = false;
-                          });
+                          }
+
+                          );
                           break;
                         case 'Update Setting':
+                        // waController.clear();
+                        // linkedController.clear();
+                        // twitterController.clear();
+                        // igController.clear();
+                        // youtubeController.clear();
                           setState(() {
                             enb = true;
                             btnText = 'Save Update';
                           });
                           break;
                         case 'Save Update':
+                          createSosmed(wa, ln, tw, ig, yt);
+                          {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Save Data Success'),));
+                          }
                           break;
                         default:
+                          createSosmed(wa, ln, tw, ig, yt);
+                          {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Save Data Success'),));
+                          }
                       }
                     },
                     child: Text(
@@ -108,6 +139,8 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                         decoration: InputDecoration(
                             hintText:
                             'Enter WhatsApp number without +,   Ex : 6280000000000 '),
+                        onChanged: (value) => wa = value,
+                        enabled: enb,
                       ),
                       ElevatedButton(
                           onPressed: () {
@@ -131,6 +164,8 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                         controller: linkedController,
                         decoration: InputDecoration(
                             hintText: 'Enter a new Linkedin link address'),
+                        onChanged: (value) => ln = value,
+                        enabled: enb,
                       ),
                       ElevatedButton(
                           onPressed: () {
@@ -154,6 +189,8 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                         controller: twitterController,
                         decoration: InputDecoration(
                             hintText: 'Enter a new Twitter link address'),
+                        onChanged: (value) => tw = value,
+                        enabled: enb,
                       ),
                       ElevatedButton(
                           onPressed: () {
@@ -177,6 +214,8 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                         controller: igController,
                         decoration: InputDecoration(
                             hintText: 'Enter a new Instagram link address'),
+                        onChanged: (value) => ig = value,
+                        enabled: enb,
                       ),
                       ElevatedButton(
                           onPressed: () {
@@ -200,6 +239,8 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                         controller: youtubeController,
                         decoration: InputDecoration(
                             hintText: 'Enter a new Youtube link address'),
+                        onChanged: (value) => yt = value,
+                        enabled: enb,
                       ),
                       ElevatedButton(
                           onPressed: () {

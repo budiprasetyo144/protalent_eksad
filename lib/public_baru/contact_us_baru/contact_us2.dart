@@ -248,6 +248,7 @@ class ContactUs2 extends StatelessWidget {
                         hintText: "Enter your message",
                         fillColor: Colors.white,
                         filled: true,
+                        errorStyle: TextStyle(color: Colors.white),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(width: 1, color: Colors.white),

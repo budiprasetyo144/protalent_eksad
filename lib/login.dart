@@ -120,70 +120,74 @@ class _loginState extends State<login> {
                           flex: 1,
                         ),
                         Container(
-                          height: 40,
+                          height: 60,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
                             onFieldSubmitted: (String value){
-                              if (_usmail == 'admin@admin.com' &&
-                                  _uspswd != 'administrator') {
-                                showDialog<String>(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      AlertDialog(
-                                        title: const Text('Gagal login'),
-                                        content: const Text(
-                                            'Password anda salah!!!'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context, 'OK'),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ),
-                                );
-                              } else if (_usmail == 'client@client.com' &&
-                                  _uspswd != 'clientpage') {
-                                showDialog<String>(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      AlertDialog(
-                                        title: const Text('Gagal login'),
-                                        content: const Text(
-                                            'Password anda salah!!!'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context, 'OK'),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ),
-                                );
-                              } else if (_usmail == 'admin@admin.com' &&
+                              // if (_usmail == 'admin@admin.com' &&
+                              //     _uspswd != 'administrator') {
+                              //   showDialog<String>(
+                              //     context: context,
+                              //     builder: (BuildContext context) =>
+                              //         AlertDialog(
+                              //           title: const Text('Gagal login'),
+                              //           content: const Text(
+                              //               'Password anda salah!!!'),
+                              //           actions: <Widget>[
+                              //             TextButton(
+                              //               onPressed: () =>
+                              //                   Navigator.pop(context, 'OK'),
+                              //               child: const Text('OK'),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //   );
+                              // } else if (_usmail == 'client@client.com' &&
+                              //     _uspswd != 'clientpage') {
+                              //   showDialog<String>(
+                              //     context: context,
+                              //     builder: (BuildContext context) =>
+                              //         AlertDialog(
+                              //           title: const Text('Gagal login'),
+                              //           content: const Text(
+                              //               'Password anda salah!!!'),
+                              //           actions: <Widget>[
+                              //             TextButton(
+                              //               onPressed: () =>
+                              //                   Navigator.pop(context, 'OK'),
+                              //               child: const Text('OK'),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //   );
+                              // } else
+                                if (formKey.currentState!.validate()&&_usmail == 'admin@admin.com' &&
                                   _uspswd == 'administrator') {
                                 Navigator.pushNamed(context, '/admin');
-                              } else if (_usmail == 'client@client.com' &&
+                              } else
+                                if (formKey.currentState!.validate()&&_usmail == 'client@client.com' &&
                                   _uspswd == 'clientpage') {
                                 Navigator.pushNamed(context, '/client');
-                              } else {
-                                showDialog<String>(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      AlertDialog(
-                                        title: const Text('Gagal login'),
-                                        content: const Text(
-                                            'Akun Belum terdaftar, Silahkan Registrasi'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context, 'OK'),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ),
-                                );
                               }
+
+                              //   else {
+                              //   showDialog<String>(
+                              //     context: context,
+                              //     builder: (BuildContext context) =>
+                              //         AlertDialog(
+                              //           title: const Text('Gagal login'),
+                              //           content: const Text(
+                              //               'Akun Belum terdaftar, Silahkan Registrasi'),
+                              //           actions: <Widget>[
+                              //             TextButton(
+                              //               onPressed: () =>
+                              //                   Navigator.pop(context, 'OK'),
+                              //               child: const Text('OK'),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //   );
+                              // }
                             },
                             controller: _editingController,
                             textAlign: TextAlign.start,
@@ -228,70 +232,70 @@ class _loginState extends State<login> {
                           flex: 1,
                         ),
                         Container(
-                          height: 40,
+                          height: 60,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
                            onFieldSubmitted: (String value){
-                             if (_usmail == 'admin@admin.com' &&
-                                 _uspswd != 'administrator') {
-                               showDialog<String>(
-                                 context: context,
-                                 builder: (BuildContext context) =>
-                                     AlertDialog(
-                                       title: const Text('Gagal login'),
-                                       content: const Text(
-                                           'Password anda salah!!!'),
-                                       actions: <Widget>[
-                                         TextButton(
-                                           onPressed: () =>
-                                               Navigator.pop(context, 'OK'),
-                                           child: const Text('OK'),
-                                         ),
-                                       ],
-                                     ),
-                               );
-                             } else if (_usmail == 'client@client.com' &&
-                                 _uspswd != 'clientpage') {
-                               showDialog<String>(
-                                 context: context,
-                                 builder: (BuildContext context) =>
-                                     AlertDialog(
-                                       title: const Text('Gagal login'),
-                                       content: const Text(
-                                           'Password anda salah!!!'),
-                                       actions: <Widget>[
-                                         TextButton(
-                                           onPressed: () =>
-                                               Navigator.pop(context, 'OK'),
-                                           child: const Text('OK'),
-                                         ),
-                                       ],
-                                     ),
-                               );
-                             } else if (_usmail == 'admin@admin.com' &&
-                                 _uspswd == 'administrator') {
-                               Navigator.pushNamed(context, '/admin');
-                             } else if (_usmail == 'client@client.com' &&
-                                 _uspswd == 'clientpage') {
-                               Navigator.pushNamed(context, '/client');
-                             } else {
-                               showDialog<String>(
-                                 context: context,
-                                 builder: (BuildContext context) =>
-                                     AlertDialog(
-                                       title: const Text('Gagal login'),
-                                       content: const Text(
-                                           'Akun Belum terdaftar, Silahkan Registrasi'),
-                                       actions: <Widget>[
-                                         TextButton(
-                                           onPressed: () =>
-                                               Navigator.pop(context, 'OK'),
-                                           child: const Text('OK'),
-                                         ),
-                                       ],
-                                     ),
-                               );
-                             }
+                             // if (_usmail == 'admin@admin.com' &&
+                             //     _uspswd != 'administrator') {
+                             //   showDialog<String>(
+                             //     context: context,
+                             //     builder: (BuildContext context) =>
+                             //         AlertDialog(
+                             //           title: const Text('Gagal login'),
+                             //           content: const Text(
+                             //               'Password anda salah!!!'),
+                             //           actions: <Widget>[
+                             //             TextButton(
+                             //               onPressed: () =>
+                             //                   Navigator.pop(context, 'OK'),
+                             //               child: const Text('OK'),
+                             //             ),
+                             //           ],
+                             //         ),
+                             //   );
+                             // } else if (_usmail == 'client@client.com' &&
+                             //     _uspswd != 'clientpage') {
+                             //   showDialog<String>(
+                             //     context: context,
+                             //     builder: (BuildContext context) =>
+                             //         AlertDialog(
+                             //           title: const Text('Gagal login'),
+                             //           content: const Text(
+                             //               'Password anda salah!!!'),
+                             //           actions: <Widget>[
+                             //             TextButton(
+                             //               onPressed: () =>
+                             //                   Navigator.pop(context, 'OK'),
+                             //               child: const Text('OK'),
+                             //             ),
+                             //           ],
+                             //         ),
+                             //   );
+                             // } else if (_usmail == 'admin@admin.com' &&
+                             //     _uspswd == 'administrator') {
+                             //   Navigator.pushNamed(context, '/admin');
+                             // } else if (_usmail == 'client@client.com' &&
+                             //     _uspswd == 'clientpage') {
+                             //   Navigator.pushNamed(context, '/client');
+                             // } else {
+                             //   showDialog<String>(
+                             //     context: context,
+                             //     builder: (BuildContext context) =>
+                             //         AlertDialog(
+                             //           title: const Text('Gagal login'),
+                             //           content: const Text(
+                             //               'Akun Belum terdaftar, Silahkan Registrasi'),
+                             //           actions: <Widget>[
+                             //             TextButton(
+                             //               onPressed: () =>
+                             //                   Navigator.pop(context, 'OK'),
+                             //               child: const Text('OK'),
+                             //             ),
+                             //           ],
+                             //         ),
+                             //   );
+                             // }
                            },
                             controller: _editingController2,
                             textAlign: TextAlign.start,
@@ -316,7 +320,7 @@ class _loginState extends State<login> {
                             ),
                             validator: (value) {
                               if (value == null || value.trim().isEmpty) {
-                                _editingController2.clear();
+                               // _editingController2.clear();
                                 return 'This field is required';
                               } else if (value.trim().length < 8) {
                                 return 'Password must be at least 8 characters in length';
@@ -336,66 +340,68 @@ class _loginState extends State<login> {
                               width: screenSize.width * 0.08,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  if (_usmail == 'admin@admin.com' &&
-                                      _uspswd != 'administrator') {
-                                    showDialog<String>(
-                                      context: context,
-                                      builder: (BuildContext context) =>
-                                          AlertDialog(
-                                        title: const Text('Gagal login'),
-                                        content: const Text(
-                                            'Password anda salah!!!'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context, 'OK'),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  } else if (_usmail == 'client@client.com' &&
-                                      _uspswd != 'clientpage') {
-                                    showDialog<String>(
-                                      context: context,
-                                      builder: (BuildContext context) =>
-                                          AlertDialog(
-                                        title: const Text('Gagal login'),
-                                        content: const Text(
-                                            'Password anda salah!!!'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context, 'OK'),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  } else if (_usmail == 'admin@admin.com' &&
+                                  // if (_usmail == 'admin@admin.com' &&
+                                  //     _uspswd != 'administrator') {
+                                  //   showDialog<String>(
+                                  //     context: context,
+                                  //     builder: (BuildContext context) =>
+                                  //         AlertDialog(
+                                  //       title: const Text('Gagal login'),
+                                  //       content: const Text(
+                                  //           'Password anda salah!!!'),
+                                  //       actions: <Widget>[
+                                  //         TextButton(
+                                  //           onPressed: () =>
+                                  //               Navigator.pop(context, 'OK'),
+                                  //           child: const Text('OK'),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //   );
+                                  // } else if (_usmail == 'client@client.com' &&
+                                  //     _uspswd != 'clientpage') {
+                                  //   showDialog<String>(
+                                  //     context: context,
+                                  //     builder: (BuildContext context) =>
+                                  //         AlertDialog(
+                                  //       title: const Text('Gagal login'),
+                                  //       content: const Text(
+                                  //           'Password anda salah!!!'),
+                                  //       actions: <Widget>[
+                                  //         TextButton(
+                                  //           onPressed: () =>
+                                  //               Navigator.pop(context, 'OK'),
+                                  //           child: const Text('OK'),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //   );
+                                  // } else
+                                    if (formKey.currentState!.validate()&&_usmail == 'admin@admin.com' &&
                                       _uspswd == 'administrator') {
                                     Navigator.pushNamed(context, '/admin');
-                                  } else if (_usmail == 'client@client.com' &&
+                                  } else if (formKey.currentState!.validate()&&_usmail == 'client@client.com' &&
                                       _uspswd == 'clientpage') {
                                     Navigator.pushNamed(context, '/client');
-                                  } else {
-                                    showDialog<String>(
-                                      context: context,
-                                      builder: (BuildContext context) =>
-                                          AlertDialog(
-                                        title: const Text('Gagal login'),
-                                        content: const Text(
-                                            'Akun Belum terdaftar, Silahkan Registrasi'),
-                                        actions: <Widget>[
-                                          TextButton(
-                                            onPressed: () =>
-                                                Navigator.pop(context, 'OK'),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ),
-                                    );
                                   }
+                                  //   else {
+                                  //   showDialog<String>(
+                                  //     context: context,
+                                  //     builder: (BuildContext context) =>
+                                  //         AlertDialog(
+                                  //       title: const Text('Gagal login'),
+                                  //       content: const Text(
+                                  //           'Akun Belum terdaftar, Silahkan Registrasi'),
+                                  //       actions: <Widget>[
+                                  //         TextButton(
+                                  //           onPressed: () =>
+                                  //               Navigator.pop(context, 'OK'),
+                                  //           child: const Text('OK'),
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //   );
+                                  // }
                                 },
                                 child: const Text("LOGIN"),
                               ),

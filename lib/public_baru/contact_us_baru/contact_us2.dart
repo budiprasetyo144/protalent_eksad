@@ -201,7 +201,12 @@ class ContactUs2 extends StatelessWidget {
                               borderSide:
                                   BorderSide(width: 1, color: Colors.white),
                             ),
-                          ),
+                          ),validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return '*Required';
+                          }
+                          return null;
+                        },
                         ),
                       ),
                       const SizedBox(

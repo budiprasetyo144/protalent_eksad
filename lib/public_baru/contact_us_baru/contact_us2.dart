@@ -217,7 +217,7 @@ class ContactUs2 extends StatelessWidget {
                             ),
                           ),
                           validator: (value) {
-                            if (value == null || value.isEmpty) {
+                            if (value == null || value.isEmpty || !value.isValidEmail()) {
                               return 'Please enter your email address';
                             }
                             return null;
@@ -312,6 +312,7 @@ class ContactUs2 extends StatelessWidget {
       ),
     );
   }
+  
 
   Future SendEmail(
       String name, String phone, String email, String message) async {
@@ -335,5 +336,12 @@ class ContactUs2 extends StatelessWidget {
           }
         }));
     return response.statusCode;
+  }
+}
+extension EmailValidator on String {
+  bool isValidEmail() {
+    return RegExp(
+            r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+        .hasMatch(this);
   }
 }

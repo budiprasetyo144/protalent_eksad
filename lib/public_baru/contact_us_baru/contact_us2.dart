@@ -45,7 +45,6 @@ class ContactUs2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   Container(
                     height: screenSize.height * 0.19,
                     child: Text(
@@ -118,6 +117,7 @@ class ContactUs2 extends StatelessWidget {
                         hintText: "Enter your Name",
                         fillColor: Colors.white,
                         filled: true,
+                        errorStyle: TextStyle(color: Colors.white),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.zero,
                           borderSide: BorderSide(width: 1, color: Colors.white),
@@ -127,6 +127,12 @@ class ContactUs2 extends StatelessWidget {
                           borderSide: BorderSide(width: 1, color: Colors.white),
                         ),
                       ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your name';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   const SizedBox(
@@ -167,6 +173,7 @@ class ContactUs2 extends StatelessWidget {
                             hintText: "Enter a valid phone number",
                             fillColor: Colors.white,
                             filled: true,
+                            errorStyle: TextStyle(color: Colors.white),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
@@ -178,6 +185,12 @@ class ContactUs2 extends StatelessWidget {
                                   BorderSide(width: 1, color: Colors.white),
                             ),
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your phone number';
+                            }
+                            return null;
+                          },
                         ),
                       ),
                       const SizedBox(
@@ -191,6 +204,7 @@ class ContactUs2 extends StatelessWidget {
                             hintText: "Enter a valid email address",
                             fillColor: Colors.white,
                             filled: true,
+                            errorStyle: TextStyle(color: Colors.white),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
@@ -201,12 +215,13 @@ class ContactUs2 extends StatelessWidget {
                               borderSide:
                                   BorderSide(width: 1, color: Colors.white),
                             ),
-                          ),validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return '*Required';
-                          }
-                          return null;
-                        },
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your email address';
+                            }
+                            return null;
+                          },
                         ),
                       ),
                       const SizedBox(
@@ -245,7 +260,7 @@ class ContactUs2 extends StatelessWidget {
                       maxLines: 5,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return '*Required';
+                          return 'Please enter message';
                         }
                         return null;
                       },
@@ -292,7 +307,6 @@ class ContactUs2 extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );

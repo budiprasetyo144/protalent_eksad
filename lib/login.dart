@@ -123,7 +123,7 @@ class _loginState extends State<login> {
                           height: 60,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
-                            onFieldSubmitted: (String value){
+                            onFieldSubmitted: (String value) {
                               // if (_usmail == 'admin@admin.com' &&
                               //     _uspswd != 'administrator') {
                               //   showDialog<String>(
@@ -161,11 +161,12 @@ class _loginState extends State<login> {
                               //         ),
                               //   );
                               // } else
-                                if (formKey.currentState!.validate()&&_usmail == 'admin@admin.com' &&
+                              if (formKey.currentState!.validate() &&
+                                  _usmail == 'admin@admin.com' &&
                                   _uspswd == 'administrator') {
                                 Navigator.pushNamed(context, '/admin');
-                              } else
-                                if (formKey.currentState!.validate()&&_usmail == 'client@client.com' &&
+                              } else if (formKey.currentState!.validate() &&
+                                  _usmail == 'client@client.com' &&
                                   _uspswd == 'clientpage') {
                                 Navigator.pushNamed(context, '/client');
                               }
@@ -201,7 +202,7 @@ class _loginState extends State<login> {
                             validator: (value) {
                               if (value == null || value.trim().isEmpty) {
                                 _editingController.clear();
-                                return "please enter your email address";
+                                return "Please enter your email address";
                               } else if (!RegExp(r'\S+@\S+\.\S+')
                                   .hasMatch(value)) {
                                 return 'Please enter a valid email address';
@@ -235,68 +236,68 @@ class _loginState extends State<login> {
                           height: 60,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
-                           onFieldSubmitted: (String value){
-                             // if (_usmail == 'admin@admin.com' &&
-                             //     _uspswd != 'administrator') {
-                             //   showDialog<String>(
-                             //     context: context,
-                             //     builder: (BuildContext context) =>
-                             //         AlertDialog(
-                             //           title: const Text('Gagal login'),
-                             //           content: const Text(
-                             //               'Password anda salah!!!'),
-                             //           actions: <Widget>[
-                             //             TextButton(
-                             //               onPressed: () =>
-                             //                   Navigator.pop(context, 'OK'),
-                             //               child: const Text('OK'),
-                             //             ),
-                             //           ],
-                             //         ),
-                             //   );
-                             // } else if (_usmail == 'client@client.com' &&
-                             //     _uspswd != 'clientpage') {
-                             //   showDialog<String>(
-                             //     context: context,
-                             //     builder: (BuildContext context) =>
-                             //         AlertDialog(
-                             //           title: const Text('Gagal login'),
-                             //           content: const Text(
-                             //               'Password anda salah!!!'),
-                             //           actions: <Widget>[
-                             //             TextButton(
-                             //               onPressed: () =>
-                             //                   Navigator.pop(context, 'OK'),
-                             //               child: const Text('OK'),
-                             //             ),
-                             //           ],
-                             //         ),
-                             //   );
-                             // } else if (_usmail == 'admin@admin.com' &&
-                             //     _uspswd == 'administrator') {
-                             //   Navigator.pushNamed(context, '/admin');
-                             // } else if (_usmail == 'client@client.com' &&
-                             //     _uspswd == 'clientpage') {
-                             //   Navigator.pushNamed(context, '/client');
-                             // } else {
-                             //   showDialog<String>(
-                             //     context: context,
-                             //     builder: (BuildContext context) =>
-                             //         AlertDialog(
-                             //           title: const Text('Gagal login'),
-                             //           content: const Text(
-                             //               'Akun Belum terdaftar, Silahkan Registrasi'),
-                             //           actions: <Widget>[
-                             //             TextButton(
-                             //               onPressed: () =>
-                             //                   Navigator.pop(context, 'OK'),
-                             //               child: const Text('OK'),
-                             //             ),
-                             //           ],
-                             //         ),
-                             //   );
-                             // }
-                           },
+                            onFieldSubmitted: (String value) {
+                              // if (_usmail == 'admin@admin.com' &&
+                              //     _uspswd != 'administrator') {
+                              //   showDialog<String>(
+                              //     context: context,
+                              //     builder: (BuildContext context) =>
+                              //         AlertDialog(
+                              //           title: const Text('Gagal login'),
+                              //           content: const Text(
+                              //               'Password anda salah!!!'),
+                              //           actions: <Widget>[
+                              //             TextButton(
+                              //               onPressed: () =>
+                              //                   Navigator.pop(context, 'OK'),
+                              //               child: const Text('OK'),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //   );
+                              // } else if (_usmail == 'client@client.com' &&
+                              //     _uspswd != 'clientpage') {
+                              //   showDialog<String>(
+                              //     context: context,
+                              //     builder: (BuildContext context) =>
+                              //         AlertDialog(
+                              //           title: const Text('Gagal login'),
+                              //           content: const Text(
+                              //               'Password anda salah!!!'),
+                              //           actions: <Widget>[
+                              //             TextButton(
+                              //               onPressed: () =>
+                              //                   Navigator.pop(context, 'OK'),
+                              //               child: const Text('OK'),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //   );
+                              // } else if (_usmail == 'admin@admin.com' &&
+                              //     _uspswd == 'administrator') {
+                              //   Navigator.pushNamed(context, '/admin');
+                              // } else if (_usmail == 'client@client.com' &&
+                              //     _uspswd == 'clientpage') {
+                              //   Navigator.pushNamed(context, '/client');
+                              // } else {
+                              //   showDialog<String>(
+                              //     context: context,
+                              //     builder: (BuildContext context) =>
+                              //         AlertDialog(
+                              //           title: const Text('Gagal login'),
+                              //           content: const Text(
+                              //               'Akun Belum terdaftar, Silahkan Registrasi'),
+                              //           actions: <Widget>[
+                              //             TextButton(
+                              //               onPressed: () =>
+                              //                   Navigator.pop(context, 'OK'),
+                              //               child: const Text('OK'),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //   );
+                              // }
+                            },
                             controller: _editingController2,
                             textAlign: TextAlign.start,
                             obscureText: _isObscure,
@@ -320,7 +321,7 @@ class _loginState extends State<login> {
                             ),
                             validator: (value) {
                               if (value == null || value.trim().isEmpty) {
-                               // _editingController2.clear();
+                                // _editingController2.clear();
                                 return 'This field is required';
                               } else if (value.trim().length < 8) {
                                 return 'Password must be at least 8 characters in length';
@@ -377,10 +378,12 @@ class _loginState extends State<login> {
                                   //     ),
                                   //   );
                                   // } else
-                                    if (formKey.currentState!.validate()&&_usmail == 'admin@admin.com' &&
+                                  if (formKey.currentState!.validate() &&
+                                      _usmail == 'admin@admin.com' &&
                                       _uspswd == 'administrator') {
                                     Navigator.pushNamed(context, '/admin');
-                                  } else if (formKey.currentState!.validate()&&_usmail == 'client@client.com' &&
+                                  } else if (formKey.currentState!.validate() &&
+                                      _usmail == 'client@client.com' &&
                                       _uspswd == 'clientpage') {
                                     Navigator.pushNamed(context, '/client');
                                   }

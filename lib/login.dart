@@ -273,13 +273,18 @@ class _loginState extends State<login> {
                               //           ],
                               //         ),
                               //   );
-                              // } else if (_usmail == 'admin@admin.com' &&
-                              //     _uspswd == 'administrator') {
-                              //   Navigator.pushNamed(context, '/admin');
-                              // } else if (_usmail == 'client@client.com' &&
-                              //     _uspswd == 'clientpage') {
-                              //   Navigator.pushNamed(context, '/client');
-                              // } else {
+                              // } else
+                              if (formKey.currentState!.validate() &&
+                                  _usmail == 'admin@admin.com' &&
+                                  _uspswd == 'administrator') {
+                                Navigator.pushNamed(context, '/admin');
+                              } else if (formKey.currentState!.validate() &&
+                                  _usmail == 'client@client.com' &&
+                                  _uspswd == 'clientpage') {
+                                Navigator.pushNamed(context, '/client');
+                              }
+
+                              //   else {
                               //   showDialog<String>(
                               //     context: context,
                               //     builder: (BuildContext context) =>

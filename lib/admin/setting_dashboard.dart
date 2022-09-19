@@ -62,6 +62,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
   String tl = '';
   String em = '';
   String no = '';
+  final String role = 'PRO';
 
   @override
   Widget build(BuildContext context) {
@@ -69,28 +70,24 @@ class _SettingDashboardState extends State<SettingDashboard> {
     var screenSize1 = screenSize.width * 0.6;
     return Container(
       color: const Color.fromRGBO(238, 224, 224, 1),
-      height: screenSize.height*0.8,
-      padding: EdgeInsets.symmetric(horizontal: screenSize.height*0.15),
+      height: 650,
+      padding: const EdgeInsets.only(left: 80),
       width: screenSize.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            width: screenSize.width*0.2,
-            height: screenSize.height*0.15,
-            child: Center(
-              child: const Text(
-                "General Setting",
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    color: Colors.black, fontSize: 37, fontWeight: FontWeight.bold),
-              ),
-            ),
+          SizedBox(height: 10,),
+          const Text(
+            "General Setting",
+            textAlign: TextAlign.start,
+            style: TextStyle(
+                color: Colors.black, fontSize: 37, fontWeight: FontWeight.bold),
           ),
+          SizedBox(height: 10,),
           Container(
             color: Colors.white,
-            height: screenSize.height*0.7,
-            width: 900,
+            height: screenSize.height*0.75,
+            width: screenSize.width*0.7,
             padding: const EdgeInsets.only(left: 30,top: 15,right: 20,bottom: 15),
             child: Form(
               key: formKey,
@@ -151,7 +148,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                     // endIndent: 0,
                     color: Colors.grey,
                   ),
-
+                  SizedBox(height: 25,),
                   Row(
                     children: [
                       Container(
@@ -243,6 +240,9 @@ class _SettingDashboardState extends State<SettingDashboard> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
                             const Text(
                               "Site title",
                               style: TextStyle(
@@ -258,7 +258,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                               width: screenSize1 * 0.5,
                               child: TextFormField(
                                 decoration: const InputDecoration(
-                                    labelText: "Protalent",
+                                    labelText: "Protalent by Eksad",
                                     hintStyle: TextStyle(),
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -270,30 +270,30 @@ class _SettingDashboardState extends State<SettingDashboard> {
                             const SizedBox(
                               height: 20,
                             ),
-                            const Text(
-                              "Site tagline",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
-                            ),
+                            // const Text(
+                            //   "Site tagline",
+                            //   style: TextStyle(
+                            //       color: Colors.black,
+                            //       fontSize: 17,
+                            //       fontWeight: FontWeight.bold),
+                            // ),
                             const SizedBox(
                               height: 7,
                             ),
-                            Container(
-                              height: 40,
-                              width: screenSize1 * 0.5,
-                              child: TextFormField(
-                                decoration: const InputDecoration(
-                                    labelText: "Great talent with Eksad",
-                                    hintStyle: TextStyle(),
-                                    border: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            width: 1, color: Colors.grey))),
-                                onChanged: (value) => tl = value,
-                                enabled: enb,
-                              ),
-                            ),
+                            // Container(
+                            //   height: 40,
+                            //   width: screenSize1 * 0.5,
+                            //   child: TextFormField(
+                            //     decoration: const InputDecoration(
+                            //         labelText: "Cloud Partner with Eksad",
+                            //         hintStyle: TextStyle(),
+                            //         border: OutlineInputBorder(
+                            //             borderSide: BorderSide(
+                            //                 width: 1, color: Colors.grey))),
+                            //     onChanged: (value) => tl = value,
+                            //     enabled: enb,
+                            //   ),
+                            // ),
                             const SizedBox(
                               height: 10,
                             ),
@@ -347,7 +347,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
 
                         ],
                       ),
-                      SizedBox(width: screenSize.width*0.05,),
+                      SizedBox(width: 30,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -360,7 +360,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                                 fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
-                            height: 7,
+                            height: 10,
                           ),
                           Container(
                             height: 40,

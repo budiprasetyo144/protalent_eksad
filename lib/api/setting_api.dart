@@ -2,11 +2,21 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+
+var cmd = 'https://dmsdev-api.eksad.com/gateway/pro/v1/cmd';
+var qry = 'https://dmsdev-api.eksad.com/gateway/pro/v1/qry';
+
 Future<bool> createSetting(im, tt, tl, em, no) async {
   final response = await http.post(
-      Uri.parse('http://192.168.41.102:8081/setting/saveSetting'),
+      Uri.parse('$cmd/setting/saveSetting'),
       body: jsonEncode(
-          {"image": im, "title": tt, "tagline": tl, "email": em, "no": no}),
+          {
+            "image": im,
+            "title": tt,
+            "tagline": tl,
+            "email": em,
+            "no": no,
+          }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       });
@@ -17,9 +27,9 @@ Future<bool> createSetting(im, tt, tl, em, no) async {
   }
 }
 
-Future<bool> updateSetting(id, image, name, title, tagline, email, no) async {
+Future<bool> updateSetting(id, image, name, title, tagline, email, no,) async {
   final response = await http
-      .put(Uri.parse('http://192.168.41.102:8081/setting/updateSetting'),
+      .put(Uri.parse('$cmd/setting/updateSetting'),
       body: jsonEncode({
         "idsetting": id,
         "image": image,
@@ -28,7 +38,7 @@ Future<bool> updateSetting(id, image, name, title, tagline, email, no) async {
         "tagline": tagline,
         "email": email,
         "no": no,
-        "idrole": "R001"
+        "idrole": "R001",
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
@@ -42,6 +52,12 @@ Future<bool> updateSetting(id, image, name, title, tagline, email, no) async {
 
 Future<List<dynamic>> getSetting() async {
   var response = await http.get(
-      Uri.parse('http://192.168.41.102:8082/setting/getAllSettingByIdRole'));
+      Uri.parse('$cmd/setting/getAllSettingByIdRole'));
+  return jsonDecode(response.body)['data'];
+}
+
+Future<List<dynamic>> getSettingDesc() async {
+  var response = await http.get(
+      Uri.parse('$qry/setting/getSettingByIdDesc'));
   return jsonDecode(response.body)['data'];
 }

@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'api/setting_api.dart';
+
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
 
@@ -268,53 +270,8 @@ class Footer extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 5),
-                          Container(
-                            width: screenSize.width * 0.2,
-                            child: ListTile(
-                              leading: const Icon(
-                                Icons.phone,
-                                size: 22,
-                              ),
-                              title: TextButton(
-                                onPressed: () {
-                                  launch('tel:02157958040');
-                                },
-                                child: Container(
-                                  height: screenSize.height * 0.04,
-                                  child: Text(
-                                    '(021) 5795 - 8040',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 16,
-                                      color: Colors.black87,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: screenSize.width * 0.2,
-                            child: ListTile(
-                              leading: const Icon(
-                                Icons.mail,
-                                size: 22,
-                              ),
-                              title: TextButton(
-                                onPressed: () {
-                                  launch(
-                                      'mailto:Hello@eksad.com?subject=Hello saya ingin bertanya tentang protalent');
-                                },
-                                child: Container(
-                                  height: screenSize.height * 0.04,
-                                  child: Text(
-                                    'Hello@eksad.com',
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 16, color: Colors.black87),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          TelphoneApi(),
+                          EmailAPI(),
                           Container(
                             width: screenSize.width * 0.25,
                             height: screenSize.height * 0.30,
@@ -383,5 +340,105 @@ class itemBawah extends StatelessWidget {
               fontSize: 17,
               letterSpacing: 1.2),
         ));
+  }
+}
+class TelphoneApi extends StatefulWidget {
+  const TelphoneApi({Key? key}) : super(key: key);
+
+  @override
+  State<TelphoneApi> createState() => _TelphoneApiState();
+}
+
+class _TelphoneApiState extends State<TelphoneApi> {
+
+  String no = '';
+  @override
+  Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    return FutureBuilder<List<dynamic>>(
+      future: getSettingDesc(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        var pgm = snapshot.data[0];
+        if (snapshot.hasError ||
+            snapshot.data == null ||
+            snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator();
+        }
+        return Container(
+          width: screenSize.width * 0.19,
+          child: ListTile(
+            leading: const Icon(
+              Icons.phone,
+              size: 23,
+              color: Colors.black,
+            ),
+            title: TextButton(
+                onPressed: ()  {
+                  no = pgm['no'];
+                  //02157958040
+                  launch('tel:$no');
+                },
+                child: Text(
+                  pgm['no'],
+                  style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.black87,
+                      letterSpacing: 1.5
+                  ),
+                )),
+          ),
+        );
+      },
+    );
+  }
+}
+
+
+
+class EmailAPI extends StatefulWidget {
+  const EmailAPI({Key? key}) : super(key: key);
+
+  @override
+  State<EmailAPI> createState() => _EmailAPIState();
+}
+
+class _EmailAPIState extends State<EmailAPI> {
+  String email = '';
+  @override
+  Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    return FutureBuilder<List<dynamic>>(
+      future: getSettingDesc(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        var pgm = snapshot.data[0];
+        if (snapshot.hasError ||
+            snapshot.data == null ||
+            snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator();
+        }
+        return Container(
+          width: screenSize.width * 0.2,
+          child: ListTile(
+            leading: const Icon(
+              Icons.mail,
+              size: 23,
+              color: Colors.black,
+            ),
+            title: TextButton(
+                onPressed: () {
+                  email = pgm['email'];
+                  launch(
+                      'mailto:$email?subject=Info MCS');
+                },
+                // child: SettingAPI(),
+                child: Text(pgm['email'],style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Colors.black87,
+                    letterSpacing: 1.1),)
+            ),
+          ),
+        );
+      },
+    );
   }
 }

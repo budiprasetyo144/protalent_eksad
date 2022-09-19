@@ -35,7 +35,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
             width: 200,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/logo/logo_protalent.png'),
+                    image: AssetImage('assets/logo/protalent.png'),
                     fit: BoxFit.fill)),
           ),
         ),

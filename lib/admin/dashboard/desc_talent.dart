@@ -82,11 +82,11 @@ class SelectTalent extends StatelessWidget {
                       ),
                       Container(
                         padding: const EdgeInsets.only(top: 2),
-                        width: 180,
+                        width: 185,
                         height: 60,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage('assets/logo/logo_protalent.png'),
+                              image: AssetImage('assets/logo/protalent.png'),
                               fit: BoxFit.fill),
                         ),
                       ),

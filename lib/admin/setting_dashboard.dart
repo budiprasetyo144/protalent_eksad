@@ -116,7 +116,7 @@ class _SettingDashboardState extends State<SettingDashboard> {
                           switch (btnText) {
                             case 'Save Setting':
                               createSetting(im.toString(), tt.toString(),
-                                  tl.toString(), em.toString(), no.toString());
+                                   em.toString(), no.toString());
                               setState(() {
                                 btnText = 'Update Setting';
                                 enb = false;

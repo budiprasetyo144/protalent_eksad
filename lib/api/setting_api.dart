@@ -6,14 +6,14 @@ import 'package:http/http.dart' as http;
 var cmd = 'https://dmsdev-api.eksad.com/gateway/pro/v1/cmd';
 var qry = 'https://dmsdev-api.eksad.com/gateway/pro/v1/qry';
 
-Future<bool> createSetting(im, tt, tl, em, no) async {
+Future<bool> createSetting(im, tt,  em, no) async {
   final response = await http.post(
       Uri.parse('$cmd/setting/saveSetting'),
       body: jsonEncode(
           {
             "image": im,
             "title": tt,
-            "tagline": tl,
+            // "tagline": tl,
             "email": em,
             "no": no,
           }),
@@ -27,7 +27,7 @@ Future<bool> createSetting(im, tt, tl, em, no) async {
   }
 }
 
-Future<bool> updateSetting(id, image, name, title, tagline, email, no,) async {
+Future<bool> updateSetting(id, image, name, title,  email, no,) async {
   final response = await http
       .put(Uri.parse('$cmd/setting/updateSetting'),
       body: jsonEncode({
@@ -35,7 +35,7 @@ Future<bool> updateSetting(id, image, name, title, tagline, email, no,) async {
         "image": image,
         "name": name,
         "title": title,
-        "tagline": tagline,
+      //  "tagline": tagline,
         "email": email,
         "no": no,
         "idrole": "R001",

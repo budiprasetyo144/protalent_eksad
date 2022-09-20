@@ -217,7 +217,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                         selectname = pgm['title'];
                                         selectpage = pgm['page'];
                                         print(selectedIndex);
-                                        print(pgm['idpage']);
+                                        print(pgm['idPage']);
                                         print(selectname);
 
                                         _controllerName.clear();
@@ -418,7 +418,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                                   child: const Text("Yes"),
                                                   onPressed: () {
                                                     Navigator.pop(context);
-                                                    deletePage(pgm['idpage'])
+                                                    deletePage(pgm['idPage'])
                                                         .then((isSuccess) {
                                                       if (isSuccess) {
                                                         setState(() {});

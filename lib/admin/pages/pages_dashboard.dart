@@ -194,7 +194,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                           return DataRow(
                             cells: [
                               DataCell(
-                                Text(pgm['idpage'].toString()),
+                                Text(pgm['idPage'].toString()),
                               ),
                               DataCell(
                                 Text(pgm['title']),
@@ -213,7 +213,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                       onPressed: () {
                                         var pgm = snapshot.data[index];
                                         selectedIndex = index;
-                                        id = pgm['idpage'];
+                                        id = pgm['idPage'];
                                         selectname = pgm['title'];
                                         selectpage = pgm['page'];
                                         print(selectedIndex);

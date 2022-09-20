@@ -29,7 +29,7 @@ Future<bool> createPage(name, page) async {
 Future<bool> updatePage(id, name, page) async {
   final response = await http.post(
     Uri.parse('$cmd/page/savePage'),
-    body: jsonEncode({"idpage": id, "title": name, "page": page}),
+    body: jsonEncode({"idPage": id, "title": name, "page": page}),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },

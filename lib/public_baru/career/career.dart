@@ -34,7 +34,6 @@ class _CareerState extends State<Career> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-
     setPageTitle('Career Protalent', context);
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
@@ -44,27 +43,28 @@ class _CareerState extends State<Career> {
                 Colors.black, Colors.blue, Colors.black),
         drawer: DrawerProtalent(),
         body: ResponsiveWidget.isSmallScreen(context)
-        ? ListView(
-          children: const [
-            Career1_small(),
-            Career2_small(),
-            Career3_small(),
-            Career4_small(),
-            FooterSmall(),
-          ],
-        )
-        : ListView(
-        children: const [
-          Career1(),
-          Career1_2(),
-          Career2(),
-          Career3(),
-          Footer(),
-    ],
-    ),
+            ? ListView(
+                children: const [
+                  Career1_small(),
+                  Career2_small(),
+                  Career3_small(),
+                  Career4_small(),
+                  FooterSmall(),
+                ],
+              )
+            : ListView(
+                children:  [
+                  const Career1(),
+                  const Career1_2(),
+                  const Career2(),
+                  const Career3(),
+                  Footer(),
+                ],
+              ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: WAChat());
   }
+
   AppBar AppBarKecil() {
     return AppBar(
       leading: IconButton(

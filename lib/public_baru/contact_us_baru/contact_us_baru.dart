@@ -42,30 +42,34 @@ class _ContactUsState extends State<ContactUs_baru> {
                 Colors.black, Colors.black, Colors.blue),
         drawer: DrawerProtalent(),
         body: ResponsiveWidget.isSmallScreen(context)
-        ? ListView(
-          children: [
-            const ContactUs1_small(),
-            ContactUs2_small(),
-            const FooterSmall(),
-          ],
-        )
-        : ListView(
-          children: [
-            const ContactUs1(),
-            ContactUs2(),
-            const Footer(),
-          ],
-        ),
+            ? ListView(
+                children: [
+                  const ContactUs1_small(),
+                  ContactUs2_small(),
+                  const FooterSmall(),
+                ],
+              )
+            : ListView(
+                children: [
+                  const ContactUs1(),
+                  ContactUs2(),
+                  Footer(),
+                ],
+              ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: WAChat());
   }
-
 
   AppBar AppBarKecil() {
     return AppBar(
       leading: IconButton(
         onPressed: () => _scaffoldKey.currentState!.openDrawer(),
-        icon: Icon(Icons.list_outlined,size: 30,color: Colors.black,),),
+        icon: Icon(
+          Icons.list_outlined,
+          size: 30,
+          color: Colors.black,
+        ),
+      ),
       backgroundColor: Colors.white,
       centerTitle: true,
       title: Container(

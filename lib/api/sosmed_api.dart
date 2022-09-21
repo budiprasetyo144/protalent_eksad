@@ -3,9 +3,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 
+var cmd = 'https://dmsdev-api.eksad.com/gateway/pro/v1/cmd';
+var qry = 'https://dmsdev-api.eksad.com/gateway/pro/v1/qry';
+
 Future<bool> createSosmed (wa, ln, tw, ig, yt) async{
   final response = await http.post(
-      Uri.parse('http://192.168.204.102:8081/settingsosmed/saveSettingSosmed'),
+      Uri.parse('$cmd/settingsosmed/saveSettingSosmed'),
       body: jsonEncode(
           {
             'whatsapp': wa,
@@ -26,7 +29,7 @@ Future<bool> createSosmed (wa, ln, tw, ig, yt) async{
 
 Future<bool> updateSosmed (wa,linked,twitter,ig,yt) async {
   final response = await http
-      .put(Uri.parse('http://192.168.204.102:8081/settingsosmed/updateSettingSosmed'),
+      .put(Uri.parse('$cmd/settingsosmed/updateSettingSosmed'),
       body: jsonEncode({
         'whatsapp': wa,
         'linkedin': linked,
@@ -42,4 +45,11 @@ Future<bool> updateSosmed (wa,linked,twitter,ig,yt) async {
   } else {
     return false;
   }
+}
+
+
+Future<List<dynamic>> getSosmedDesc() async {
+  var response = await http.get(
+      Uri.parse('$qry/settingsosmed/getSettingSosmedByIdDesc'));
+  return jsonDecode(response.body)['data'];
 }

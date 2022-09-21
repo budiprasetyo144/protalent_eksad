@@ -59,17 +59,12 @@ class _OurServicesState extends State<OurServices> {
                   const OurServices1b(),
                   const OurServices2(),
                   ContactUs2(),
-                  const Footer(),
+                  Footer(),
                 ],
               ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         floatingActionButton: WAChat());
   }
-
-
-
-
-
 
   AppBar AppBarKecil() {
     return AppBar(

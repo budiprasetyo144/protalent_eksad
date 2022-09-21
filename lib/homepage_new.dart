@@ -41,50 +41,45 @@ class _HomePageNewState extends State<HomePageNew> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
         key: _scaffoldKey,
-      floatingActionButton: WAChat(),
-      appBar: ResponsiveWidget.isSmallScreen(context)
-          ? AppBarKecil()
-          : AppbarHomeLarge(screenSize, context, Colors.blue, Colors.blue,
-              Colors.black, Colors.black, Colors.black),
-      drawer: DrawerProtalent(),
-      body: ResponsiveWidget.isSmallScreen(context)
-     ? ListView(
-        children: [
-          HomeSmall1(),
-          HomeSmall2(),
-          HomeSmall3(),
-          HomeSmall4(),
-          ContactUs2_small(),
-          const FooterSmall(),
-        ],
-      )
-        : ListView(
-        children: [
-          const HomeNew1(),
-          const HomeNew2(),
-          const HomeNew3(),
-          const HomeNew4(),
-          ContactUs2(),
-          const Footer(),
-        ],
-      )
-    );
+        floatingActionButton: WAChat(),
+        appBar: ResponsiveWidget.isSmallScreen(context)
+            ? AppBarKecil()
+            : AppbarHomeLarge(screenSize, context, Colors.blue, Colors.blue,
+                Colors.black, Colors.black, Colors.black),
+        drawer: DrawerProtalent(),
+        body: ResponsiveWidget.isSmallScreen(context)
+            ? ListView(
+                children: [
+                  HomeSmall1(),
+                  HomeSmall2(),
+                  HomeSmall3(),
+                  HomeSmall4(),
+                  ContactUs2_small(),
+                  const FooterSmall(),
+                ],
+              )
+            : ListView(
+                children: [
+                  const HomeNew1(),
+                  const HomeNew2(),
+                  const HomeNew3(),
+                  const HomeNew4(),
+                  ContactUs2(),
+                  Footer(),
+                ],
+              ));
   }
-
-
-
-
-
-
-
-
-
 
   AppBar AppBarKecil() {
     return AppBar(
       leading: IconButton(
         onPressed: () => _scaffoldKey.currentState!.openDrawer(),
-        icon: Icon(Icons.list_outlined,size: 30,color: Colors.black,),),
+        icon: Icon(
+          Icons.list_outlined,
+          size: 30,
+          color: Colors.black,
+        ),
+      ),
       backgroundColor: Colors.white,
       centerTitle: true,
       title: Container(
@@ -99,5 +94,3 @@ class _HomePageNewState extends State<HomePageNew> {
     );
   }
 }
-
-

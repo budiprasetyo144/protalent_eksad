@@ -16,7 +16,7 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController waController = new TextEditingController();
-  // final waController = TextEditingController();
+ // final waController = TextEditingController();
   final linkedController = TextEditingController();
   final twitterController = TextEditingController();
   final igController = TextEditingController();
@@ -40,7 +40,7 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
         width: screenSize.width,
         height: screenSize.height * 0.8,
         padding:
-        const EdgeInsets.only(left: 30, top: 15, right: 30, bottom: 15),
+            const EdgeInsets.only(left: 30, top: 15, right: 30, bottom: 15),
         color: Colors.white,
         child: Form(
           key: formKey,
@@ -138,18 +138,29 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                         controller: waController,
                         decoration: InputDecoration(
                             hintText:
-                            'Enter WhatsApp number without +,   Ex : 6280000000000 '),
+                                'Enter WhatsApp number without +,   Ex : 6280000000000 '),
                         onChanged: (value) => wa = value,
                         enabled: enb,
                       ),
                       ElevatedButton(
                           onPressed: () {
                             showDialog(
-                              context: context,
-                              builder: (BuildContext context)=>
-                                  AlertDialog(
-                                    content: Text('Nomer'),
-                                  ) ,
+                                context: context, 
+                                builder: (BuildContext context)=>
+                                    AlertDialog(
+                                      content:FutureBuilder<List<dynamic>>(
+                                        future: getSosmedDesc(),
+                                        builder: (BuildContext context, AsyncSnapshot snapshot) {
+                                          var pgm = snapshot.data[0];
+                                          if (snapshot.hasError ||
+                                              snapshot.data == null ||
+                                              snapshot.connectionState == ConnectionState.waiting) {
+                                            return const CircularProgressIndicator();
+                                          }
+                                          return Text('Active WA : '+pgm['whatsapp']);
+                                        },
+                                      ),
+                                    ) ,
                             );
                           }, child: Text('View Active'))),
                   SizedBox(
@@ -173,7 +184,18 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                               context: context,
                               builder: (BuildContext context)=>
                                   AlertDialog(
-                                    content: Text('Linkedin'),
+                                    content:FutureBuilder<List<dynamic>>(
+                                      future: getSosmedDesc(),
+                                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                                        var pgm = snapshot.data[0];
+                                        if (snapshot.hasError ||
+                                            snapshot.data == null ||
+                                            snapshot.connectionState == ConnectionState.waiting) {
+                                          return const CircularProgressIndicator();
+                                        }
+                                        return Text('Active Linkedin : '+pgm['linkedin']);
+                                      },
+                                    ),
                                   ) ,
                             );
                           }, child: Text('View Active'))),
@@ -198,7 +220,18 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                               context: context,
                               builder: (BuildContext context)=>
                                   AlertDialog(
-                                    content: Text('Twitter'),
+                                    content:FutureBuilder<List<dynamic>>(
+                                      future: getSosmedDesc(),
+                                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                                        var pgm = snapshot.data[0];
+                                        if (snapshot.hasError ||
+                                            snapshot.data == null ||
+                                            snapshot.connectionState == ConnectionState.waiting) {
+                                          return const CircularProgressIndicator();
+                                        }
+                                        return Text('Active Twitter : '+pgm['twitter']);
+                                      },
+                                    ),
                                   ) ,
                             );
                           }, child: Text('View Active'))),
@@ -223,7 +256,18 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                               context: context,
                               builder: (BuildContext context)=>
                                   AlertDialog(
-                                    content: Text('Instagram'),
+                                    content:FutureBuilder<List<dynamic>>(
+                                      future: getSosmedDesc(),
+                                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                                        var pgm = snapshot.data[0];
+                                        if (snapshot.hasError ||
+                                            snapshot.data == null ||
+                                            snapshot.connectionState == ConnectionState.waiting) {
+                                          return const CircularProgressIndicator();
+                                        }
+                                        return Text('Active Instagram : '+pgm['instagram']);
+                                      },
+                                    ),
                                   ) ,
                             );
                           }, child: Text('View Active'))),
@@ -248,7 +292,18 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                               context: context,
                               builder: (BuildContext context)=>
                                   AlertDialog(
-                                    content: Text('Youtube'),
+                                    content:FutureBuilder<List<dynamic>>(
+                                      future: getSosmedDesc(),
+                                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                                        var pgm = snapshot.data[0];
+                                        if (snapshot.hasError ||
+                                            snapshot.data == null ||
+                                            snapshot.connectionState == ConnectionState.waiting) {
+                                          return const CircularProgressIndicator();
+                                        }
+                                        return Text('Active Youtube : '+pgm['youtube']);
+                                      },
+                                    ),
                                   ) ,
                             );
                           }, child: Text('View Active'))),

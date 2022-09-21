@@ -111,3 +111,5 @@ String row3 = 'Generally the detailed organization and implementation '
     'of a complex operation. In a general business sense, logistics is '
     ''
     'the point of consumption to meet the requirements of customers or corporations.';
+
+// ....//

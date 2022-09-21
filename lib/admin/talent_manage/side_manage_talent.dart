@@ -27,7 +27,7 @@ class _SideMenuManageTalentState extends State<SideMenuManageTalent> {
     PagesDashboard(),
     PostDashboard(),
     MasterData(),
-    ClientDashboard(),
+    UserControl(),
     AddTalent(),
   ];
   int selectedIndex = 0;

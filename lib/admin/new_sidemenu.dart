@@ -768,7 +768,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 SettingDashboard(),
                 PagesDashboard(),
                 MasterData(),
-                ClientDashboard(),
+                UserControl(),
                 TalentManagement(),
                 SosmedDashboard(),
                 SelectTalent(),

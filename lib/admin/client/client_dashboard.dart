@@ -1,250 +1,533 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'data_sources.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:protalent_eksad/admin/client/clientControl_api.dart';
 
-class ClientDashboard extends StatefulWidget {
-  const ClientDashboard({Key? key}) : super(key: key);
+class UserControl extends StatefulWidget {
+  const UserControl({Key? key}) : super(key: key);
 
   @override
-  State<ClientDashboard> createState() => _ClientDashboardState();
+  State<UserControl> createState() => _UserControlState();
 }
 
-class _ClientDashboardState extends State<ClientDashboard> {
+class _UserControlState extends State<UserControl> {
+  void apiService(BuildContext context) {
+    FutureBuilder<List<dynamic>>(
+        future: getUserControl(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.hasError ||
+              snapshot.data == null ||
+              snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          }
+
+          return snapshot.data;
+        });
+  }
+
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: const Color.fromRGBO(238, 224, 224, 1),
-      body: Center(
-        child: Container(
-          //padding: EdgeInsets.symmetric(vertical: screenSize.height*0.1,horizontal: screenSize.width*0.2),
-          width: screenSize.width * 0.72,
-          height: screenSize.height * 0.75,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                  color: const Color.fromARGB(255, 18, 108, 178), width: 20),
-              color: const Color.fromARGB(255, 18, 108, 178)),
-
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(top: 6, left: 50),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      topLeft: Radius.circular(20)),
-                  color:
-                      // Colors.white
-                      Color.fromARGB(255, 18, 108, 178),
-                ),
-                width: screenSize.width * 0.7,
-                height: screenSize.height * 0.14,
-                child: const Text(
-                  'Data Client',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 50,
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        decoration: BoxDecoration(
+            color: Colors.white60,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                  color: const Color.fromARGB(255, 10, 116, 255).withAlpha(60),
+                  blurRadius: 5.0,
+                  spreadRadius: 5.0,
+                  offset: const Offset(0.0, 3.0))
+            ]),
+        child: Column(
+          children: [
+            Container(
+              height: screenSize.height * 0.15,
+              child: Center(
+                child: Text(
+                  'Data User',
+                  style: GoogleFonts.poppins(
+                      height: 1.5,
+                      fontSize: 31,
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 2),
+                      color: Colors.blueAccent[200]),
                 ),
               ),
-              // Container(
-              //   width: screenSize.width * 0.7,
-              //   height: screenSize.height * 0.06,
-              //   decoration: BoxDecoration(
-              //     border: Border(
-              //       top: BorderSide(color: Color.fromARGB(255, 18, 108, 178), width: 10),
-              //     ),
-              //   ),
-              // ),
-              Container(
-                width: screenSize.width * 0.65,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                    child: const PaginatedDataTableDemo()),
+            ),
+            Container(
+              height: screenSize.height * 0.65,
+              child: ListView(
+                controller: ScrollController(),
+                children: [
+                  FutureBuilder<List<dynamic>>(
+                      future: getUserControl(),
+                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                        if (snapshot.hasError ||
+                            snapshot.data == null ||
+                            snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                          return const CircularProgressIndicator();
+                        }
+                        return DataTable(
+                            decoration:
+                                const BoxDecoration(color: Colors.white),
+                            columnSpacing: 55,
+                            columns: const [
+                              DataColumn(
+                                  label: Text(
+                                "ID",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )),
+                              DataColumn(
+                                  label: Text(
+                                "Nama User",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )),
+                              // DataColumn(label: Text("Telp Rumah Sakit")),
+                              DataColumn(
+                                  label: Text(
+                                "Email User",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )),
+                              // DataColumn(label: Text("Nama PIC")),
+                              // DataColumn(label: Text("Telp PIC")),
+                              // DataColumn(label: Text("Email PIC")),
+                              DataColumn(
+                                  label: Text(
+                                "STATUS",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )),
+                              DataColumn(
+                                  label: Text(
+                                "ACTION",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ))
+                            ],
+                            rows: List.generate(snapshot.data.length, (index) {
+                              var pgm = snapshot.data[index];
+
+                              final nameUserController = TextEditingController()
+                                ..text = pgm['username'].toString();
+                              final passwordUserController =
+                                  TextEditingController(
+                                      text: pgm['password'].toString());
+                              final emailUserController = TextEditingController(
+                                  text: pgm['email'].toString());
+                              final idRoleController = TextEditingController(
+                                  text: pgm['idRole'].toString());
+                              // final statusController = TextEditingController(
+                              //     text: pgm['status'].toString());
+
+                              // final passwordController =
+                              //     TextEditingController();
+
+                              void viewUser(BuildContext context) {
+                                var screenSize = MediaQuery.of(context).size;
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      // var pgm = snapshot.data;
+                                      // print(pgm);
+
+                                      // if (snapshot.hasError ||
+                                      //     snapshot.data == null ||
+                                      //     snapshot.connectionState == ConnectionState.waiting) {
+                                      //   return const CircularProgressIndicator();
+                                      // }
+                                      return AlertDialog(
+                                        content: Form(
+                                            child: Container(
+                                          padding: EdgeInsets.only(
+                                              left: screenSize.width * 0.045,
+                                              top: screenSize.height * 0.01),
+                                          width: screenSize.width * 0.50,
+                                          height: screenSize.height * 0.4,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              const Spacer(),
+                                              Container(
+                                                padding: EdgeInsets.only(
+                                                    left: screenSize.width *
+                                                        0.15),
+                                                height: screenSize.width * 0.03,
+                                                child: Image.asset(
+                                                    "assets/logo/logo_protalent.png"),
+                                              ),
+                                              const SizedBox(height: 20),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                              Icons
+                                                                  .drive_file_rename_outline,
+                                                              color: Colors
+                                                                  .grey[500],
+                                                              size: screenSize
+                                                                      .width *
+                                                                  0.01),
+                                                          const SizedBox(
+                                                              width: 10),
+                                                          const Text(
+                                                              "Nama User",
+                                                              style: TextStyle(
+                                                                  fontSize: 13))
+                                                        ],
+                                                      ),
+                                                      const SizedBox(height: 5),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  nameUserController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              decoration: InputDecoration(
+                                                                  labelText:
+                                                                      "Nama User",
+                                                                  labelStyle:
+                                                                      TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                  border: OutlineInputBorder(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              5.0))),
+                                                              readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Nama User tidak boleh kosong";
+                                                                } else {
+                                                                  return null;
+                                                                }
+                                                              },
+                                                            ),
+                                                          )
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                  const SizedBox(width: 30),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .drive_file_rename_outline,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Password User",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  passwordUserController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Password User",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                              readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Password User tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .add_home_work_sharp,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Email User",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  emailUserController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Email User tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Email User",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .email_outlined,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Id Role",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  idRoleController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Id Role tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Id Role",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        )),
+                                        actions: [
+                                          MaterialButton(
+                                              child: Text("OK"),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              })
+                                        ],
+                                      );
+                                    });
+                              }
+
+                              return DataRow(cells: [
+                                DataCell(Text(pgm['idUser'].toString())),
+                                DataCell(Text(pgm['username'].toString())),
+                                // DataCell(Text(pgm['noRs'].toString())),
+                                DataCell(Text(pgm['email'].toString())),
+                                // DataCell(Text(pgm['namaPic'].toString())),
+                                // DataCell(Text(pgm['noPic'].toString())),
+                                // DataCell(Text(pgm['emailPic'].toString())),
+                                // DataCell(Text(pgm['idRole'].toString())),
+                                DataCell(Text(pgm['status'].toString())),
+                                DataCell(PopupMenuButton(
+                                  icon: Icon(Icons.more_vert_outlined),
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem(
+                                        child: Text("Edit"), value: 1),
+                                    PopupMenuItem(
+                                        child: Text("Delete"), value: 2),
+                                    PopupMenuItem(child: Text("View"), value: 3)
+                                  ],
+                                  onSelected: (value) {
+                                    if (value == 1) {
+                                      print("you choose Edit...");
+                                      viewUser(context);
+                                    } else if (value == 2) {
+                                      print("you choose Delete...");
+                                    } else if (value == 3) {
+                                      print("you choose View...");
+                                      viewUser(context);
+                                    }
+                                  },
+                                ))
+                              ]);
+                            }).toList());
+                      })
+                ],
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
   }
 }
-
-// Copyright 2019 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-// The file was extracted from GitHub: https://github.com/flutter/gallery
-// Changes and modifications by Maxim Saplin, 2021
-
-class PaginatedDataTableDemo extends StatefulWidget {
-  const PaginatedDataTableDemo({super.key});
-
-  @override
-  PaginatedDataTableDemoState createState() => PaginatedDataTableDemoState();
-}
-
-class PaginatedDataTableDemoState extends State<PaginatedDataTableDemo>
-    with RestorationMixin {
-  final RestorableClientSelections _dessertSelections =
-      RestorableClientSelections();
-  final RestorableInt _rowIndex = RestorableInt(0);
-  final RestorableInt _rowsPerPage =
-      RestorableInt(PaginatedDataTable.defaultRowsPerPage);
-  final RestorableBool _sortAscending = RestorableBool(true);
-  final RestorableIntN _sortColumnIndex = RestorableIntN(null);
-  late DessertDataSource _clientDataSource;
-  bool initialized = false;
-
-  @override
-  String get restorationId => 'paginated_data_table_demo';
-
-  @override
-  void restoreState(RestorationBucket? oldBucket, bool initialRestore) {
-    registerForRestoration(_dessertSelections, 'selected_row_indices');
-    registerForRestoration(_rowIndex, 'current_row_index');
-    registerForRestoration(_rowsPerPage, 'rows_per_page');
-    registerForRestoration(_sortAscending, 'sort_ascending');
-    registerForRestoration(_sortColumnIndex, 'sort_column_index');
-
-    if (!initialized) {
-      _clientDataSource = DessertDataSource(context);
-      initialized = true;
-    }
-    switch (_sortColumnIndex.value) {
-      case 0:
-        _clientDataSource.sort<num>((d) => d.nomer, _sortAscending.value);
-        break;
-      case 1:
-        _clientDataSource.sort<String>(
-            (d) => d.namaClient, _sortAscending.value);
-        break;
-      case 2:
-        _clientDataSource.sort<String>(
-            (d) => d.deskripsi, _sortAscending.value);
-        break;
-      case 3:
-        _clientDataSource.sort<String>((d) => d.lokasi, _sortAscending.value);
-        break;
-      case 4:
-        _clientDataSource.sort<String>((d) => d.posted, _sortAscending.value);
-        break;
-      // case 5:
-      //   _dessertsDataSource.sort<num>((d) => d.sodium, _sortAscending.value);
-      //   break;
-      // case 6:
-      //   _dessertsDataSource.sort<num>((d) => d.calcium, _sortAscending.value);
-      //   break;
-      // case 7:
-      //   _dessertsDataSource.sort<num>((d) => d.iron, _sortAscending.value);
-      //   break;
-    }
-    _clientDataSource.updateSelectedClients(_dessertSelections);
-    _clientDataSource.addListener(_updateSelectedDessertRowListener);
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (!initialized) {
-      _clientDataSource = DessertDataSource(context);
-      initialized = true;
-    }
-    _clientDataSource.addListener(_updateSelectedDessertRowListener);
-  }
-
-  void _updateSelectedDessertRowListener() {
-    _dessertSelections.setClientSelections(_clientDataSource.clients);
-  }
-
-  void sort<T>(
-    Comparable<T> Function(Client d) getField,
-    int columnIndex,
-    bool ascending,
-  ) {
-    _clientDataSource.sort<T>(getField, ascending);
-    setState(() {
-      _sortColumnIndex.value = columnIndex;
-      _sortAscending.value = ascending;
-    });
-  }
-
-  @override
-  void dispose() {
-    _rowsPerPage.dispose();
-    _sortColumnIndex.dispose();
-    _sortAscending.dispose();
-    _clientDataSource.removeListener(_updateSelectedDessertRowListener);
-    _clientDataSource.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    return PaginatedDataTable(
-      rowsPerPage: 4,
-      initialFirstRowIndex: _rowIndex.value,
-      onPageChanged: (rowIndex) {
-        setState(() {
-          _rowIndex.value = rowIndex;
-        });
-      },
-      sortColumnIndex: _sortColumnIndex.value,
-      sortAscending: _sortAscending.value,
-      //onSelectAll: _dessertsDataSource.selectAll,
-      columns: [
-        DataColumn(
-          label: const Text('No'),
-          numeric: true,
-          onSort: (columnIndex, ascending) =>
-              sort<num>((d) => d.nomer, columnIndex, ascending),
-        ),
-        DataColumn(
-          label: const Text('Client Name'),
-          onSort: (columnIndex, ascending) =>
-              sort<String>((d) => d.namaClient, columnIndex, ascending),
-        ),
-        DataColumn(
-          label: const Text('Description'),
-          //numeric: true,
-          onSort: (columnIndex, ascending) =>
-              sort<String>((d) => d.deskripsi, columnIndex, ascending),
-        ),
-        DataColumn(
-          label: const Text('Location'),
-          //numeric: true,
-          onSort: (columnIndex, ascending) =>
-              sort<String>((d) => d.lokasi, columnIndex, ascending),
-        ),
-        DataColumn(
-          label: const Text('Posted'),
-          //numeric: true,
-          onSort: (columnIndex, ascending) =>
-              sort<String>((d) => d.posted, columnIndex, ascending),
-        ),
-      ],
-      source: _clientDataSource,
-    );
-  }
-}
-
-// DataColumn(
-//   label: const Text('Sodium (mg)'),
-//   numeric: true,
-//   onSort: (columnIndex, ascending) =>
-//       sort<num>((d) => d.sodium, columnIndex, ascending),
-// ),
-// DataColumn(
-//   label: const Text('Calcium (%)'),
-//   numeric: true,
-//   onSort: (columnIndex, ascending) =>
-//       sort<num>((d) => d.calcium, columnIndex, ascending),
-// ),
-// DataColumn(
-//   label: const Text('Iron (%)'),
-//   numeric: true,
-//   onSort: (columnIndex, ascending) =>
-//       sort<num>((d) => d.iron, columnIndex, ascending),
-// ),

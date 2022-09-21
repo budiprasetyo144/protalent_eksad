@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //
 // import 'admin/dashboard.dart';
 import 'package:flutter/services.dart';
+import 'package:protalent_eksad/admin/new_sidemenu.dart';
 
 void setPageTitle(String title, BuildContext context) {
   SystemChrome.setApplicationSwitcherDescription(ApplicationSwitcherDescription(
@@ -164,7 +165,14 @@ class _loginState extends State<login> {
                               if (formKey.currentState!.validate() &&
                                   _usmail == 'admin@admin.com' &&
                                   _uspswd == 'administrator') {
-                                Navigator.pushNamed(context, '/admin');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (Context) {
+                                      return DashboardAdmin();
+                                    },
+                                  ),
+                                );
                               } else if (formKey.currentState!.validate() &&
                                   _usmail == 'client@client.com' &&
                                   _uspswd == 'clientpage') {
@@ -277,7 +285,15 @@ class _loginState extends State<login> {
                               if (formKey.currentState!.validate() &&
                                   _usmail == 'admin@admin.com' &&
                                   _uspswd == 'administrator') {
-                                Navigator.pushNamed(context, '/admin');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (Context) {
+                                      return DashboardAdmin();
+                                    },
+                                  ),
+                                );
+                               // Navigator.pushNamed(context, '/admin');
                               } else if (formKey.currentState!.validate() &&
                                   _usmail == 'client@client.com' &&
                                   _uspswd == 'clientpage') {
@@ -386,7 +402,15 @@ class _loginState extends State<login> {
                                   if (formKey.currentState!.validate() &&
                                       _usmail == 'admin@admin.com' &&
                                       _uspswd == 'administrator') {
-                                    Navigator.pushNamed(context, '/admin');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (Context) {
+                                          return DashboardAdmin();
+                                        },
+                                      ),
+                                    );
+                                   // Navigator.pushNamed(context, '/admin');
                                   } else if (formKey.currentState!.validate() &&
                                       _usmail == 'client@client.com' &&
                                       _uspswd == 'clientpage') {

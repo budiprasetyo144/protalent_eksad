@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
         '/contact': (context) => const ContactUs_baru(),
         '/login': (context) => const login(),
         '/register': (context) => const Register(),
-        '/admin': (context) => const DashboardAdmin(),
+        //'/admin': (context) => const DashboardAdmin(),
         '/client': (context) => const DashboardClient(),
-        '/talent': (context) => const SelectTalent()
+        //'/talent': (context) => const SelectTalent()
       },
 
       //home: Scaffold(

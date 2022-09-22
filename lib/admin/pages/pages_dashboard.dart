@@ -58,12 +58,17 @@ class _PagesDashboardState extends State<PagesDashboard> {
                       context: context,
                       builder: (BuildContext context) => AlertDialog(
                         title: const Center(
-                            child: ListTile(
-                              leading: Icon(Icons.file_copy,color: Colors.black,),
-                              title: Text('ADD NEW PAGES',
-                                style: TextStyle(fontWeight: FontWeight.w500,fontSize: 19),
-                              ),
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.file_copy,
+                              color: Colors.black,
                             ),
+                            title: Text(
+                              'ADD NEW PAGES',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 19),
+                            ),
+                          ),
                         ),
                         content: Form(
                           key: formKey,
@@ -80,7 +85,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                     hintStyle: const TextStyle(),
                                     border: OutlineInputBorder(
                                         borderRadius:
-                                        BorderRadius.circular(5.0)),
+                                            BorderRadius.circular(5.0)),
                                   ),
                                   onChanged: (value) => nm = value,
                                 ),
@@ -111,7 +116,8 @@ class _PagesDashboardState extends State<PagesDashboard> {
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.all(16.0),
                               primary: Colors.black,
-                              backgroundColor: const Color.fromARGB(255, 16, 199, 71),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 16, 199, 71),
                               textStyle: const TextStyle(fontSize: 15),
                             ),
                             onPressed: () {
@@ -134,7 +140,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                 );
                               } else {
                                 createPage(nm, pg).then(
-                                      (isSuccess) {
+                                  (isSuccess) {
                                     if (isSuccess) {
                                       setState(() {});
                                       Scaffold.of(this.context).showSnackBar(
@@ -160,7 +166,6 @@ class _PagesDashboardState extends State<PagesDashboard> {
               ],
             ),
           ),
-
           const SizedBox(
             height: 10,
           ),
@@ -189,7 +194,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                       ],
                       rows: List.generate(
                         snapshot.data.length,
-                            (index) {
+                        (index) {
                           var pgm = snapshot.data[index];
                           return DataRow(
                             cells: [
@@ -209,7 +214,6 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                 Row(
                                   children: [
                                     TextButton(
-
                                       onPressed: () {
                                         var pgm = snapshot.data[index];
                                         selectedIndex = index;
@@ -227,164 +231,163 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                           context: context,
                                           builder: (BuildContext context) =>
                                               AlertDialog(
-                                                title: const Center(
-                                                    child:
-                                                    Text('Update Pages')),
-                                                content: Form(
-                                                  key: formKey,
-                                                  child: Column(
-                                                    crossAxisAlignment:
+                                            title: const Center(
+                                                child: Text('Update Pages')),
+                                            content: Form(
+                                              key: formKey,
+                                              child: Column(
+                                                crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                    mainAxisSize: MainAxisSize.min,
-                                                    verticalDirection:
+                                                mainAxisSize: MainAxisSize.min,
+                                                verticalDirection:
                                                     VerticalDirection.down,
-                                                    children: [
-                                                      const SizedBox(
-                                                        height: 10,
-                                                      ),
-                                                      const Text(
-                                                        'Data Harus di Edit*',
-                                                        style: TextStyle(
-                                                            fontSize: 13,
-                                                            color: Colors.red),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                      Center(
-                                                        child: Container(
-                                                          width: 200,
-                                                          child: TextFormField(
-                                                            //controller: _controllerName,
+                                                children: [
+                                                  const SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  const Text(
+                                                    'Data Harus di Edit*',
+                                                    style: TextStyle(
+                                                        fontSize: 13,
+                                                        color: Colors.red),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 15,
+                                                  ),
+                                                  Center(
+                                                    child: Container(
+                                                      width: 200,
+                                                      child: TextFormField(
+                                                        //controller: _controllerName,
 
-                                                            textAlign:
+                                                        textAlign:
                                                             TextAlign.start,
-                                                            initialValue:
+                                                        initialValue:
                                                             selectname,
-                                                            decoration:
+                                                        decoration:
                                                             InputDecoration(
-                                                              labelText:
+                                                          labelText:
                                                               'Masukkan Nama Pages Baru',
-                                                              //labelStyle: TextStyle(),
+                                                          //labelStyle: TextStyle(),
 
-                                                              border: OutlineInputBorder(
-                                                                  borderRadius:
+                                                          border: OutlineInputBorder(
+                                                              borderRadius:
                                                                   BorderRadius
                                                                       .circular(
-                                                                      5.0)),
-                                                            ),
-
-                                                            onChanged: (value) =>
-                                                            nm = value,
-                                                          ),
+                                                                          5.0)),
                                                         ),
+
+                                                        onChanged: (value) =>
+                                                            nm = value,
                                                       ),
-                                                      const SizedBox(
-                                                        height: 40,
-                                                      ),
-                                                      Center(
-                                                        child: Container(
-                                                          width: 200,
-                                                          child: TextFormField(
-                                                            //controller: _controllerPage,
-                                                            textAlign:
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 40,
+                                                  ),
+                                                  Center(
+                                                    child: Container(
+                                                      width: 200,
+                                                      child: TextFormField(
+                                                        //controller: _controllerPage,
+                                                        textAlign:
                                                             TextAlign.start,
-                                                            initialValue:
+                                                        initialValue:
                                                             selectpage,
-                                                            maxLines: 7,
-                                                            decoration:
+                                                        maxLines: 7,
+                                                        decoration:
                                                             InputDecoration(
-                                                              labelText:
+                                                          labelText:
                                                               "Masukkan Keterangan",
-                                                              hintStyle:
+                                                          hintStyle:
                                                               const TextStyle(),
-                                                              border:
+                                                          border:
                                                               OutlineInputBorder(
-                                                                borderRadius:
+                                                            borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                    5.0),
-                                                              ),
-                                                            ),
-                                                            onChanged: (value) =>
-                                                            pg = value,
+                                                                        5.0),
                                                           ),
                                                         ),
+                                                        onChanged: (value) =>
+                                                            pg = value,
                                                       ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                actions: <Widget>[
-                                                  TextButton(
-                                                    style: TextButton.styleFrom(
-                                                      padding: const EdgeInsets.all(
-                                                          16.0),
-                                                      primary: Colors.black,
-                                                      backgroundColor:
-                                                      const Color.fromARGB(
-                                                          255, 16, 199, 71),
-                                                      textStyle: const TextStyle(
-                                                          fontSize: 15),
                                                     ),
-                                                    onPressed: () {
-                                                      Navigator.pop(context);
-
-                                                      if (nm.isEmpty &&
-                                                          pg.isEmpty) {
-                                                        ScaffoldMessenger.of(
-                                                            context)
-                                                            .showSnackBar(
-                                                          const SnackBar(
-                                                              content: Text(
-                                                                  'Data Can\'t Be Empty')),
-                                                        );
-                                                      } else if (pg.isEmpty) {
-                                                        ScaffoldMessenger.of(
-                                                            context)
-                                                            .showSnackBar(
-                                                          const SnackBar(
-                                                              content: Text(
-                                                                  'Content Can\'t Be Empty')),
-                                                        );
-                                                      } else if (nm.isEmpty) {
-                                                        ScaffoldMessenger.of(
-                                                            context)
-                                                            .showSnackBar(
-                                                          const SnackBar(
-                                                              content: Text(
-                                                                  'Name Can\'t Be Empty')),
-                                                        );
-                                                      } else {
-                                                        updatePage(id, nm, pg).then(
-                                                              (isSuccess) {
-                                                            if (isSuccess) {
-                                                              setState(() {});
-                                                              Scaffold.of(
-                                                                  this.context)
-                                                                  .showSnackBar(
-                                                                const SnackBar(
-                                                                  content: Text(
-                                                                      "Data success"),
-                                                                ),
-                                                              );
-                                                            } else {
-                                                              Scaffold.of(
-                                                                  this.context)
-                                                                  .showSnackBar(
-                                                                const SnackBar(
-                                                                  content: Text(
-                                                                      "Data failed!!!"),
-                                                                ),
-                                                              );
-                                                            }
-                                                          },
-                                                        );
-                                                      }
-                                                    },
-                                                    child: const Text('Update'),
                                                   ),
                                                 ],
                                               ),
+                                            ),
+                                            actions: <Widget>[
+                                              TextButton(
+                                                style: TextButton.styleFrom(
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
+                                                  primary: Colors.black,
+                                                  backgroundColor:
+                                                      const Color.fromARGB(
+                                                          255, 16, 199, 71),
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 15),
+                                                ),
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+
+                                                  if (nm.isEmpty &&
+                                                      pg.isEmpty) {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      const SnackBar(
+                                                          content: Text(
+                                                              'Data Can\'t Be Empty')),
+                                                    );
+                                                  } else if (pg.isEmpty) {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      const SnackBar(
+                                                          content: Text(
+                                                              'Content Can\'t Be Empty')),
+                                                    );
+                                                  } else if (nm.isEmpty) {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      const SnackBar(
+                                                          content: Text(
+                                                              'Name Can\'t Be Empty')),
+                                                    );
+                                                  } else {
+                                                    updatePage(id, nm, pg).then(
+                                                      (isSuccess) {
+                                                        if (isSuccess) {
+                                                          setState(() {});
+                                                          Scaffold.of(
+                                                                  this.context)
+                                                              .showSnackBar(
+                                                            const SnackBar(
+                                                              content: Text(
+                                                                  "Data success"),
+                                                            ),
+                                                          );
+                                                        } else {
+                                                          Scaffold.of(
+                                                                  this.context)
+                                                              .showSnackBar(
+                                                            const SnackBar(
+                                                              content: Text(
+                                                                  "Data failed!!!"),
+                                                            ),
+                                                          );
+                                                        }
+                                                      },
+                                                    );
+                                                  }
+                                                },
+                                                child: const Text('Update'),
+                                              ),
+                                            ],
+                                          ),
                                         );
                                       },
                                       child: const Text('Edit Page'),
@@ -393,17 +396,19 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                         primary: Colors.white,
                                         backgroundColor: const Color.fromARGB(
                                             200, 23, 104, 210),
-                                        textStyle: const TextStyle(fontSize: 15),
-                                      ),),
+                                        textStyle:
+                                            const TextStyle(fontSize: 15),
+                                      ),
+                                    ),
                                     const SizedBox(width: 10),
                                     TextButton(
                                       style: TextButton.styleFrom(
                                         padding: const EdgeInsets.all(16.0),
                                         primary: Colors.white,
-                                        backgroundColor:
-                                        const Color.fromARGB(255, 245, 27, 27),
+                                        backgroundColor: const Color.fromARGB(
+                                            255, 245, 27, 27),
                                         textStyle:
-                                        const TextStyle(fontSize: 15),
+                                            const TextStyle(fontSize: 15),
                                       ),
                                       onPressed: () {
                                         showDialog(
@@ -423,16 +428,18 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                                       if (isSuccess) {
                                                         setState(() {});
                                                         Scaffold.of(
-                                                            this.context)
-                                                            .showSnackBar(const SnackBar(
-                                                            content: Text(
-                                                                "Delete data success")));
+                                                                this.context)
+                                                            .showSnackBar(
+                                                                const SnackBar(
+                                                                    content: Text(
+                                                                        "Delete data success")));
                                                       } else {
                                                         Scaffold.of(
-                                                            this.context)
-                                                            .showSnackBar(const SnackBar(
-                                                            content: Text(
-                                                                "Delete data failed")));
+                                                                this.context)
+                                                            .showSnackBar(
+                                                                const SnackBar(
+                                                                    content: Text(
+                                                                        "Delete data failed")));
                                                       }
                                                     });
                                                   },

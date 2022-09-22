@@ -26,6 +26,9 @@ class _UserControlState extends State<UserControl> {
   }
 
   final formKey = GlobalKey<FormState>();
+  String nm = '';
+  String em = '';
+  String ps = '';
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +63,7 @@ class _UserControlState extends State<UserControl> {
               ),
             ),
             Container(
-              height: screenSize.height * 0.65,
+              height: screenSize.height * 0.6,
               child: ListView(
                 controller: ScrollController(),
                 children: [
@@ -502,18 +505,54 @@ class _UserControlState extends State<UserControl> {
                                   icon: Icon(Icons.more_vert_outlined),
                                   itemBuilder: (context) => [
                                     PopupMenuItem(
-                                        child: Text("Edit"), value: 1),
-                                    PopupMenuItem(
-                                        child: Text("Delete"), value: 2),
-                                    PopupMenuItem(child: Text("View"), value: 3)
+                                        child: Text("Delete"), value: 1),
+                                    PopupMenuItem(child: Text("View"), value: 2)
                                   ],
                                   onSelected: (value) {
                                     if (value == 1) {
-                                      print("you choose Edit...");
-                                      viewUser(context);
-                                    } else if (value == 2) {
                                       print("you choose Delete...");
-                                    } else if (value == 3) {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: const Text("Warning"),
+                                            content: Text(
+                                                "Are you sure want to delete data page ${pgm['idUser']}?"),
+                                            actions: <Widget>[
+                                              TextButton(
+                                                child: const Text("Yes"),
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                  deletePage(pgm['idUser'])
+                                                      .then((isSuccess) {
+                                                    if (isSuccess) {
+                                                      setState(() {});
+                                                      Scaffold.of(this.context)
+                                                          .showSnackBar(
+                                                              const SnackBar(
+                                                                  content: Text(
+                                                                      "Delete data success")));
+                                                    } else {
+                                                      Scaffold.of(this.context)
+                                                          .showSnackBar(
+                                                              const SnackBar(
+                                                                  content: Text(
+                                                                      "Delete data failed")));
+                                                    }
+                                                  });
+                                                },
+                                              ),
+                                              TextButton(
+                                                child: const Text("No"),
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    } else if (value == 2) {
                                       print("you choose View...");
                                       viewUser(context);
                                     }

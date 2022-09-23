@@ -13,8 +13,8 @@ Future<List<dynamic>> getContactList() async {
 
 Future<bool> deleteContact(id) async {
   final response = await http.post(
-    Uri.parse('$cmd/user/deleteUser'),
-    body: jsonEncode({"idUser": id}),
+    Uri.parse('$cmd/contact/delete'),
+    body: jsonEncode({"idContact": id}),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },

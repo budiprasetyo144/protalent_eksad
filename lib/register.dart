@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:protalent_eksad/api/user_api.dart';
+import 'package:protalent_eksad/public_baru/firebase/firebase_auth_methods.dart';
+import 'package:provider/provider.dart';
 // import 'package:protalent_eksad/login.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
@@ -21,24 +24,38 @@ class _RegisterState extends State<Register> {
   bool _isObscure = true;
 
   final formKey = GlobalKey<FormState>();
-  String _usname = '';
-  String _usmail = '';
-  String _uspswd = '';
+  // String _usname = '';
+  // String _usmail = '';
+  // String _uspswd = '';
+  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
-  void chat({
-    required final int phone,
-    required String message,
-  }) async {
-    String url() {
-      return "https://api.whatsapp.com/send?phone=$phone&text=${Uri.parse(message)}";
-    }
-
-    if (await canLaunch(url())) {
-      await launch(url());
-    } else {
-      throw 'Could not launch ${url()}';
-    }
+  void signUpUser() async {
+    context.read<FirebaseAuthMethods>().signUpWithEmail(
+          username: usernameController.text,
+          email: emailController.text,
+          password: passwordController.text,
+          context: context,
+        );
+    signUp(usernameController.value.text, emailController.value.text,
+        passwordController.value.text);
   }
+
+  // void chat({
+  //   required final int phone,
+  //   required String message,
+  // }) async {
+  //   String url() {
+  //     return "https://api.whatsapp.com/send?phone=$phone&text=${Uri.parse(message)}";
+  //   }
+
+  //   if (await canLaunch(url())) {
+  //     await launch(url());
+  //   } else {
+  //     throw 'Could not launch ${url()}';
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +155,7 @@ class _RegisterState extends State<Register> {
                               height: 40,
                               width: screenSize.width * 0.2,
                               child: TextFormField(
+                                controller: usernameController,
                                 textAlign: TextAlign.start,
                                 decoration: InputDecoration(
                                   labelText: "Username",
@@ -145,7 +163,12 @@ class _RegisterState extends State<Register> {
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(5.0)),
                                 ),
-                                onChanged: (value) => _usname = value,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "";
+                                  }
+                                  return null;
+                                },
                               ),
                             ),
                           ],
@@ -173,6 +196,7 @@ class _RegisterState extends State<Register> {
                           height: 40,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
+                            controller: emailController,
                             textAlign: TextAlign.start,
                             decoration: InputDecoration(
                               labelText: "Email",
@@ -180,7 +204,12 @@ class _RegisterState extends State<Register> {
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0)),
                             ),
-                            onChanged: (value) => _usmail = value,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return "";
+                              }
+                              return null;
+                            },
                           ),
                         ),
                         const Spacer(
@@ -206,6 +235,7 @@ class _RegisterState extends State<Register> {
                           height: 40,
                           width: screenSize.width * 0.2,
                           child: TextFormField(
+                            controller: passwordController,
                             textAlign: TextAlign.start,
                             obscureText: _isObscure,
                             decoration: InputDecoration(
@@ -226,7 +256,12 @@ class _RegisterState extends State<Register> {
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0)),
                             ),
-                            onChanged: (value) => _uspswd = value,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return "";
+                              }
+                              return null;
+                            },
                           ),
                         ),
                         const Spacer(
@@ -251,12 +286,7 @@ class _RegisterState extends State<Register> {
                               height: 30,
                               width: screenSize.width * 0.09,
                               child: ElevatedButton(
-                                onPressed: () {
-                                  chat(
-                                      phone: 6281807890777,
-                                      message:
-                                          'Form Register Client Protalent \n\nUsername = $_usname \nemail address = $_usmail \npassword = $_uspswd \n\ndengan ini saya ingin mengajukan regristrasi akun baru.\nTerimakasih.');
-                                },
+                                onPressed: signUpUser,
                                 child: const Text('REGISTER'),
                               ),
                             ),

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 // import 'admin/dashboard.dart';
 import 'package:flutter/services.dart';
 import 'package:protalent_eksad/admin/new_sidemenu.dart';
+import 'package:protalent_eksad/public_baru/firebase/firebase_auth_methods.dart';
+import 'package:provider/provider.dart';
 
 void setPageTitle(String title, BuildContext context) {
   SystemChrome.setApplicationSwitcherDescription(ApplicationSwitcherDescription(
@@ -28,6 +30,17 @@ class _loginState extends State<login> {
   String _uspswd = '';
   TextEditingController _editingController = TextEditingController();
   TextEditingController _editingController2 = TextEditingController();
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  void loginUser() {
+    context.read<FirebaseAuthMethods>().loginWithEmail(
+          email: emailController.text,
+          password: passwordController.text,
+          context: context,
+        );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -293,7 +306,7 @@ class _loginState extends State<login> {
                                     },
                                   ),
                                 );
-                               // Navigator.pushNamed(context, '/admin');
+                                // Navigator.pushNamed(context, '/admin');
                               } else if (formKey.currentState!.validate() &&
                                   _usmail == 'client@client.com' &&
                                   _uspswd == 'clientpage') {
@@ -410,12 +423,15 @@ class _loginState extends State<login> {
                                         },
                                       ),
                                     );
-                                   // Navigator.pushNamed(context, '/admin');
-                                  } else if (formKey.currentState!.validate() &&
-                                      _usmail == 'client@client.com' &&
-                                      _uspswd == 'clientpage') {
-                                    Navigator.pushNamed(context, '/client');
+                                    // Navigator.pushNamed(context, '/admin');
+                                  } else {
+                                    loginUser();
                                   }
+                                  // else if (formKey.currentState!.validate() &&
+                                  //     _usmail == 'client@client.com' &&
+                                  //     _uspswd == 'clientpage') {
+                                  //   Navigator.pushNamed(context, '/client');
+                                  // }
                                   //   else {
                                   //   showDialog<String>(
                                   //     context: context,

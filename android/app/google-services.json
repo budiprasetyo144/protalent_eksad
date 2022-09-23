@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "769961254578",
+    "project_id": "protalent-eksad",
+    "storage_bucket": "protalent-eksad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769961254578:android:2fca61719a0db4ae9773ab",
+        "android_client_info": {
+          "package_name": "eksad.com.protalent_eksad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769961254578-iq86qqrseti9f8act0s2ivuekh63up59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOiiXi2_qHMiH88OQQRG-oTqVAg5BtgMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769961254578-iq86qqrseti9f8act0s2ivuekh63up59.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "769961254578-i92cdp99g9u1kpbni5g1fbu8rrd121og.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "eksad.com.protalentEksad"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

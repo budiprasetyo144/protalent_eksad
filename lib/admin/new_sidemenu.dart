@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:protalent_eksad/admin/client/client_dashboard.dart';
+import 'package:protalent_eksad/admin/contact/contactList.dart';
 import 'package:protalent_eksad/admin/dashboard/desc_talent.dart';
 import 'package:protalent_eksad/admin/dashboard/main_dashboard.dart';
 import 'package:protalent_eksad/admin/master_data/master_data.dart';
@@ -17,7 +18,6 @@ class DashboardAdmin extends StatefulWidget {
 }
 
 class _DashboardAdminState extends State<DashboardAdmin> {
-
   PageController page = PageController();
   @override
   Widget build(BuildContext context) {
@@ -172,6 +172,14 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 },
                 icon: const Icon(Icons.phone_android),
               ),
+              SideMenuItem(
+                priority: 7,
+                title: 'Contact List',
+                onTap: () {
+                  page.jumpToPage(7);
+                },
+                icon: const Icon(Icons.contact_phone),
+              ),
             ],
           ),
           Expanded(
@@ -181,16 +189,15 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 MainDashboard(
                   all: GestureDetector(
                     onTap: () {
-                      page.jumpToPage(7);
+                      page.jumpToPage(8);
                     },
-                    child:  GridView.count(
+                    child: GridView.count(
                       childAspectRatio: (itemWidth / itemHeight),
                       controller: ScrollController(),
                       crossAxisCount: 3,
                       mainAxisSpacing: 50,
                       crossAxisSpacing: 50,
                       children: [
-
                         Profil(
                           name: "Bagas",
                           gender: "Male",
@@ -376,16 +383,15 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                   ),
                   available: GestureDetector(
                     onTap: () {
-                      page.jumpToPage(7);
+                      page.jumpToPage(8);
                     },
-                    child:  GridView.count(
+                    child: GridView.count(
                       childAspectRatio: (itemWidth / itemHeight),
                       controller: ScrollController(),
                       crossAxisCount: 3,
                       mainAxisSpacing: 50,
                       crossAxisSpacing: 50,
                       children: [
-
                         Profil(
                           name: "Bagas",
                           gender: "Male",
@@ -571,16 +577,15 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                   ),
                   hired: GestureDetector(
                     onTap: () {
-                      page.jumpToPage(7);
+                      page.jumpToPage(8);
                     },
-                    child:  GridView.count(
+                    child: GridView.count(
                       childAspectRatio: (itemWidth / itemHeight),
                       controller: ScrollController(),
                       crossAxisCount: 3,
                       mainAxisSpacing: 50,
                       crossAxisSpacing: 50,
                       children: [
-
                         Profil(
                           name: "Bagas",
                           gender: "Male",
@@ -771,6 +776,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 UserControl(),
                 TalentManagement(),
                 SosmedDashboard(),
+                contactList(),
                 SelectTalent(),
               ],
             ),
@@ -780,5 +786,3 @@ class _DashboardAdminState extends State<DashboardAdmin> {
     );
   }
 }
-
-

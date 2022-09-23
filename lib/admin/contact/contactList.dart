@@ -605,13 +605,13 @@ class _contactListState extends State<contactList> {
                                           return AlertDialog(
                                             title: const Text("Warning"),
                                             content: Text(
-                                                "Are you sure want to delete data page ${pgm['idUser']}?"),
+                                                "Are you sure want to delete data page ${pgm['idContact']}?"),
                                             actions: <Widget>[
                                               TextButton(
                                                 child: const Text("Yes"),
                                                 onPressed: () {
                                                   Navigator.pop(context);
-                                                  deletePage(pgm['idUser'])
+                                                  deleteContact(pgm['idContact'])
                                                       .then((isSuccess) {
                                                     if (isSuccess) {
                                                       setState(() {});

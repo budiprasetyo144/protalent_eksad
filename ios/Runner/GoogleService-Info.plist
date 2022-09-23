@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>769961254578-i92cdp99g9u1kpbni5g1fbu8rrd121og.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.769961254578-i92cdp99g9u1kpbni5g1fbu8rrd121og</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPueW22pLSKiqaZXw0QliUnRvZCVbJV0I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>769961254578</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>eksad.com.protalentEksad</string>
+	<key>PROJECT_ID</key>
+	<string>protalent-eksad</string>
+	<key>STORAGE_BUCKET</key>
+	<string>protalent-eksad.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:769961254578:ios:05fbc46c3c895bce9773ab</string>
+</dict>
+</plist>

@@ -143,11 +143,11 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                   (isSuccess) {
                                     if (isSuccess) {
                                       setState(() {});
-                                      Scaffold.of(this.context).showSnackBar(
+                                      ScaffoldMessenger.of(this.context).showSnackBar(
                                           const SnackBar(
                                               content: Text("Data success")));
                                     } else {
-                                      Scaffold.of(this.context).showSnackBar(
+                                      ScaffoldMessenger.of(this.context).showSnackBar(
                                           const SnackBar(
                                               content: Text("Data failed!!!")));
                                     }
@@ -362,7 +362,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                                       (isSuccess) {
                                                         if (isSuccess) {
                                                           setState(() {});
-                                                          Scaffold.of(
+                                                          ScaffoldMessenger.of(
                                                                   this.context)
                                                               .showSnackBar(
                                                             const SnackBar(
@@ -371,7 +371,7 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                                             ),
                                                           );
                                                         } else {
-                                                          Scaffold.of(
+                                                          ScaffoldMessenger.of(
                                                                   this.context)
                                                               .showSnackBar(
                                                             const SnackBar(
@@ -427,14 +427,14 @@ class _PagesDashboardState extends State<PagesDashboard> {
                                                         .then((isSuccess) {
                                                       if (isSuccess) {
                                                         setState(() {});
-                                                        Scaffold.of(
+                                                        ScaffoldMessenger.of(
                                                                 this.context)
                                                             .showSnackBar(
                                                                 const SnackBar(
                                                                     content: Text(
                                                                         "Delete data success")));
                                                       } else {
-                                                        Scaffold.of(
+                                                        ScaffoldMessenger.of(
                                                                 this.context)
                                                             .showSnackBar(
                                                                 const SnackBar(

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protalent_eksad/admin/client/clientControl_api.dart';
 
@@ -330,7 +331,7 @@ class _UserControlState extends State<UserControl> {
                                                         children: [
                                                           Icon(
                                                             Icons
-                                                                .add_home_work_sharp,
+                                                                .email_outlined,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -409,8 +410,8 @@ class _UserControlState extends State<UserControl> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            Icons
-                                                                .email_outlined,
+                                                            FontAwesomeIcons
+                                                                .idBadge,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize

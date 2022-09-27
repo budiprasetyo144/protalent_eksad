@@ -26,11 +26,34 @@ Future<bool> deleteTalent(id) async {
   }
 }
 
-
-Future<bool> createTalent(name, email, password) async {
-  final response = await http.post(
-      Uri.parse('$cmd/register/save'),
-      body: jsonEncode({"fullname": name, "email": email,"password": password}),
+Future<bool> createTalent(
+    idTalent,
+    name,
+    gender,
+    age,
+    workExperience,
+    expectedSalary,
+    statusTalent,
+    latestWorkPeriode,
+    locationWork,
+    latestCompany,
+    latestPosition,
+    idUser) async {
+  final response = await http.post(Uri.parse('$cmd/talent/save'),
+      body: jsonEncode({
+        "idTalent": idTalent,
+        "name": name,
+        "gender": gender,
+        "age": age,
+        "workExperience": workExperience,
+        "expectedSalary": expectedSalary,
+        "statusTalent": statusTalent,
+        "latestWorkPeriode": latestWorkPeriode,
+        "locationWork": locationWork,
+        "latestCompany": latestCompany,
+        "latestPosition": latestPosition,
+        "idUser": idUser,
+      }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       });
@@ -41,5 +64,3 @@ Future<bool> createTalent(name, email, password) async {
     return false;
   }
 }
-
-

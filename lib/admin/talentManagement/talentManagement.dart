@@ -30,10 +30,18 @@ class _TalentManagementsState extends State<TalentManagements> {
   }
 
   final formKey = GlobalKey<FormState>();
+  String id = '';
   String nm = '';
-  String em = '';
-  String ps = '';
-
+  String gd = '';
+  String ag = '';
+  String we = '';
+  String es = '';
+  String st = '';
+  String lwp = '';
+  String lw = '';
+  String lc = '';
+  String lp = '';
+  String iu = '';
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -65,6 +73,688 @@ class _TalentManagementsState extends State<TalentManagements> {
                       color: Colors.blueAccent[200]),
                 ),
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ElevatedButton(
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(16.0),
+                    primary: Colors.white,
+                    backgroundColor: Colors.blue,
+                    textStyle: const TextStyle(fontSize: 15),
+                  ),
+                  onPressed: () {
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        content: Form(
+                            child: Container(
+                          padding: EdgeInsets.only(
+                              left: screenSize.width * 0.045,
+                              top: screenSize.height * 0.01),
+                          width: screenSize.width * 0.50,
+                          height: screenSize.height * 0.7,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              const Spacer(),
+                              Container(
+                                padding: EdgeInsets.only(
+                                    left: screenSize.width * 0.15),
+                                height: screenSize.width * 0.03,
+                                child: Image.asset(
+                                    "assets/logo/logo_protalent.png"),
+                              ),
+                              const SizedBox(height: 20),
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.drive_file_rename_outline,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Name Talent",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => nm = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Name Talent tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Name Talent",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(width: 30),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.assignment_ind,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Age",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => ag = value,
+                                              textAlign: TextAlign.start,
+                                              decoration: InputDecoration(
+                                                  labelText: "Age",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Age tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons
+                                                .personCircleQuestion,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Status Talent",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => st = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Status Talent tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Status Talent",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.venusMars,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Gender",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => gd = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Gender tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Gender",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.building,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Latest Company",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => lc = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Latest Company tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Latest Company",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.briefcase,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Latest Position",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => lp = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Latest Position tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Latest Position",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.businessTime,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Latest Work Periode",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => lwp = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Latest Work Periode tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText:
+                                                      "Latest Work Periode",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.locationDot,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Location Work",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => lw = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Location Work tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Location Work",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.moneyCheckDollar,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Expected Salary",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => es = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Expected Salary tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Expected Salary",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 30,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            FontAwesomeIcons.building,
+                                            color: Colors.grey[500],
+                                            size: screenSize.width * 0.01,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          const Text(
+                                            "Work Experience",
+                                            style: TextStyle(fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 60,
+                                            width: screenSize.width * 0.2,
+                                            child: TextFormField(
+                                              onChanged: (value) => we = value,
+                                              textAlign: TextAlign.start,
+                                              // readOnly: true,
+                                              validator: (value) {
+                                                if (value == null ||
+                                                    value.isEmpty) {
+                                                  return "Work Experience tidak boleh kosong";
+                                                }
+                                                return null;
+                                              },
+                                              decoration: InputDecoration(
+                                                  labelText: "Work Experience",
+                                                  labelStyle:
+                                                      TextStyle(fontSize: 13),
+                                                  hintStyle: const TextStyle(),
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5.0),
+                                                  )),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )),
+                        actions: <Widget>[
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(16.0),
+                              primary: Colors.black,
+                              backgroundColor:
+                                  const Color.fromARGB(255, 16, 199, 71),
+                              textStyle: const TextStyle(fontSize: 15),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              createTalent(id, nm, gd, ag, we, es, st, lwp, lw,
+                                      lc, lp, iu)
+                                  .then(
+                                (isSuccess) {
+                                  if (isSuccess) {
+                                    setState(() {});
+                                    Scaffold.of(this.context).showSnackBar(
+                                        const SnackBar(
+                                            content: Text("Data success")));
+                                  } else {
+                                    Scaffold.of(this.context).showSnackBar(
+                                        const SnackBar(
+                                            content: Text("Data failed!!!")));
+                                  }
+                                },
+                              );
+                            },
+                            child: const Text('save'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: const Text('Add Pages'),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 15,
             ),
             Container(
               height: screenSize.height * 0.6,
@@ -165,8 +855,7 @@ class _TalentManagementsState extends State<TalentManagements> {
 
                               // final passwordController =
                               //     TextEditingController();
-
-                              void viewUser(BuildContext context) {
+                              void EditTalent(BuildContext context) {
                                 var screenSize = MediaQuery.of(context).size;
                                 showDialog(
                                     context: context,
@@ -216,7 +905,1095 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                              FontAwesomeIcons.idCard,
+                                                              FontAwesomeIcons
+                                                                  .idCard,
+                                                              color: Colors
+                                                                  .grey[500],
+                                                              size: screenSize
+                                                                      .width *
+                                                                  0.01),
+                                                          const SizedBox(
+                                                              width: 10),
+                                                          const Text(
+                                                              "Id Talent",
+                                                              style: TextStyle(
+                                                                  fontSize: 13))
+                                                        ],
+                                                      ),
+                                                      const SizedBox(height: 5),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  idTalentController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              decoration: InputDecoration(
+                                                                  labelText:
+                                                                      "Id Talent",
+                                                                  labelStyle:
+                                                                      TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                  border: OutlineInputBorder(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              5.0))),
+                                                              readOnly: true,
+                                                             
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         id =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Id Talent tidak boleh kosong";
+                                                                } else {
+                                                                  return null;
+                                                                }
+                                                              },
+                                                            ),
+                                                          )
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                  const SizedBox(width: 30),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .assignment_ind,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Age",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  ageController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Age",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                              // readOnly: true,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         ag =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Age tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .drive_file_rename_outline,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Name Talent",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  nameTalentController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         nm =
+                                                              //             value,
+                                                              // readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Name Talent tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Name Talent",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .venusMars,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Gender",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  genderController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         gd =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Gender tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Gender",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .building,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Latest Company",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  latestCompanyController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         lc =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Latest Company tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Latest Company",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .briefcase,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Latest Position",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  latestPositionController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         lp =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Latest Position tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Latest Position",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .businessTime,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Latest Work Periode",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  latestWorkPeriodeController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         lwp =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Latest Work Periode tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Latest Work Periode",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .locationDot,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Location Work",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  locationWorkController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         lw =
+                                                              //             value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Location Work tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Location Work",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .moneyCheckDollar,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Expected Salary",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  expectedSalaryController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // onChanged:
+                                                              //     (value) =>
+                                                              //         es =
+                                                              //             value,
+                                                              // readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Expected Salary tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Expected Salary",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .building,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Work Experience",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  workExperienceController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged: (value) => we = value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Work Experience tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Work Experience",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .personCircleQuestion,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Status Talent",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  statusTalentController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged: (value) => st = value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Status Talent tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Status Talent",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .circleQuestion,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Status Active",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  statusActiveController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Status Active tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Status Active",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        )),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            style: TextButton.styleFrom(
+                                              padding:
+                                                  const EdgeInsets.all(16.0),
+                                              primary: Colors.black,
+                                              backgroundColor:
+                                                  const Color.fromARGB(
+                                                      255, 16, 199, 71),
+                                              textStyle:
+                                                  const TextStyle(fontSize: 15),
+                                            ),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                              createTalent(
+                                                      pgm['idTalent'],
+                                                      nameTalentController.value.text,
+                                                      genderController.value.text,
+                                                      ageController.value.text,
+                                                      workExperienceController.value.text,
+                                                      expectedSalaryController.value.text,
+                                                      statusTalentController.value.text,
+                                                      latestWorkPeriodeController.value.text,
+                                                      locationWorkController.value.text,
+                                                      latestCompanyController.value.text,
+                                                      latestPositionController.value.text,
+                                                      iu)
+                                                  .then(
+                                                (isSuccess) {
+                                                  if (isSuccess) {
+                                                    setState(() {});
+                                                    Scaffold.of(this.context)
+                                                        .showSnackBar(
+                                                            const SnackBar(
+                                                                content: Text(
+                                                                    "Data success")));
+                                                  } else {
+                                                    Scaffold.of(this.context)
+                                                        .showSnackBar(
+                                                            const SnackBar(
+                                                                content: Text(
+                                                                    "Data failed!!!")));
+                                                  }
+                                                },
+                                              );
+                                            },
+                                            child: const Text('save'),
+                                          ),
+                                        ],
+                                      );
+                                    });
+                              }
+
+                              void viewTalent(BuildContext context) {
+                                var screenSize = MediaQuery.of(context).size;
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      // var pgm = snapshot.data;
+                                      // print(pgm);
+
+                                      // if (snapshot.hasError ||
+                                      //     snapshot.data == null ||
+                                      //     snapshot.connectionState == ConnectionState.waiting) {
+                                      //   return const CircularProgressIndicator();
+                                      // }
+                                      return AlertDialog(
+                                        content: Form(
+                                            child: Container(
+                                          padding: EdgeInsets.only(
+                                              left: screenSize.width * 0.045,
+                                              top: screenSize.height * 0.01),
+                                          width: screenSize.width * 0.50,
+                                          height: screenSize.height * 0.75,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              const Spacer(),
+                                              Container(
+                                                padding: EdgeInsets.only(
+                                                    left: screenSize.width *
+                                                        0.15),
+                                                height: screenSize.width * 0.03,
+                                                child: Image.asset(
+                                                    "assets/logo/logo_protalent.png"),
+                                              ),
+                                              const SizedBox(height: 20),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                              FontAwesomeIcons
+                                                                  .idCard,
                                                               color: Colors
                                                                   .grey[500],
                                                               size: screenSize
@@ -365,7 +2142,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            Icons.drive_file_rename_outline,
+                                                            Icons
+                                                                .drive_file_rename_outline,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -444,7 +2222,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.venusMars,
+                                                            FontAwesomeIcons
+                                                                .venusMars,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -524,7 +2303,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.building,
+                                                            FontAwesomeIcons
+                                                                .building,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -603,7 +2383,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.briefcase,
+                                                            FontAwesomeIcons
+                                                                .briefcase,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -683,7 +2464,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.businessTime,
+                                                            FontAwesomeIcons
+                                                                .businessTime,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -762,7 +2544,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.locationDot,
+                                                            FontAwesomeIcons
+                                                                .locationDot,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -842,7 +2625,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.moneyCheckDollar,
+                                                            FontAwesomeIcons
+                                                                .moneyCheckDollar,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -921,7 +2705,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.building,
+                                                            FontAwesomeIcons
+                                                                .building,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -1001,7 +2786,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.personCircleQuestion,
+                                                            FontAwesomeIcons
+                                                                .personCircleQuestion,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -1080,7 +2866,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons.circleQuestion,
+                                                            FontAwesomeIcons
+                                                                .circleQuestion,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -1177,11 +2964,16 @@ class _TalentManagementsState extends State<TalentManagements> {
                                   icon: Icon(Icons.more_vert_outlined),
                                   itemBuilder: (context) => [
                                     PopupMenuItem(
-                                        child: Text("Delete"), value: 1),
-                                    PopupMenuItem(child: Text("View"), value: 2)
+                                        child: Text("Edit"), value: 1),
+                                    PopupMenuItem(
+                                        child: Text("Delete"), value: 2),
+                                    PopupMenuItem(child: Text("View"), value: 3)
                                   ],
                                   onSelected: (value) {
                                     if (value == 1) {
+                                      print("you choose Edit...");
+                                      EditTalent(context);
+                                    } else if (value == 2) {
                                       print("you choose Delete...");
                                       showDialog(
                                         context: context,
@@ -1224,9 +3016,9 @@ class _TalentManagementsState extends State<TalentManagements> {
                                           );
                                         },
                                       );
-                                    } else if (value == 2) {
+                                    } else if (value == 3) {
                                       print("you choose View...");
-                                      viewUser(context);
+                                      viewTalent(context);
                                     }
                                   },
                                 ))

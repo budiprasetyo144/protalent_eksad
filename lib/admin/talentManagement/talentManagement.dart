@@ -1199,13 +1199,13 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       .then((isSuccess) {
                                                     if (isSuccess) {
                                                       setState(() {});
-                                                      Scaffold.of(this.context)
+                                                      ScaffoldMessenger.of(this.context)
                                                           .showSnackBar(
                                                               const SnackBar(
                                                                   content: Text(
                                                                       "Delete data success")));
                                                     } else {
-                                                      Scaffold.of(this.context)
+                                                      ScaffoldMessenger.of(this.context)
                                                           .showSnackBar(
                                                               const SnackBar(
                                                                   content: Text(

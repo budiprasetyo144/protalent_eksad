@@ -32,14 +32,15 @@ class _RegisterState extends State<Register> {
   final passwordController = TextEditingController();
 
   void signUpUser() async {
+    signUp(usernameController.value.text, emailController.value.text,
+        passwordController.value.text);
     context.read<FirebaseAuthMethods>().signUpWithEmail(
           username: usernameController.text,
           email: emailController.text,
           password: passwordController.text,
           context: context,
         );
-    signUp(usernameController.value.text, emailController.value.text,
-        passwordController.value.text);
+
   }
 
   // void chat({

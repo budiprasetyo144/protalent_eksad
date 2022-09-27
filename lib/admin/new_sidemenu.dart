@@ -8,6 +8,7 @@ import 'package:protalent_eksad/admin/master_data/master_data.dart';
 import 'package:protalent_eksad/admin/pages/pages_dashboard.dart';
 import 'package:protalent_eksad/admin/setting_dashboard.dart';
 import 'package:protalent_eksad/admin/sosmed_dashboard.dart';
+import 'package:protalent_eksad/admin/talentManagement/talentManagement.dart';
 import 'package:protalent_eksad/admin/talent_manage/talent_manage.dart';
 
 class DashboardAdmin extends StatefulWidget {
@@ -774,7 +775,7 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 PagesDashboard(),
                 MasterData(),
                 UserControl(),
-                TalentManagement(),
+                TalentManagements(),
                 SosmedDashboard(),
                 contactList(),
                 SelectTalent(),

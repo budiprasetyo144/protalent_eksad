@@ -719,9 +719,9 @@ class _TalentManagementsState extends State<TalentManagements> {
                           TextButton(
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.all(16.0),
-                              primary: Colors.black,
+                              primary: Colors.white,
                               backgroundColor:
-                                  const Color.fromARGB(255, 16, 199, 71),
+                                  Colors.blue,
                               textStyle: const TextStyle(fontSize: 15),
                             ),
                             onPressed: () {
@@ -749,7 +749,7 @@ class _TalentManagementsState extends State<TalentManagements> {
                       ),
                     );
                   },
-                  child: const Text('Add Pages'),
+                  child: const Text('Add Talent'),
                 ),
               ],
             ),
@@ -1894,10 +1894,9 @@ class _TalentManagementsState extends State<TalentManagements> {
                                             style: TextButton.styleFrom(
                                               padding:
                                                   const EdgeInsets.all(16.0),
-                                              primary: Colors.black,
+                                              primary: Colors.white,
                                               backgroundColor:
-                                                  const Color.fromARGB(
-                                                      255, 16, 199, 71),
+                                                  Colors.blue,
                                               textStyle:
                                                   const TextStyle(fontSize: 15),
                                             ),

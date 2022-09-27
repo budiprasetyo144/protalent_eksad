@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protalent_eksad/admin/client/clientControl_api.dart';
 import 'package:protalent_eksad/admin/contact/contactList_api.dart';
@@ -256,8 +257,8 @@ class _contactListState extends State<contactList> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            Icons
-                                                                .drive_file_rename_outline,
+                                                            FontAwesomeIcons
+                                                                .mailBulk,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -336,7 +337,7 @@ class _contactListState extends State<contactList> {
                                                         children: [
                                                           Icon(
                                                             Icons
-                                                                .add_home_work_sharp,
+                                                                .phone_android,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -416,7 +417,7 @@ class _contactListState extends State<contactList> {
                                                         children: [
                                                           Icon(
                                                             Icons
-                                                                .add_home_work_sharp,
+                                                                .date_range,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -497,7 +498,7 @@ class _contactListState extends State<contactList> {
                                                         children: [
                                                           Icon(
                                                             Icons
-                                                                .email_outlined,
+                                                                .message,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize

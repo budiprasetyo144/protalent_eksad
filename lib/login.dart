@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // import 'admin/dashboard.dart';
 import 'package:flutter/services.dart';
 import 'package:protalent_eksad/admin/new_sidemenu.dart';
-import 'package:protalent_eksad/public_baru/firebase/firebase_auth_methods.dart';
+import 'package:protalent_eksad/firebase/firebase_auth_methods.dart';
 import 'package:provider/provider.dart';
 
 void setPageTitle(String title, BuildContext context) {
@@ -365,8 +365,19 @@ class _loginState extends State<login> {
                             onChanged: (value) => _uspswd = value,
                           ),
                         ),
+
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            TextButton(onPressed: (){
+                              Navigator.pushNamed(context, '/reset_password');
+                            }, child: Text('Forgot Password?')),
+                            SizedBox(width: 52,)
+                          ],
+                        ),
                         const Spacer(
-                          flex: 3,
+                          flex: 2,
                         ),
                         Row(
                           children: [

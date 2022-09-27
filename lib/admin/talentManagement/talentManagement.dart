@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protalent_eksad/admin/client/clientControl_api.dart';
+import 'package:protalent_eksad/admin/contact/contactList_api.dart';
+import 'package:protalent_eksad/admin/talentManagement/talentManagement_api.dart';
+import 'package:protalent_eksad/admin/talent_manage/talent_manage.dart';
 
-class UserControl extends StatefulWidget {
-  const UserControl({Key? key}) : super(key: key);
+class TalentManagements extends StatefulWidget {
+  const TalentManagements({Key? key}) : super(key: key);
 
   @override
-  State<UserControl> createState() => _UserControlState();
+  State<TalentManagements> createState() => _TalentManagementsState();
 }
 
-class _UserControlState extends State<UserControl> {
+class _TalentManagementsState extends State<TalentManagements> {
   void apiService(BuildContext context) {
     FutureBuilder<List<dynamic>>(
         future: getUserControl(),
@@ -54,7 +57,7 @@ class _UserControlState extends State<UserControl> {
               height: screenSize.height * 0.15,
               child: Center(
                 child: Text(
-                  'Data User',
+                  'Talent Management',
                   style: GoogleFonts.poppins(
                       height: 1.5,
                       fontSize: 31,
@@ -69,7 +72,7 @@ class _UserControlState extends State<UserControl> {
                 controller: ScrollController(),
                 children: [
                   FutureBuilder<List<dynamic>>(
-                      future: getUserControl(),
+                      future: getTalentList(),
                       builder: (BuildContext context, AsyncSnapshot snapshot) {
                         if (snapshot.hasError ||
                             snapshot.data == null ||
@@ -84,18 +87,18 @@ class _UserControlState extends State<UserControl> {
                             columns: const [
                               DataColumn(
                                   label: Text(
-                                "ID",
+                                "Id Talent",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               )),
                               DataColumn(
                                   label: Text(
-                                "Nama User",
+                                "Talent Name",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               )),
                               // DataColumn(label: Text("Telp Rumah Sakit")),
                               DataColumn(
                                   label: Text(
-                                "Email User",
+                                "Position",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               )),
                               // DataColumn(label: Text("Nama PIC")),
@@ -103,7 +106,12 @@ class _UserControlState extends State<UserControl> {
                               // DataColumn(label: Text("Email PIC")),
                               DataColumn(
                                   label: Text(
-                                "STATUS",
+                                "Expected Salary",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )),
+                              DataColumn(
+                                  label: Text(
+                                "Status",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               )),
                               DataColumn(
@@ -115,15 +123,37 @@ class _UserControlState extends State<UserControl> {
                             rows: List.generate(snapshot.data.length, (index) {
                               var pgm = snapshot.data[index];
 
-                              final nameUserController = TextEditingController()
-                                ..text = pgm['username'].toString();
-                              final passwordUserController =
+                              final idTalentController = TextEditingController()
+                                ..text = pgm['idTalent'].toString();
+                              final ageController = TextEditingController(
+                                  text: pgm['age'].toString());
+                              final expectedSalaryController =
                                   TextEditingController(
-                                      text: pgm['password'].toString());
-                              final emailUserController = TextEditingController(
-                                  text: pgm['email'].toString());
-                              final idRoleController = TextEditingController(
-                                  text: pgm['idRole'].toString());
+                                      text: pgm['expectedSalary'].toString());
+                              final genderController = TextEditingController(
+                                  text: pgm['gender'].toString());
+                              final latestCompanyController =
+                                  TextEditingController(
+                                      text: pgm['latestCompany'].toString());
+                              final latestPositionController =
+                                  TextEditingController()
+                                    ..text = pgm['latestPosition'].toString();
+                              final latestWorkPeriodeController =
+                                  TextEditingController(
+                                      text:
+                                          pgm['latestWorkPeriode'].toString());
+                              final locationWorkController =
+                                  TextEditingController(
+                                      text: pgm['locationWork'].toString());
+                              final nameTalentController =
+                                  TextEditingController(
+                                      text: pgm['nameTalent'].toString());
+                              final statusSalaryController =
+                                  TextEditingController(
+                                      text: pgm['statusSalary'].toString());
+                              final workExperienceController =
+                                  TextEditingController(
+                                      text: pgm['workExperience'].toString());
                               // final statusController = TextEditingController(
                               //     text: pgm['status'].toString());
 
@@ -150,7 +180,7 @@ class _UserControlState extends State<UserControl> {
                                               left: screenSize.width * 0.045,
                                               top: screenSize.height * 0.01),
                                           width: screenSize.width * 0.50,
-                                          height: screenSize.height * 0.4,
+                                          height: screenSize.height * 0.52,
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -190,7 +220,7 @@ class _UserControlState extends State<UserControl> {
                                                           const SizedBox(
                                                               width: 10),
                                                           const Text(
-                                                              "Nama User",
+                                                              "Id Talent",
                                                               style: TextStyle(
                                                                   fontSize: 13))
                                                         ],
@@ -206,13 +236,13 @@ class _UserControlState extends State<UserControl> {
                                                             child:
                                                                 TextFormField(
                                                               controller:
-                                                                  nameUserController,
+                                                                  idTalentController,
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
                                                               decoration: InputDecoration(
                                                                   labelText:
-                                                                      "Nama User",
+                                                                      "Id Talent",
                                                                   labelStyle:
                                                                       TextStyle(
                                                                           fontSize:
@@ -228,7 +258,7 @@ class _UserControlState extends State<UserControl> {
                                                                         null ||
                                                                     value
                                                                         .isEmpty) {
-                                                                  return "Nama User tidak boleh kosong";
+                                                                  return "Id Talent tidak boleh kosong";
                                                                 } else {
                                                                   return null;
                                                                 }
@@ -251,8 +281,8 @@ class _UserControlState extends State<UserControl> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            Icons
-                                                                .drive_file_rename_outline,
+                                                            FontAwesomeIcons
+                                                                .mailBulk,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -263,7 +293,7 @@ class _UserControlState extends State<UserControl> {
                                                             width: 10,
                                                           ),
                                                           const Text(
-                                                            "Password User",
+                                                            "Age",
                                                             style: TextStyle(
                                                                 fontSize: 13),
                                                           ),
@@ -282,14 +312,14 @@ class _UserControlState extends State<UserControl> {
                                                             child:
                                                                 TextFormField(
                                                               controller:
-                                                                  passwordUserController,
+                                                                  ageController,
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
                                                               decoration:
                                                                   InputDecoration(
                                                                       labelText:
-                                                                          "Password User",
+                                                                          "Age",
                                                                       labelStyle: TextStyle(
                                                                           fontSize:
                                                                               13),
@@ -305,7 +335,7 @@ class _UserControlState extends State<UserControl> {
                                                                         null ||
                                                                     value
                                                                         .isEmpty) {
-                                                                  return "Password User tidak boleh kosong";
+                                                                  return "Age tidak boleh kosong";
                                                                 }
                                                                 return null;
                                                               },
@@ -330,8 +360,7 @@ class _UserControlState extends State<UserControl> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            Icons
-                                                                .email_outlined,
+                                                            Icons.phone_android,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -342,7 +371,7 @@ class _UserControlState extends State<UserControl> {
                                                             width: 10,
                                                           ),
                                                           const Text(
-                                                            "Email User",
+                                                            "Expected Salary",
                                                             style: TextStyle(
                                                                 fontSize: 13),
                                                           ),
@@ -361,7 +390,7 @@ class _UserControlState extends State<UserControl> {
                                                             child:
                                                                 TextFormField(
                                                               controller:
-                                                                  emailUserController,
+                                                                  expectedSalaryController,
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
@@ -372,14 +401,14 @@ class _UserControlState extends State<UserControl> {
                                                                         null ||
                                                                     value
                                                                         .isEmpty) {
-                                                                  return "Email User tidak boleh kosong";
+                                                                  return "Expected Salary tidak boleh kosong";
                                                                 }
                                                                 return null;
                                                               },
                                                               decoration:
                                                                   InputDecoration(
                                                                       labelText:
-                                                                          "Email User",
+                                                                          "Expected Salary",
                                                                       labelStyle: TextStyle(
                                                                           fontSize:
                                                                               13),
@@ -410,8 +439,7 @@ class _UserControlState extends State<UserControl> {
                                                       Row(
                                                         children: [
                                                           Icon(
-                                                            FontAwesomeIcons
-                                                                .idBadge,
+                                                            Icons.date_range,
                                                             color: Colors
                                                                 .grey[500],
                                                             size: screenSize
@@ -422,7 +450,7 @@ class _UserControlState extends State<UserControl> {
                                                             width: 10,
                                                           ),
                                                           const Text(
-                                                            "Id Role",
+                                                            "Gender",
                                                             style: TextStyle(
                                                                 fontSize: 13),
                                                           ),
@@ -441,7 +469,7 @@ class _UserControlState extends State<UserControl> {
                                                             child:
                                                                 TextFormField(
                                                               controller:
-                                                                  idRoleController,
+                                                                  genderController,
                                                               textAlign:
                                                                   TextAlign
                                                                       .start,
@@ -452,14 +480,95 @@ class _UserControlState extends State<UserControl> {
                                                                         null ||
                                                                     value
                                                                         .isEmpty) {
-                                                                  return "Id Role tidak boleh kosong";
+                                                                  return "Gender tidak boleh kosong";
                                                                 }
                                                                 return null;
                                                               },
                                                               decoration:
                                                                   InputDecoration(
                                                                       labelText:
-                                                                          "Id Role",
+                                                                          "Gender",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            Icons.message,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Latest Company",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  latestCompanyController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              readOnly: true,
+                                                              maxLines: 5,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Latest Company tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Latest Company",
                                                                       labelStyle: TextStyle(
                                                                           fontSize:
                                                                               13),
@@ -492,16 +601,20 @@ class _UserControlState extends State<UserControl> {
                                     });
                               }
 
+                              
+
                               return DataRow(cells: [
-                                DataCell(Text(pgm['idUser'].toString())),
-                                DataCell(Text(pgm['username'].toString())),
+                                DataCell(Text(pgm['idTalent'].toString())),
+                                DataCell(Text(pgm['nameTalent'].toString())),
                                 // DataCell(Text(pgm['noRs'].toString())),
-                                DataCell(Text(pgm['email'].toString())),
+                                DataCell(
+                                    Text(pgm['latestPosition'].toString())),
                                 // DataCell(Text(pgm['namaPic'].toString())),
                                 // DataCell(Text(pgm['noPic'].toString())),
                                 // DataCell(Text(pgm['emailPic'].toString())),
-                                // DataCell(Text(pgm['idRole'].toString())),
-                                DataCell(Text(pgm['status'].toString())),
+                                DataCell(
+                                    Text(pgm['expectedSalary'].toString())),
+                                DataCell(Text(pgm['statusActive'].toString())),
                                 DataCell(PopupMenuButton(
                                   icon: Icon(Icons.more_vert_outlined),
                                   itemBuilder: (context) => [
@@ -518,23 +631,23 @@ class _UserControlState extends State<UserControl> {
                                           return AlertDialog(
                                             title: const Text("Warning"),
                                             content: Text(
-                                                "Are you sure want to delete data page ${pgm['idUser']}?"),
+                                                "Are you sure want to delete data page ${pgm['idTalent']}?"),
                                             actions: <Widget>[
                                               TextButton(
                                                 child: const Text("Yes"),
                                                 onPressed: () {
                                                   Navigator.pop(context);
-                                                  deletePage(pgm['idUser'])
+                                                  deleteTalent(pgm['idTalent'])
                                                       .then((isSuccess) {
                                                     if (isSuccess) {
                                                       setState(() {});
-                                                      ScaffoldMessenger.of(this.context)
+                                                      Scaffold.of(this.context)
                                                           .showSnackBar(
                                                               const SnackBar(
                                                                   content: Text(
                                                                       "Delete data success")));
                                                     } else {
-                                                      ScaffoldMessenger.of(this.context)
+                                                      Scaffold.of(this.context)
                                                           .showSnackBar(
                                                               const SnackBar(
                                                                   content: Text(

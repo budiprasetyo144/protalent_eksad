@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:protalent_eksad/public_baru/firebase/showOtpDialog.dart';
-import 'package:protalent_eksad/public_baru/firebase/showSnackbar_Alertdialog.dart';
+import 'package:protalent_eksad/firebase/showOtpDialog.dart';
+import 'package:protalent_eksad/firebase/showSnackbar_Alertdialog.dart';
 
 class FirebaseAuthMethods {
   final FirebaseAuth _auth;

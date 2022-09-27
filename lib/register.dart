@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:protalent_eksad/api/user_api.dart';
-import 'package:protalent_eksad/public_baru/firebase/firebase_auth_methods.dart';
+import 'package:protalent_eksad/firebase/firebase_auth_methods.dart';
 import 'package:provider/provider.dart';
 // import 'package:protalent_eksad/login.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -32,14 +32,15 @@ class _RegisterState extends State<Register> {
   final passwordController = TextEditingController();
 
   void signUpUser() async {
+    signUp(usernameController.value.text, emailController.value.text,
+        passwordController.value.text);
     context.read<FirebaseAuthMethods>().signUpWithEmail(
           username: usernameController.text,
           email: emailController.text,
           password: passwordController.text,
           context: context,
         );
-    signUp(usernameController.value.text, emailController.value.text,
-        passwordController.value.text);
+
   }
 
   // void chat({

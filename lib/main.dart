@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:protalent_eksad/admin/dashboard/desc_talent.dart';
 import 'package:protalent_eksad/admin/new_sidemenu.dart';
 import 'package:protalent_eksad/client/dashboard_client.dart';
+import 'package:protalent_eksad/firebase/forgot_password.dart';
 import 'package:protalent_eksad/firebase_options.dart';
 import 'package:protalent_eksad/homepage_new.dart';
 import 'package:protalent_eksad/login.dart';
 import 'package:protalent_eksad/public_baru/career/career.dart';
 import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us_baru.dart';
-import 'package:protalent_eksad/public_baru/firebase/firebase_auth_methods.dart';
+import 'package:protalent_eksad/firebase/firebase_auth_methods.dart';
 import 'package:protalent_eksad/public_baru/our_services/our_services.dart';
 import 'package:protalent_eksad/register.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
           //'/admin': (context) => const DashboardAdmin(),
           '/client': (context) => const DashboardClient(),
           //'/talent': (context) => const SelectTalent()
+          '/reset_password': (context) => const ForgotPassword(),
         },
 
         //home: Scaffold(

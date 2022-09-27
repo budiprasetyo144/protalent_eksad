@@ -129,7 +129,7 @@ class ContactUs2 extends StatelessWidget {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your name';
+                          return '*Please enter your name';
                         }
                         return null;
                       },
@@ -187,7 +187,7 @@ class ContactUs2 extends StatelessWidget {
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter your phone number';
+                              return '*Please enter your phone number';
                             }
                             return null;
                           },
@@ -217,8 +217,10 @@ class ContactUs2 extends StatelessWidget {
                             ),
                           ),
                           validator: (value) {
-                            if (value == null || value.isEmpty || !value.isValidEmail()) {
-                              return 'Please enter your email address';
+                            if (value == null ||
+                                value.isEmpty ||
+                                !value.isValidEmail()) {
+                              return '*Please enter your email address';
                             }
                             return null;
                           },
@@ -261,7 +263,7 @@ class ContactUs2 extends StatelessWidget {
                       maxLines: 5,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter message';
+                          return '*Please enter message';
                         }
                         return null;
                       },
@@ -312,7 +314,6 @@ class ContactUs2 extends StatelessWidget {
       ),
     );
   }
-  
 
   Future SendEmail(
       String name, String phone, String email, String message) async {
@@ -338,6 +339,7 @@ class ContactUs2 extends StatelessWidget {
     return response.statusCode;
   }
 }
+
 extension EmailValidator on String {
   bool isValidEmail() {
     return RegExp(

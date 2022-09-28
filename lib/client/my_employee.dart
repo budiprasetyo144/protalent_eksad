@@ -32,7 +32,7 @@ class _MyEmployeeState extends State<MyEmployee> {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    Text("13 results found"),
+                    //Text("13 results found"),
                   ],
                 ),
 

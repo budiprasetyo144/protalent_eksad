@@ -14,7 +14,7 @@ class SideClient extends StatefulWidget {
 class _SideClientState extends State<SideClient> {
   // script untuk mengatur navigation menu client
   List<Widget> views = [
-    const FindTalent(),
+//    const FindTalent(),
     const HiredTalent(),
     const MyEmployee()
   ];

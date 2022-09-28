@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:protalent_eksad/client/dashboard_client.dart';
+import 'package:protalent_eksad/client/newsidemenu_client.dart';
 import 'package:protalent_eksad/firebase/showOtpDialog.dart';
 import 'package:protalent_eksad/firebase/showSnackbar_Alertdialog.dart';
 
@@ -87,7 +88,7 @@ class FirebaseAuthMethods {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DashboardClient(),
+            builder: (context) => DashboardClientNew(),
           ),
         );
       }

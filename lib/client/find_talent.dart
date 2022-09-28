@@ -4,386 +4,177 @@ import 'package:protalent_eksad/widget/dropdown_dashboard.dart';
 import 'package:protalent_eksad/widget/whatsapp.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
-class FindTalent extends StatefulWidget {
-  const FindTalent({Key? key}) : super(key: key);
 
-  @override
-  State<FindTalent> createState() => _FindTalentState();
-}
+class FindTalent extends StatelessWidget {
+  const FindTalent({Key? key,required this.gridTalent}) : super(key: key);
+  final Widget gridTalent;
 
-class _FindTalentState extends State<FindTalent> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-        floatingActionButton: WAChat(),
-        body: Column(
-          children: [
-            Container(
-              width: screenSize.width,
-              height: screenSize.height * 0.15,
-              color: const Color.fromRGBO(238, 224, 224, 1),
-              child: Center(
-                child: Container(
-                  width: screenSize.width * 0.83,
-                  height: screenSize.height * 0.12,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.blue),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: screenSize.height * 0.04,
-                        child: Row(
-                          children: const [
-                            SizedBox(
-                              width: 23,
-                            ),
-                            Text(
-                              'Position',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Spacer(
-                              flex: 2,
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Text(
-                              'Skill',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Spacer(
-                              flex: 2,
-                            ),
-                            SizedBox(
-                              width: 33,
-                            ),
-                            Text(
-                              'Level',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Spacer(
-                              flex: 2,
-                            ),
-                            SizedBox(
-                              width: 31,
-                            ),
-                            Text(
-                              'Industry',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Spacer(
-                              flex: 2,
-                            ),
-                            SizedBox(
-                              width: 21,
-                            ),
-                            Text(
-                              'Location',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Spacer(
-                              flex: 5,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          DropDownDashboard2(
-                              item1: 'Software Enginering',
-                              item2: 'Flutter Developer',
-                              item3: 'Backend Developer',
-                              item4: 'Frontend Developer',
-                              item5: 'Mobile Developer'),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          DropDownDashboard2(
-                              item1: 'Software Enginering',
-                              item2: 'Flutter Developer',
-                              item3: 'Backend Developer',
-                              item4: 'Frontend Developer',
-                              item5: 'Mobile Developer'),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          DropDownDashboard2(
-                              item1: 'Software Enginering',
-                              item2: 'Flutter Developer',
-                              item3: 'Backend Developer',
-                              item4: 'Frontend Developer',
-                              item5: 'Mobile Developer'),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          DropDownDashboard2(
-                              item1: 'Software Enginering',
-                              item2: 'Flutter Developer',
-                              item3: 'Backend Developer',
-                              item4: 'Frontend Developer',
-                              item5: 'Mobile Developer'),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          DropDownDashboard2(
-                              item1: 'Software Enginering',
-                              item2: 'Flutter Developer',
-                              item3: 'Backend Developer',
-                              item4: 'Frontend Developer',
-                              item5: 'Mobile Developer'),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
+    return Column(
+      children: [
+        Container(
+          width: screenSize.width,
+          height: screenSize.height * 0.15,
+          color: Colors.blueGrey,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children:  [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Position',
+                          style: TextStyle(
                               color: Colors.white,
-                              height: 45,
-                              width: screenSize.width * 0.12,
-                              child: ElevatedButton.icon(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.white,
-                                      onPrimary: Colors.blue),
-                                  onPressed: () {},
-                                  icon: SizedBox(
-                                      width: screenSize.width * 0.02,
-                                      child: const Icon(
-                                        Icons.search,
-                                        color: Colors.blue,
-                                      )),
-                                  label: SizedBox(
-                                      width: screenSize.width * 0.08,
-                                      child: const Text(
-                                        'Search',
-                                        style: TextStyle(
-                                            color: Colors.blue,
-                                            fontSize: 19,
-                                            fontWeight: FontWeight.w500),
-                                      )))),
-                        ],
-                      ),
-                    ],
-                  ),
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        DropDownDashboard2(
+                            item1: 'Software Enginering',
+                            item2: 'Flutter Developer',
+                            item3: 'Backend Developer',
+                            item4: 'Frontend Developer',
+                            item5: 'Mobile Developer'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Skill',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        DropDownDashboard2(
+                            item1: 'Software Enginering',
+                            item2: 'Flutter Developer',
+                            item3: 'Backend Developer',
+                            item4: 'Frontend Developer',
+                            item5: 'Mobile Developer'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Level',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        DropDownDashboard2(
+                            item1: 'Software Enginering',
+                            item2: 'Flutter Developer',
+                            item3: 'Backend Developer',
+                            item4: 'Frontend Developer',
+                            item5: 'Mobile Developer'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Industry',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        DropDownDashboard2(
+                            item1: 'Software Enginering',
+                            item2: 'Flutter Developer',
+                            item3: 'Backend Developer',
+                            item4: 'Frontend Developer',
+                            item5: 'Mobile Developer'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Location',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        DropDownDashboard2(
+                            item1: 'Software Enginering',
+                            item2: 'Flutter Developer',
+                            item3: 'Backend Developer',
+                            item4: 'Frontend Developer',
+                            item5: 'Mobile Developer'),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(''),
+                        Container(
+                            color: Colors.white,
+                            height: 45,
+                            width: screenSize.width * 0.1,
+                            child: ElevatedButton.icon(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.white,
+                                    onPrimary: Colors.blue),
+                                onPressed: () {},
+                                icon: SizedBox(
+                                    width: screenSize.width * 0.02,
+                                    child: const Icon(
+                                      Icons.search,
+                                      color: Colors.blue,
+                                    )),
+                                label: SizedBox(
+                                    width: screenSize.width * 0.08,
+                                    child: const Text(
+                                      'Search',
+                                      style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 19,
+                                          fontWeight: FontWeight.w500),
+                                    )))),
+                      ],
+                    ),
+
+
+
+                  ],
                 ),
-              ),
+              ],
             ),
-            Container(
-              padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
-              width: screenSize.width,
-              height: screenSize.height * 0.75,
-              color: const Color.fromRGBO(238, 224, 224, 1),
-              child: GridView.count(
-                controller: ScrollController(),
-                crossAxisCount: 3,
-                mainAxisSpacing: 50,
-                crossAxisSpacing: 50,
-                children: [
-                  Profil(
-                    name: "Bagas",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Qori",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Faid",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Fahrur",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Budi",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Jay",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Rizki",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Tohap",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Manik",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Arham",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Fikri",
-                    gender: "Male",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                  Profil(
-                    name: "Maharani",
-                    gender: "Female",
-                    age: "26",
-                    exp: "5",
-                    skill1: "Java",
-                    skill2: "Flutter",
-                    skill3: "Quarkus",
-                    numSkill: "7",
-                    salary: "10.000.000",
-                    lastExp: "Java Developer",
-                    lastPosition: "Backend Developer",
-                    lastCompany: "EKSAD",
-                    berapaLama: "Feb 2020 - Juni 2024",
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ));
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 12),
+          width: screenSize.width,
+          height: screenSize.height * 0.7,
+          color: const Color.fromRGBO(238, 224, 224, 1),
+          child: gridTalent,
+        ),
+      ],
+    );
   }
 }
+
+
+
 
 class Profil extends StatelessWidget {
   Profil({

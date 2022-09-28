@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:protalent_eksad/admin/dashboard/desc_talent.dart';
 import 'package:protalent_eksad/admin/new_sidemenu.dart';
 import 'package:protalent_eksad/client/dashboard_client.dart';
+import 'package:protalent_eksad/client/newsidemenu_client.dart';
 import 'package:protalent_eksad/firebase/forgot_password.dart';
 import 'package:protalent_eksad/firebase_options.dart';
 import 'package:protalent_eksad/homepage_new.dart';
@@ -56,6 +58,7 @@ class MyApp extends StatelessWidget {
           '/contact': (context) => const ContactUs_baru(),
           // '/login': (context) => const login(),
           '/login': (context) => const SignIn(),
+          //'/client':(context) => DashboardClientNew(),
           '/register': (context) => const Register(),
           '/reset_password': (context) => const ForgotPassword(),
         },

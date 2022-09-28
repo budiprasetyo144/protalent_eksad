@@ -27,18 +27,18 @@ Future<bool> createSetting(im, tt,  em, no) async {
   }
 }
 
-Future<bool> updateSetting(id, image, name, title,  email, no,) async {
+Future<bool> updateSetting(id, title,  email, no) async {
   final response = await http
       .put(Uri.parse('$cmd/setting/updateSetting'),
       body: jsonEncode({
         "idsetting": id,
-        "image": image,
-        "name": name,
+        // "image": image,
+        // "name": name,
         "title": title,
       //  "tagline": tagline,
         "email": email,
         "no": no,
-        "idrole": "R001",
+
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

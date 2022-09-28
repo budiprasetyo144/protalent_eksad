@@ -46,7 +46,7 @@ class _TalentManagementsState extends State<TalentManagements> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(30.0),
+      padding: const EdgeInsets.all(10.0),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
@@ -62,12 +62,12 @@ class _TalentManagementsState extends State<TalentManagements> {
         child: Column(
           children: [
             Container(
-              height: screenSize.height * 0.15,
+              height: screenSize.height * 0.1,
               child: Center(
                 child: Text(
                   'Talent Management',
                   style: GoogleFonts.poppins(
-                      height: 1.5,
+                      height: 1,
                       fontSize: 31,
                       fontWeight: FontWeight.bold,
                       color: Colors.blueAccent[200]),
@@ -94,7 +94,7 @@ class _TalentManagementsState extends State<TalentManagements> {
                               left: screenSize.width * 0.045,
                               top: screenSize.height * 0.01),
                           width: screenSize.width * 0.50,
-                          height: screenSize.height * 0.7,
+                          height: screenSize.height,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -103,11 +103,10 @@ class _TalentManagementsState extends State<TalentManagements> {
                               Container(
                                 padding: EdgeInsets.only(
                                     left: screenSize.width * 0.15),
-                                height: screenSize.width * 0.03,
+                                height: screenSize.width * 0.02,
                                 child: Image.asset(
                                     "assets/logo/logo_protalent.png"),
                               ),
-                              const SizedBox(height: 20),
                               Row(
                                 children: [
                                   Column(
@@ -720,8 +719,7 @@ class _TalentManagementsState extends State<TalentManagements> {
                             style: TextButton.styleFrom(
                               padding: const EdgeInsets.all(16.0),
                               primary: Colors.white,
-                              backgroundColor:
-                                  Colors.blue,
+                              backgroundColor: Colors.blue,
                               textStyle: const TextStyle(fontSize: 15),
                             ),
                             onPressed: () {
@@ -874,8 +872,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                           padding: EdgeInsets.only(
                                               left: screenSize.width * 0.045,
                                               top: screenSize.height * 0.01),
-                                          width: screenSize.width * 0.50,
-                                          height: screenSize.height * 0.75,
+                                          width: screenSize.width * 0.73,
+                                          height: screenSize.height,
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -886,12 +884,14 @@ class _TalentManagementsState extends State<TalentManagements> {
                                               Container(
                                                 padding: EdgeInsets.only(
                                                     left: screenSize.width *
-                                                        0.15),
+                                                        0.27),
                                                 height: screenSize.width * 0.03,
                                                 child: Image.asset(
                                                     "assets/logo/logo_protalent.png"),
                                               ),
-                                              const SizedBox(height: 20),
+                                              SizedBox(
+                                                height: 30,
+                                              ),
                                               Row(
                                                 children: [
                                                   Column(
@@ -947,7 +947,7 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                                           BorderRadius.circular(
                                                                               5.0))),
                                                               readOnly: true,
-                                                             
+
                                                               // onChanged:
                                                               //     (value) =>
                                                               //         id =
@@ -1048,11 +1048,10 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                         ],
                                                       ),
                                                     ],
-                                                  )
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -1134,9 +1133,10 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       ),
                                                     ],
                                                   ),
-                                                  const SizedBox(
-                                                    width: 30,
-                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -1218,10 +1218,9 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       ),
                                                     ],
                                                   ),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -1556,6 +1555,87 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       ),
                                                     ],
                                                   ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .building,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Work Experience",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  workExperienceController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              // readOnly: true,
+                                                              // onChanged: (value) => we = value,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Work Experience tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Work Experience",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ],
                                               ),
                                               Row(
@@ -1644,88 +1724,6 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                   const SizedBox(
                                                     width: 30,
                                                   ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                    children: [
-                                                      Row(
-                                                        children: [
-                                                          Icon(
-                                                            FontAwesomeIcons
-                                                                .building,
-                                                            color: Colors
-                                                                .grey[500],
-                                                            size: screenSize
-                                                                    .width *
-                                                                0.01,
-                                                          ),
-                                                          const SizedBox(
-                                                            width: 10,
-                                                          ),
-                                                          const Text(
-                                                            "Work Experience",
-                                                            style: TextStyle(
-                                                                fontSize: 13),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 5,
-                                                      ),
-                                                      Row(
-                                                        children: [
-                                                          SizedBox(
-                                                            height: 60,
-                                                            width: screenSize
-                                                                    .width *
-                                                                0.2,
-                                                            child:
-                                                                TextFormField(
-                                                              controller:
-                                                                  workExperienceController,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .start,
-                                                              // readOnly: true,
-                                                              // onChanged: (value) => we = value,
-                                                              validator:
-                                                                  (value) {
-                                                                if (value ==
-                                                                        null ||
-                                                                    value
-                                                                        .isEmpty) {
-                                                                  return "Work Experience tidak boleh kosong";
-                                                                }
-                                                                return null;
-                                                              },
-                                                              decoration:
-                                                                  InputDecoration(
-                                                                      labelText:
-                                                                          "Work Experience",
-                                                                      labelStyle: TextStyle(
-                                                                          fontSize:
-                                                                              13),
-                                                                      hintStyle:
-                                                                          const TextStyle(),
-                                                                      border:
-                                                                          OutlineInputBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(5.0),
-                                                                      )),
-                                                            ),
-                                                          )
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -1895,8 +1893,7 @@ class _TalentManagementsState extends State<TalentManagements> {
                                               padding:
                                                   const EdgeInsets.all(16.0),
                                               primary: Colors.white,
-                                              backgroundColor:
-                                                  Colors.blue,
+                                              backgroundColor: Colors.blue,
                                               textStyle:
                                                   const TextStyle(fontSize: 15),
                                             ),
@@ -1904,16 +1901,25 @@ class _TalentManagementsState extends State<TalentManagements> {
                                               Navigator.pop(context);
                                               createTalent(
                                                       pgm['idTalent'],
-                                                      nameTalentController.value.text,
-                                                      genderController.value.text,
+                                                      nameTalentController
+                                                          .value.text,
+                                                      genderController
+                                                          .value.text,
                                                       ageController.value.text,
-                                                      workExperienceController.value.text,
-                                                      expectedSalaryController.value.text,
-                                                      statusTalentController.value.text,
-                                                      latestWorkPeriodeController.value.text,
-                                                      locationWorkController.value.text,
-                                                      latestCompanyController.value.text,
-                                                      latestPositionController.value.text,
+                                                      workExperienceController
+                                                          .value.text,
+                                                      expectedSalaryController
+                                                          .value.text,
+                                                      statusTalentController
+                                                          .value.text,
+                                                      latestWorkPeriodeController
+                                                          .value.text,
+                                                      locationWorkController
+                                                          .value.text,
+                                                      latestCompanyController
+                                                          .value.text,
+                                                      latestPositionController
+                                                          .value.text,
                                                       iu)
                                                   .then(
                                                 (isSuccess) {
@@ -1960,8 +1966,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                                           padding: EdgeInsets.only(
                                               left: screenSize.width * 0.045,
                                               top: screenSize.height * 0.01),
-                                          width: screenSize.width * 0.50,
-                                          height: screenSize.height * 0.75,
+                                          width: screenSize.width * 0.73,
+                                          height: screenSize.height,
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -1972,12 +1978,14 @@ class _TalentManagementsState extends State<TalentManagements> {
                                               Container(
                                                 padding: EdgeInsets.only(
                                                     left: screenSize.width *
-                                                        0.15),
+                                                        0.27),
                                                 height: screenSize.width * 0.03,
                                                 child: Image.asset(
                                                     "assets/logo/logo_protalent.png"),
                                               ),
-                                              const SizedBox(height: 20),
+                                              SizedBox(
+                                                height: 30,
+                                              ),
                                               Row(
                                                 children: [
                                                   Column(
@@ -2125,11 +2133,10 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                         ],
                                                       ),
                                                     ],
-                                                  )
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -2207,9 +2214,10 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       ),
                                                     ],
                                                   ),
-                                                  const SizedBox(
-                                                    width: 30,
-                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                children: [
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -2287,10 +2295,9 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       ),
                                                     ],
                                                   ),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -2609,87 +2616,6 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                       ),
                                                     ],
                                                   ),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                    children: [
-                                                      Row(
-                                                        children: [
-                                                          Icon(
-                                                            FontAwesomeIcons
-                                                                .moneyCheckDollar,
-                                                            color: Colors
-                                                                .grey[500],
-                                                            size: screenSize
-                                                                    .width *
-                                                                0.01,
-                                                          ),
-                                                          const SizedBox(
-                                                            width: 10,
-                                                          ),
-                                                          const Text(
-                                                            "Expected Salary",
-                                                            style: TextStyle(
-                                                                fontSize: 13),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 5,
-                                                      ),
-                                                      Row(
-                                                        children: [
-                                                          SizedBox(
-                                                            height: 60,
-                                                            width: screenSize
-                                                                    .width *
-                                                                0.2,
-                                                            child:
-                                                                TextFormField(
-                                                              controller:
-                                                                  expectedSalaryController,
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .start,
-                                                              readOnly: true,
-                                                              validator:
-                                                                  (value) {
-                                                                if (value ==
-                                                                        null ||
-                                                                    value
-                                                                        .isEmpty) {
-                                                                  return "Expected Salary tidak boleh kosong";
-                                                                }
-                                                                return null;
-                                                              },
-                                                              decoration:
-                                                                  InputDecoration(
-                                                                      labelText:
-                                                                          "Expected Salary",
-                                                                      labelStyle: TextStyle(
-                                                                          fontSize:
-                                                                              13),
-                                                                      hintStyle:
-                                                                          const TextStyle(),
-                                                                      border:
-                                                                          OutlineInputBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(5.0),
-                                                                      )),
-                                                            ),
-                                                          )
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
                                                   const SizedBox(
                                                     width: 30,
                                                   ),
@@ -2774,6 +2700,86 @@ class _TalentManagementsState extends State<TalentManagements> {
                                               ),
                                               Row(
                                                 children: [
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          Icon(
+                                                            FontAwesomeIcons
+                                                                .moneyCheckDollar,
+                                                            color: Colors
+                                                                .grey[500],
+                                                            size: screenSize
+                                                                    .width *
+                                                                0.01,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          const Text(
+                                                            "Expected Salary",
+                                                            style: TextStyle(
+                                                                fontSize: 13),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 60,
+                                                            width: screenSize
+                                                                    .width *
+                                                                0.2,
+                                                            child:
+                                                                TextFormField(
+                                                              controller:
+                                                                  expectedSalaryController,
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              readOnly: true,
+                                                              validator:
+                                                                  (value) {
+                                                                if (value ==
+                                                                        null ||
+                                                                    value
+                                                                        .isEmpty) {
+                                                                  return "Expected Salary tidak boleh kosong";
+                                                                }
+                                                                return null;
+                                                              },
+                                                              decoration:
+                                                                  InputDecoration(
+                                                                      labelText:
+                                                                          "Expected Salary",
+                                                                      labelStyle: TextStyle(
+                                                                          fontSize:
+                                                                              13),
+                                                                      hintStyle:
+                                                                          const TextStyle(),
+                                                                      border:
+                                                                          OutlineInputBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(5.0),
+                                                                      )),
+                                                            ),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 30,
+                                                  ),
                                                   Column(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -2958,7 +2964,7 @@ class _TalentManagementsState extends State<TalentManagements> {
                                 // DataCell(Text(pgm['emailPic'].toString())),
                                 DataCell(
                                     Text(pgm['expectedSalary'].toString())),
-                                DataCell(Text(pgm['statusActive'].toString())),
+                                DataCell(Text(pgm['statusTalent'].toString())),
                                 DataCell(PopupMenuButton(
                                   icon: Icon(Icons.more_vert_outlined),
                                   itemBuilder: (context) => [

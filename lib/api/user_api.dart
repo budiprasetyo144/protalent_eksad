@@ -7,9 +7,9 @@ var cmd = 'https://dmsdev-api.eksad.com/gateway/pro/v1/cmd';
 var qry = 'https://dmsdev-api.eksad.com/gateway/pro/v1/qry';
 
 Future<bool> signUp(username, email, password) async {
-  final response = await http.post(Uri.parse('$cmd/user/signup'),
+  final response = await http.post(Uri.parse('$cmd/register/save'),
       body: jsonEncode(
-          {"username": username, "email": email, "password": password}),
+          {"fullname": username, "email": email, "password": password}),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       });

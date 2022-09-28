@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:protalent_eksad/client/sidemenu_talent.dart';
 import 'package:protalent_eksad/widget/dropdown_dashboard.dart';
@@ -192,6 +194,7 @@ class Profil extends StatelessWidget {
     required this.lastPosition,
     required this.lastCompany,
     required this.berapaLama,
+
   }) : super(key: key);
 
   final String name;
@@ -208,19 +211,10 @@ class Profil extends StatelessWidget {
   final String lastCompany;
   final String berapaLama;
 
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (Context) {
-              return const SideMenuTalentClient();
-            },
-          ),
-        );
-      },
       child: Container(
         height: 340,
         width: 310,
@@ -376,7 +370,7 @@ class Profil extends StatelessWidget {
               Text(
                 "$lastExp | $lastPosition",
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               Text(lastCompany),
               Text(berapaLama),

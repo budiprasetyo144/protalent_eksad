@@ -149,18 +149,18 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
             child: PageView(
               controller: page,
               children: [
-                FindTalent(gridTalent: GestureDetector(
-                  onTap: () {
-                    page.jumpToPage(5);
-                  },
-                  child: GridView.count(
-                    childAspectRatio: (itemWidth / itemHeight),
-                    controller: ScrollController(),
-                    crossAxisCount: 3,
-                    mainAxisSpacing: 50,
-                    crossAxisSpacing: 50,
-                    children: [
-                      Profil(
+                FindTalent(gridTalent: GridView.count(
+                  childAspectRatio: (itemWidth / itemHeight),
+                  controller: ScrollController(),
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 50,
+                  crossAxisSpacing: 50,
+                  children: [
+                    GestureDetector(
+                      onTap:(){
+                        jumpDetailTalent();
+                    },
+                      child: Profil(
                         name: "Bagas",
                         gender: "Male",
                         age: "26",
@@ -175,7 +175,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap:(){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Qori",
                         gender: "Male",
                         age: "26",
@@ -190,7 +195,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap:(){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Faid",
                         gender: "Male",
                         age: "26",
@@ -205,7 +215,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap:(){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Fahrur",
                         gender: "Male",
                         age: "26",
@@ -220,7 +235,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap:(){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Budi",
                         gender: "Male",
                         age: "26",
@@ -235,7 +255,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap:(){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Jay",
                         gender: "Male",
                         age: "26",
@@ -250,7 +275,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Rizki",
                         gender: "Male",
                         age: "26",
@@ -265,7 +295,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Tohap",
                         gender: "Male",
                         age: "26",
@@ -280,7 +315,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Manik",
                         gender: "Male",
                         age: "26",
@@ -295,7 +335,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Arham",
                         gender: "Male",
                         age: "26",
@@ -310,7 +355,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Fikri",
                         gender: "Male",
                         age: "26",
@@ -325,7 +375,12 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                      Profil(
+                    ),
+                    GestureDetector(
+                      onTap: (){
+                        jumpDetailTalent();
+                      },
+                      child: Profil(
                         name: "Maharani",
                         gender: "Female",
                         age: "26",
@@ -340,10 +395,10 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
                         lastCompany: "EKSAD",
                         berapaLama: "Feb 2020 - Juni 2024",
                       ),
-                    ],
-                  ),
-                ),),
-
+                    ),
+                  ],
+                ),
+                ),
                 HiredTalent(),
                 MyEmployee(),
                 MasterData(),
@@ -357,4 +412,7 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
       ),
     );
   }
+
+  void jumpDetailTalent() => page.jumpToPage(5);
 }
+

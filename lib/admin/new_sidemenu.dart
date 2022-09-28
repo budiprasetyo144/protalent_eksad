@@ -188,18 +188,18 @@ class _DashboardAdminState extends State<DashboardAdmin> {
               controller: page,
               children: [
                 MainDashboard(
-                  all: GestureDetector(
-                    onTap: () {
-                      page.jumpToPage(8);
-                    },
-                    child: GridView.count(
-                      childAspectRatio: (itemWidth / itemHeight),
-                      controller: ScrollController(),
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 50,
-                      crossAxisSpacing: 50,
-                      children: [
-                        Profil(
+                  all: GridView.count(
+                    childAspectRatio: (itemWidth / itemHeight),
+                    controller: ScrollController(),
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 50,
+                    crossAxisSpacing: 50,
+                    children: [
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Bagas",
                           gender: "Male",
                           age: "26",
@@ -214,7 +214,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Qori",
                           gender: "Male",
                           age: "26",
@@ -229,7 +234,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Faid",
                           gender: "Male",
                           age: "26",
@@ -244,7 +254,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Fahrur",
                           gender: "Male",
                           age: "26",
@@ -259,7 +274,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Budi",
                           gender: "Male",
                           age: "26",
@@ -274,7 +294,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Jay",
                           gender: "Male",
                           age: "26",
@@ -289,7 +314,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Rizki",
                           gender: "Male",
                           age: "26",
@@ -304,7 +334,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Tohap",
                           gender: "Male",
                           age: "26",
@@ -319,7 +354,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Manik",
                           gender: "Male",
                           age: "26",
@@ -334,7 +374,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Arham",
                           gender: "Male",
                           age: "26",
@@ -349,7 +394,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Fikri",
                           gender: "Male",
                           age: "26",
@@ -364,7 +414,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Maharani",
                           gender: "Female",
                           age: "26",
@@ -379,21 +434,21 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  available: GestureDetector(
-                    onTap: () {
-                      page.jumpToPage(8);
-                    },
-                    child: GridView.count(
-                      childAspectRatio: (itemWidth / itemHeight),
-                      controller: ScrollController(),
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 50,
-                      crossAxisSpacing: 50,
-                      children: [
-                        Profil(
+                  available: GridView.count(
+                    childAspectRatio: (itemWidth / itemHeight),
+                    controller: ScrollController(),
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 50,
+                    crossAxisSpacing: 50,
+                    children: [
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Bagas",
                           gender: "Male",
                           age: "26",
@@ -408,7 +463,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Qori",
                           gender: "Male",
                           age: "26",
@@ -423,7 +483,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Faid",
                           gender: "Male",
                           age: "26",
@@ -438,7 +503,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Fahrur",
                           gender: "Male",
                           age: "26",
@@ -453,7 +523,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Budi",
                           gender: "Male",
                           age: "26",
@@ -468,7 +543,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Jay",
                           gender: "Male",
                           age: "26",
@@ -483,7 +563,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Rizki",
                           gender: "Male",
                           age: "26",
@@ -498,7 +583,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Tohap",
                           gender: "Male",
                           age: "26",
@@ -513,7 +603,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Manik",
                           gender: "Male",
                           age: "26",
@@ -528,7 +623,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Arham",
                           gender: "Male",
                           age: "26",
@@ -543,7 +643,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Fikri",
                           gender: "Male",
                           age: "26",
@@ -558,7 +663,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Maharani",
                           gender: "Female",
                           age: "26",
@@ -573,21 +683,21 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  hired: GestureDetector(
-                    onTap: () {
-                      page.jumpToPage(8);
-                    },
-                    child: GridView.count(
-                      childAspectRatio: (itemWidth / itemHeight),
-                      controller: ScrollController(),
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 50,
-                      crossAxisSpacing: 50,
-                      children: [
-                        Profil(
+                  hired: GridView.count(
+                    childAspectRatio: (itemWidth / itemHeight),
+                    controller: ScrollController(),
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 50,
+                    crossAxisSpacing: 50,
+                    children: [
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Bagas",
                           gender: "Male",
                           age: "26",
@@ -602,7 +712,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Qori",
                           gender: "Male",
                           age: "26",
@@ -617,7 +732,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Faid",
                           gender: "Male",
                           age: "26",
@@ -632,7 +752,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Fahrur",
                           gender: "Male",
                           age: "26",
@@ -647,7 +772,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Budi",
                           gender: "Male",
                           age: "26",
@@ -662,7 +792,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap:(){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Jay",
                           gender: "Male",
                           age: "26",
@@ -677,7 +812,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Rizki",
                           gender: "Male",
                           age: "26",
@@ -692,7 +832,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Tohap",
                           gender: "Male",
                           age: "26",
@@ -707,7 +852,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Manik",
                           gender: "Male",
                           age: "26",
@@ -722,7 +872,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Arham",
                           gender: "Male",
                           age: "26",
@@ -737,7 +892,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Fikri",
                           gender: "Male",
                           age: "26",
@@ -752,7 +912,12 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                        Profil(
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          jumpDetailTalent();
+                        },
+                        child: Profil(
                           name: "Maharani",
                           gender: "Female",
                           age: "26",
@@ -767,8 +932,8 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                           lastCompany: "EKSAD",
                           berapaLama: "Feb 2020 - Juni 2024",
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
                 SettingDashboard(),
@@ -786,4 +951,6 @@ class _DashboardAdminState extends State<DashboardAdmin> {
       ),
     );
   }
+
+  void jumpDetailTalent() => page.jumpToPage(8);
 }

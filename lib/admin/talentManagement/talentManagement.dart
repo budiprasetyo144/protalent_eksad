@@ -730,11 +730,11 @@ class _TalentManagementsState extends State<TalentManagements> {
                                 (isSuccess) {
                                   if (isSuccess) {
                                     setState(() {});
-                                    Scaffold.of(this.context).showSnackBar(
+                                    ScaffoldMessenger.of(this.context).showSnackBar(
                                         const SnackBar(
                                             content: Text("Data success")));
                                   } else {
-                                    Scaffold.of(this.context).showSnackBar(
+                                    ScaffoldMessenger.of(this.context).showSnackBar(
                                         const SnackBar(
                                             content: Text("Data failed!!!")));
                                   }
@@ -1925,13 +1925,13 @@ class _TalentManagementsState extends State<TalentManagements> {
                                                 (isSuccess) {
                                                   if (isSuccess) {
                                                     setState(() {});
-                                                    Scaffold.of(this.context)
+                                                    ScaffoldMessenger.of(this.context)
                                                         .showSnackBar(
                                                             const SnackBar(
                                                                 content: Text(
                                                                     "Data success")));
                                                   } else {
-                                                    Scaffold.of(this.context)
+                                                    ScaffoldMessenger.of(this.context)
                                                         .showSnackBar(
                                                             const SnackBar(
                                                                 content: Text(

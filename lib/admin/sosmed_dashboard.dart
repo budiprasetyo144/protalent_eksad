@@ -176,7 +176,7 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                       SizedBox(
                         height: 10,
                       ),
-                      listsosmed(
+                      listsosmed2(
                           Icon(
                             FontAwesomeIcons.youtube,
                             color: Colors.red,
@@ -188,16 +188,17 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                          //   onChanged: (value) => yt = value,
                             enabled: enb,
                           ),
-                          ElevatedButton(
-                              onPressed: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context)=>
-                                      AlertDialog(
-                                        content:Text('Active Youtube : '+pgm['youtube']),
-                                      ) ,
-                                );
-                              }, child: Text('View Active'))),
+                          // ElevatedButton(
+                          //     onPressed: () {
+                          //       showDialog(
+                          //         context: context,
+                          //         builder: (BuildContext context)=>
+                          //             AlertDialog(
+                          //               content:Text('Active Youtube : '+pgm['youtube']),
+                          //             ) ,
+                          //       );
+                          //     }, child: Text('View Active')),
+                      ),
                     ],
                   ),
                   SizedBox(height: 15,),
@@ -226,19 +227,7 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                               {
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Save Data Success'),));
                               }
-                              // print(updateSosmed(
-                              //     pgm['idSettingSosmed'],
-                              //     waController.value.text,
-                              //     linkedController.value.text,
-                              //     twitterController.value.text,
-                              //     igController.value.text,
-                              //     youtubeController.value.text));
-                              // print(pgm['idSettingSosmed']);
-                              // print(waController.value.text);
-                              // print(linkedController.value.text);
-                              // print(twitterController.value.text);
-                              // print(igController.value.text);
-                              // print(youtubeController.value.text);
+
 
                               setState(() {
                                 btnText = 'Update Setting';
@@ -255,7 +244,13 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                               });
                               break;
                             case 'Save Update':
-                            //  createSosmed(wa, ln, tw, ig, yt);
+                              updateSosmed(
+                                  pgm['idSettingSosmed'],
+                                  waController.value.text,
+                                  linkedController.value.text,
+                                  twitterController.value.text,
+                                  igController.value.text,
+                                  youtubeController.value.text);
                               {
                                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Save Data Success'),));
                               }

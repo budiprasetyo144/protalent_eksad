@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:protalent_eksad/client/dashboard_client.dart';
 import 'package:protalent_eksad/firebase/showOtpDialog.dart';
 import 'package:protalent_eksad/firebase/showSnackbar_Alertdialog.dart';
 
@@ -83,7 +84,12 @@ class FirebaseAuthMethods {
         // restrict access to certain things using provider
         // transition to another page instead of home screen
       } else if (user.emailVerified) {
-        Navigator.pushNamed(context, '/client');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DashboardClient(),
+          ),
+        );
       }
     } on FirebaseAuthException catch (e) {
       showAlertError(context, e.message!); // Displaying the error message

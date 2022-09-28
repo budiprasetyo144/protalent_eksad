@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:protalent_eksad/admin/new_sidemenu.dart';
 import 'package:provider/provider.dart';
 
 import 'firebase/firebase_auth_methods.dart';
@@ -137,7 +138,19 @@ class _SignInState extends State<SignIn> {
                                 controller: emailController,
                                 textAlign: TextAlign.start,
                                 onFieldSubmitted: (String value) {
-                                  loginUser();
+                                  if (emailController.value.text ==
+                                      'admin@admin.com' &&
+                                      passwordController.value.text ==
+                                          'administrator') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => DashboardAdmin(),
+                                      ),
+                                    );
+                                  } else {
+                                    loginUser();
+                                  }
                                 },
                                 decoration: InputDecoration(
                                   labelText: "Enter Your Email",
@@ -184,7 +197,19 @@ class _SignInState extends State<SignIn> {
                               child: TextFormField(
                                 controller: passwordController,
                                 onFieldSubmitted: (String value) {
-                                  loginUser();
+                                  if (emailController.value.text ==
+                                      'admin@admin.com' &&
+                                      passwordController.value.text ==
+                                          'administrator') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => DashboardAdmin(),
+                                      ),
+                                    );
+                                  } else {
+                                    loginUser();
+                                  }
                                 },
                                 textAlign: TextAlign.start,
                                 obscureText: _isObscure,
@@ -249,53 +274,16 @@ class _SignInState extends State<SignIn> {
                                               'admin@admin.com' &&
                                           passwordController.value.text ==
                                               'administrator') {
-                                        Navigator.pushNamed(
-                                            context, '/dashboard');
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => DashboardAdmin(),
+                                          ),
+                                        );
                                       } else {
                                         loginUser();
                                       }
-                                      // if (emailController.value.text == emailController &&
-                                      //     passwordController.value.text != passwordController) {
-                                      //   showDialog<String>(
-                                      //     context: context,
-                                      //     builder: (BuildContext context) =>
-                                      //         AlertDialog(
-                                      //       title: const Text('Gagal login'),
-                                      //       content: const Text(
-                                      //           'Password anda salah!!!'),
-                                      //       actions: <Widget>[
-                                      //         TextButton(
-                                      //           onPressed: () =>
-                                      //               Navigator.pop(context, 'OK'),
-                                      //           child: const Text('OK'),
-                                      //         ),
-                                      //       ],
-                                      //     ),
-                                      //   );
-                                      // } else if (emailController.value.text == emailController &&
-                                      //     passwordController.value.text == passwordController) {
-                                      //   loginUser();
-                                      //   Navigator.pushNamed(context, '/dashboard');
-                                      // } else {
-                                      //   loginUser();
-                                      //   Navigator.pushNamed(context, '/dashboard');
-                                      //   // showDialog<String>(
-                                      //   //   context: context,
-                                      //   //   builder: (BuildContext context) =>
-                                      //   //       AlertDialog(
-                                      //   //     title: const Text('Gagal login'),
-                                      //   //     content: const Text(
-                                      //   //         'Akun Belum terdaftar, Silahkan Registrasi'),
-                                      //   //     actions: <Widget>[
-                                      //   //       TextButton(
-                                      //   //         onPressed: () =>
-                                      //   //             Navigator.pop(context, 'OK'),
-                                      //   //         child: const Text('OK'),
-                                      //   //       ),
-                                      //   //     ],
-                                      //   //   ),
-                                      //   // );
-                                      // }
+
                                     },
                                     child: const Text("LOGIN"),
                                   ),

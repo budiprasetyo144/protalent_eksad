@@ -6,11 +6,12 @@ import 'package:http/http.dart' as http;
 var cmd = 'https://dmsdev-api.eksad.com/gateway/pro/v1/cmd';
 var qry = 'https://dmsdev-api.eksad.com/gateway/pro/v1/qry';
 
-Future<bool> createSosmed (wa, ln, tw, ig, yt) async{
+Future<bool> createSosmed (id,wa, ln, tw, ig, yt) async{
   final response = await http.post(
       Uri.parse('$cmd/settingsosmed/saveSettingSosmed'),
       body: jsonEncode(
           {
+            'idSettingSosmed': id,
             'whatsapp': wa,
             'linkedin': ln,
             'twitter': tw,
@@ -27,10 +28,11 @@ Future<bool> createSosmed (wa, ln, tw, ig, yt) async{
   }
 }
 
-Future<bool> updateSosmed (wa,linked,twitter,ig,yt) async {
+Future<bool> updateSosmed (id,wa,linked,twitter,ig,yt) async {
   final response = await http
-      .put(Uri.parse('$cmd/settingsosmed/updateSettingSosmed'),
+      .post(Uri.parse('$cmd/settingsosmed/updateSettingSosmed'),
       body: jsonEncode({
+        'idSettingSosmed': id,
         'whatsapp': wa,
         'linkedin': linked,
         'twitter': twitter,

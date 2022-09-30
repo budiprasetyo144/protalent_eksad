@@ -95,7 +95,7 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
               children: [
                 Container(
                   height: 20,
-                )
+                ),
                 Center(
                   child: Text(
                     'Welcome,\n$mail',

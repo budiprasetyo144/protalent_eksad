@@ -8,8 +8,8 @@ import 'package:protalent_eksad/admin/master_data/master_data.dart';
 import 'package:protalent_eksad/admin/pages/pages_dashboard.dart';
 import 'package:protalent_eksad/admin/setting_dashboard.dart';
 import 'package:protalent_eksad/admin/sosmed_dashboard.dart';
-import 'package:protalent_eksad/admin/talentManagement/talentManagement.dart';
-import 'package:protalent_eksad/admin/talent_manage/talent_manage.dart';
+import 'package:protalent_eksad/firebase/firebase_auth_methods.dart';
+import 'package:provider/provider.dart';
 
 class DashboardAdmin extends StatefulWidget {
   const DashboardAdmin({Key? key}) : super(key: key);
@@ -54,7 +54,8 @@ class _DashboardAdminState extends State<DashboardAdmin> {
           ),
           TextButton.icon(
             onPressed: () {
-              Navigator.pushNamed(context, '/login');
+              context.read<FirebaseAuthMethods>().signOut(context);
+              Navigator.pushNamed(context, '/');
             },
             icon: const Icon(
               Icons.output,

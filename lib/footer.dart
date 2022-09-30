@@ -303,6 +303,7 @@ class Footer extends StatelessWidget {
                                 leading: const Icon(
                                   Icons.location_on,
                                   size: 25,
+                                  color: Colors.black,
                                 ),
                                 title: Container(
                                   padding:

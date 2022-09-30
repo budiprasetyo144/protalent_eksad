@@ -85,12 +85,13 @@ class FirebaseAuthMethods {
         // restrict access to certain things using provider
         // transition to another page instead of home screen
       } else if (user.emailVerified) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => DashboardClientNew(),
-          ),
-        );
+        Navigator.popAndPushNamed(context, '/client');
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (context) => DashboardClientNew(),
+        //   ),
+        // );
       }
     } on FirebaseAuthException catch (e) {
       showAlertError(context, e.message!); // Displaying the error message

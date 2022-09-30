@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
           '/contact': (context) => const ContactUs_baru(),
           // '/login': (context) => const login(),
           '/login': (context) => const SignIn(),
-          //'/client':(context) => DashboardClientNew(),
+          '/client':(context) => DashboardClientNew(),
           '/register': (context) => const Register(),
           '/reset_password': (context) => const ForgotPassword(),
         },

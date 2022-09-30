@@ -11,6 +11,17 @@ Future<List<dynamic>> getTalentList() async {
   return jsonDecode(response.body)['data'];
 }
 
+Future<List<dynamic>> getTalentListFilter(filter) async {
+  var response = await http.post(Uri.parse('$qry/talent/getTalentByFilter'),
+  body: jsonEncode({"filter": filter}),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  );
+
+  return jsonDecode(response.body)['data'];
+}
+
 Future<bool> deleteTalent(id) async {
   final response = await http.post(
     Uri.parse('$cmd/talent/delete'),

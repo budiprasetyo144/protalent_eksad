@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protalent_eksad/api/setting_api.dart';
 import 'package:protalent_eksad/footer.dart';
 import 'package:protalent_eksad/conts_warna.dart';
 import 'package:protalent_eksad/public_baru/contact_us_baru/contact_us2.dart';
@@ -37,37 +38,53 @@ class _HomePageNewState extends State<HomePageNew> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    setPageTitle('Protalent by Eksad', context);
+    //setPageTitle('Protalent by Eksad', context);
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-        key: _scaffoldKey,
-        floatingActionButton: WAChat(),
-        appBar: ResponsiveWidget.isSmallScreen(context)
-            ? AppBarKecil()
-            : AppbarHomeLarge(screenSize, context, Colors.blue, Colors.blue,
-                Colors.black, Colors.black, Colors.black),
-        drawer: DrawerProtalent(),
-        body: ResponsiveWidget.isSmallScreen(context)
-            ? ListView(
-                children: [
-                  HomeSmall1(),
-                  HomeSmall2(),
-                  HomeSmall3(),
-                  HomeSmall4(),
-                  ContactUs2_small(),
-                  const FooterSmall(),
-                ],
-              )
-            : ListView(
-                children: [
-                  const HomeNew1(),
-                  const HomeNew2(),
-                  const HomeNew3(),
-                  const HomeNew4(),
-                  ContactUs2(),
-                  Footer(),
-                ],
-              ));
+      key: _scaffoldKey,
+      floatingActionButton: WAChat(),
+      appBar: ResponsiveWidget.isSmallScreen(context)
+          ? AppBarKecil()
+          : AppbarHomeLarge(screenSize, context, Colors.blue, Colors.blue,
+              Colors.black, Colors.black, Colors.black),
+      drawer: DrawerProtalent(),
+      body: ResponsiveWidget.isSmallScreen(context)
+          ? ListView(
+              children: [
+                HomeSmall1(),
+                HomeSmall2(),
+                HomeSmall3(),
+                HomeSmall4(),
+                ContactUs2_small(),
+                const FooterSmall(),
+              ],
+            )
+          : FutureBuilder<dynamic>(
+              future: getSettingTitle(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                var pgm = snapshot.data[0];
+                if (snapshot.hasError ||
+                    snapshot.data == null ||
+                    snapshot.connectionState == ConnectionState.waiting) {
+                  return const CircularProgressIndicator();
+                }
+                return Title(
+                  title: pgm['title'],
+                  color: Colors.white,
+                  child: ListView(
+                    children: [
+                      const HomeNew1(),
+                      const HomeNew2(),
+                      const HomeNew3(),
+                      const HomeNew4(),
+                      ContactUs2(),
+                      Footer(),
+                    ],
+                  ),
+                );
+              },
+            ),
+    );
   }
 
   AppBar AppBarKecil() {

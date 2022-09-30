@@ -15,19 +15,7 @@ class TalentManagements extends StatefulWidget {
 }
 
 class _TalentManagementsState extends State<TalentManagements> {
-  void apiService(BuildContext context) {
-    FutureBuilder<List<dynamic>>(
-        future: getUserControl(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasError ||
-              snapshot.data == null ||
-              snapshot.connectionState == ConnectionState.waiting) {
-            return const CircularProgressIndicator();
-          }
-
-          return snapshot.data;
-        });
-  }
+  
 
   final formKey = GlobalKey<FormState>();
   String id = '';
@@ -75,7 +63,7 @@ class _TalentManagementsState extends State<TalentManagements> {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                   style: TextButton.styleFrom(
@@ -749,6 +737,25 @@ class _TalentManagementsState extends State<TalentManagements> {
                   },
                   child: const Text('Add Talent'),
                 ),
+                SizedBox(
+                  height: 40,
+                  width: screenSize.width * 0.2,
+                  child: TextFormField(
+                    textAlign: TextAlign.start,
+                    decoration: InputDecoration(
+                        labelText: "Search",
+                        labelStyle: TextStyle(fontSize: 13),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        )),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Search tidak boleh kosong";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -848,6 +855,8 @@ class _TalentManagementsState extends State<TalentManagements> {
                               final statusActiveController =
                                   TextEditingController(
                                       text: pgm['statusActive'].toString());
+                              final filterController = TextEditingController(
+                                  text: pgm['filter'].toString());
                               // final statusController = TextEditingController(
                               //     text: pgm['status'].toString());
 

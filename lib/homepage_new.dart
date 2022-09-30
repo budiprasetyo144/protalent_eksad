@@ -63,11 +63,6 @@ class _HomePageNewState extends State<HomePageNew> {
               future: getSettingTitle(),
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 var pgm = snapshot.data[0];
-                if (snapshot.hasError ||
-                    snapshot.data == null ||
-                    snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                }
                 return Title(
                   title: pgm['title'],
                   color: Colors.white,

@@ -37,6 +37,7 @@ class _CareerState extends State<Career> {
     setPageTitle('Career Protalent', context);
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      key: _scaffoldKey,
         appBar: ResponsiveWidget.isSmallScreen(context)
             ? AppBarKecil()
             : AppbarHomeLarge(screenSize, context, Colors.black, Colors.black,

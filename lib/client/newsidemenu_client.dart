@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_sidemenu/easy_sidemenu.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:protalent_eksad/admin/dashboard/desc_talent.dart';
 import 'package:protalent_eksad/admin/master_data/master_data.dart';
 import 'package:protalent_eksad/admin/talentManagement/talentManagement.dart';
@@ -7,6 +8,8 @@ import 'package:protalent_eksad/client/find_talent.dart';
 
 import 'package:protalent_eksad/client/hired_talent.dart';
 import 'package:protalent_eksad/client/my_employee.dart';
+import 'package:protalent_eksad/firebase/firebase_auth_methods.dart';
+import 'package:provider/provider.dart';
 
 class DashboardClientNew extends StatefulWidget {
   const DashboardClientNew({Key? key}) : super(key: key);
@@ -22,6 +25,8 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
     var size = MediaQuery.of(context).size;
     final double itemHeight = (size.height - kToolbarHeight - 24) * 2;
     final double itemWidth = size.width / 1.65;
+    final user = context.read<FirebaseAuthMethods>().user;
+    final String mail = user.email!;
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
@@ -88,7 +93,15 @@ class _DashboardClientNewState extends State<DashboardClientNew> {
             ),
             title: Column(
               children: [
-
+                Container(
+                  height: 20,
+                )
+                Center(
+                  child: Text(
+                    'Welcome,\n$mail',
+                    style: GoogleFonts.poppins(fontSize: 17),
+                  ),
+                ),
                 Container(
                   height: 20,
                 )

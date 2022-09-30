@@ -141,43 +141,43 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 },
                 icon: const Icon(Icons.file_copy),
               ),
+              // SideMenuItem(
+              //   priority: 3,
+              //   title: 'Master Data',
+              //   onTap: () {
+              //     page.jumpToPage(3);
+              //   },
+              //   icon: const Icon(Icons.table_rows),
+              // ),
               SideMenuItem(
                 priority: 3,
-                title: 'Master Data',
+                title: 'Client',
                 onTap: () {
                   page.jumpToPage(3);
                 },
-                icon: const Icon(Icons.table_rows),
-              ),
-              SideMenuItem(
-                priority: 4,
-                title: 'Client',
-                onTap: () {
-                  page.jumpToPage(4);
-                },
                 icon: const Icon(Icons.person),
               ),
+              // SideMenuItem(
+              //   priority: 5,
+              //   title: 'Talent Management',
+              //   onTap: () {
+              //     page.jumpToPage(5);
+              //   },
+              //   icon: const Icon(Icons.people_alt),
+              // ),
               SideMenuItem(
-                priority: 5,
-                title: 'Talent Management',
-                onTap: () {
-                  page.jumpToPage(5);
-                },
-                icon: const Icon(Icons.people_alt),
-              ),
-              SideMenuItem(
-                priority: 6,
+                priority: 4,
                 title: 'Social Media',
                 onTap: () {
-                  page.jumpToPage(6);
+                  page.jumpToPage(4);
                 },
                 icon: const Icon(Icons.phone_android),
               ),
               SideMenuItem(
-                priority: 7,
+                priority: 5,
                 title: 'Contact List',
                 onTap: () {
-                  page.jumpToPage(7);
+                  page.jumpToPage(5);
                 },
                 icon: const Icon(Icons.contact_phone),
               ),
@@ -938,9 +938,9 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                 ),
                 SettingDashboard(),
                 PagesDashboard(),
-                MasterData(),
+                //MasterData(),
                 UserControl(),
-                TalentManagements(),
+                //TalentManagements(),
                 SosmedDashboard(),
                 contactList(),
                 SelectTalent(),

@@ -79,8 +79,9 @@ class _SosmedDashboardState extends State<SosmedDashboard> {
                           TextFormField(
                             controller: waController,
                             decoration: InputDecoration(
-                                hintText:
+                                helperText:
                                 'Enter WhatsApp number without +,   Ex : 6280000000000 '),
+
                           //  onChanged: (value) => wa = value,
                             enabled: enb,
                           ),

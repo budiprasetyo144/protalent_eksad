@@ -96,7 +96,7 @@ class _IndustryState extends State<Industry> {
       body: Container(
         width: screenSize.width * 0.64,
         //color: Colors.blue,
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 38),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -111,11 +111,9 @@ class _IndustryState extends State<Industry> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            const Spacer(
-              flex: 1,
-            ),
+
             Container(
-                width: screenSize.width * 0.6,
+                width: screenSize.width * 0.7,
                 height: screenSize.height*0.4,
                 color: Colors.white70,
                 child: const PaginatedDataTableDemo()),

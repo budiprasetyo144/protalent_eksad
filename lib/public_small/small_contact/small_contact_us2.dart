@@ -6,7 +6,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:protalent_eksad/widget/button_color.dart';
 
-
 class ContactUs2_small extends StatefulWidget {
   const ContactUs2_small({Key? key}) : super(key: key);
 
@@ -15,8 +14,6 @@ class ContactUs2_small extends StatefulWidget {
 }
 
 class _ContactUs2_smallState extends State<ContactUs2_small> {
-
-
   final _formKey = GlobalKey<FormState>();
 
   final nameController = TextEditingController();
@@ -33,14 +30,14 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
       // color: Colors.blue,
       decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: <Color>[
-              Color(0xff137fc2),
-              Color(0xff3958d5),
-              Color(0xff184b80),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          )),
+        colors: <Color>[
+          Color(0xff137fc2),
+          Color(0xff3958d5),
+          Color(0xff184b80),
+        ],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      )),
       child: Container(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -49,9 +46,8 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
             children: [
               Text(
                   'Yes, you need '
-                      '\n'
-                      'an outsourcing partner '
-                      'you can trust and thrive with',
+                  '\n'
+                  'an IT Consultant',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.poppins(
                       color: Colors.white,
@@ -59,8 +55,8 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
                       fontWeight: FontWeight.bold)),
               Text(
                   'Go for the one who knows what they are doing, those who you share values with, '
-                      'and those who will celebrate your success, and help you win over your biggest challenges. '
-                      'Looking for an outsourcing partner? ',
+                  'and those who will celebrate your success, and help you win over your biggest challenges. '
+                  'Looking for an outsourcing partner? ',
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.poppins(
                       color: Colors.white,
@@ -96,12 +92,12 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                           ),
                         ),
@@ -132,12 +128,12 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                           ),
                         ),
@@ -168,12 +164,12 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                           ),
                         ),
@@ -199,12 +195,12 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.zero,
                               borderSide:
-                              BorderSide(width: 1, color: Colors.white),
+                                  BorderSide(width: 1, color: Colors.white),
                             ),
                           ),
                           maxLines: 5,
@@ -234,12 +230,12 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 response == 200
                                     ? const SnackBar(
-                                    content: Text('Message Sent!'),
-                                    backgroundColor: Colors.green)
+                                        content: Text('Message Sent!'),
+                                        backgroundColor: Colors.green)
                                     : const SnackBar(
-                                    content:
-                                    Text('Failed to send message!'),
-                                    backgroundColor: Colors.red),
+                                        content:
+                                            Text('Failed to send message!'),
+                                        backgroundColor: Colors.red),
                               );
 
                               nameController.clear();
@@ -260,7 +256,6 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
       ),
     );
   }
-
 
 //
 // class ContactUs2_small extends StatelessWidget {

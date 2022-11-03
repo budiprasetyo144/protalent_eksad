@@ -50,8 +50,7 @@ class ContactUs2 extends StatelessWidget {
                     child: Text(
                         'Yes, you need '
                         '\n'
-                        'an outsourcing partner '
-                        'you can trust and thrive with',
+                        'an IT Consultant',
                         textAlign: TextAlign.left,
                         style: GoogleFonts.poppins(
                             color: Colors.white,

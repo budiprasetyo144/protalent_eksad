@@ -110,9 +110,7 @@ class _SkillState extends State<Skill> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            const Spacer(
-              flex: 1,
-            ),
+
             Container(
                 width: screenSize.width * 0.6,
                 height: screenSize.height*0.4,

@@ -50,7 +50,9 @@ class ContactUs2 extends StatelessWidget {
                     child: Text(
                         'Yes, you need '
                         '\n'
-                        'an IT Consultant',
+                        'an IT Consultant partner '
+                        '\n'
+                        'You can trust and thrive with',
                         textAlign: TextAlign.left,
                         style: GoogleFonts.poppins(
                             color: Colors.white,
@@ -65,7 +67,7 @@ class ContactUs2 extends StatelessWidget {
                     child: Text(
                         'Go for the one who knows what they are doing, those who you share values with, '
                         'and those who will celebrate your success, and help you win over your biggest challenges. '
-                        '\nLooking for an outsourcing partner? ',
+                        '\nLooking for an IT Consultant partner? ',
                         textAlign: TextAlign.left,
                         style: GoogleFonts.poppins(
                             color: Colors.white,

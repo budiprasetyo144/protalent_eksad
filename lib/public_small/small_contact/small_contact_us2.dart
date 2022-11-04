@@ -47,7 +47,9 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
               Text(
                   'Yes, you need '
                   '\n'
-                  'an IT Consultant',
+                  'an IT Consultant partner '
+                  '\n'
+                  'You can trust and thrive with',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.poppins(
                       color: Colors.white,
@@ -56,7 +58,7 @@ class _ContactUs2_smallState extends State<ContactUs2_small> {
               Text(
                   'Go for the one who knows what they are doing, those who you share values with, '
                   'and those who will celebrate your success, and help you win over your biggest challenges. '
-                  'Looking for an outsourcing partner? ',
+                  'Looking for an IT Consultant partner? ',
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.poppins(
                       color: Colors.white,
